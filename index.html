@@ -408,7 +408,8 @@ if(element.removeHandler){//Dom2级的处理事件
     }
 </code></pre><p>其中的event.cancelBubble=true是指取消事件冒泡，将事件停止下来，不让事件往上面的元素传递。</p>
 <h2 id="冒泡还是-捕获？"><a href="#冒泡还是-捕获？" class="headerlink" title="冒泡还是 捕获？"></a>冒泡还是 捕获？</h2><p>对于事件代理来说，在事件捕获或者事件冒泡阶段处理并没有明显的优劣之分，但是由于事件冒泡的事件流模型被所有主流的浏览器兼容，从兼容性角度来说还是建议大家使用事件冒泡模型。</p>
-<h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。<br><img src="`(U08RQBUO5_~A{FZ(7S%WH.png" alt="浏览器兼容"><br>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>
+<h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。</p>
+<p>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>
 
           
         
