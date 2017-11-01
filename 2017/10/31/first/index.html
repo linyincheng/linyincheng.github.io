@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,7 +90,7 @@
 <meta property="og:site_name" content="成成的博客">
 <meta property="og:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T11:50:28.320Z">
+<meta property="og:updated_time" content="2017-11-01T11:54:41.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中事件的冒泡和事件的捕获">
 <meta name="twitter:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
@@ -101,7 +101,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     version: '5.1.3',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -365,8 +365,17 @@
 <p>所以上面的例子在事件冒泡的概念下发生click事件的顺序应该是p -&gt; div -&gt; body -&gt; html -&gt; document。</p>
 <h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><p>事件捕获是和事件冒泡完全相反的概念，也就是说，事件会从最外的document对象开始触发，然后不断往里触发。直到最里面的元素被触发为止。</p>
 <p>上面的例子在事件捕获的概念下发生click事件的顺序应该是document -&gt; html -&gt; body -&gt; div -&gt; p。</p>
-<p>在处理事件冒泡中，IE，DOM2级以及DOM0级分别给出以下的处理方法：<br>    addHandler:function(element,type,handler){//element：元素，type：事件类型“click”。。。handler：处理函数<br>        if(element.addEventListener){ //Dom2级的处理事件<br>            element.addEventListener(type,handler,false);<br>        }else if(element.attachEvent){ // IE处理事件<br>            element.attachEvent(‘on’+type,handler);<br>        }else{      //Dom0级的处理时事件<br>            element[‘on’+type]=handler;<br>        }<br>    }</p>
-<hr>
+<p>在处理事件冒泡中，IE，DOM2级以及DOM0级分别给出以下的处理方法：</p>
+<pre><code>addHandler:function(element,type,handler){//element：元素，type：事件类型“click”。。。handler：处理函数
+    if(element.addEventListener){ //Dom2级的处理事件
+        element.addEventListener(type,handler,false);
+    }else if(element.attachEvent){ // IE处理事件
+        element.attachEvent(&apos;on&apos;+type,handler);
+    }else{      //Dom0级的处理时事件
+        element[&apos;on&apos;+type]=handler;
+    }
+}
+</code></pre><hr>
 
       
     </div>
@@ -632,7 +641,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.3</div>
 
 
 
@@ -731,6 +740,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
