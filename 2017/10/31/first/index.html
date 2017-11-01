@@ -90,12 +90,10 @@
 <meta property="og:site_name" content="成成的博客">
 <meta property="og:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://linyincheng.github.io/2017/10/31/first/%60(U08RQBUO5_~A%7BFZ(7S%WH.png">
-<meta property="og:updated_time" content="2017-11-01T13:05:46.811Z">
+<meta property="og:updated_time" content="2017-11-01T13:11:56.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中事件的冒泡和事件的捕获">
 <meta name="twitter:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
-<meta name="twitter:image" content="http://linyincheng.github.io/2017/10/31/first/%60(U08RQBUO5_~A%7BFZ(7S%WH.png">
 
 
 
@@ -397,10 +395,16 @@ if(element.removeHandler){//Dom2级的处理事件
 <h2 id="addEventListener的第三个参数"><a href="#addEventListener的第三个参数" class="headerlink" title="addEventListener的第三个参数"></a>addEventListener的第三个参数</h2><p>“DOM2级事件”中规定的事件流同时支持了事件捕获阶段和事件冒泡阶段，而作为开发者，我们可以选择事件处理函数在哪一个阶段被调用。</p>
 <p>addEventListener方法用来为一个特定的元素绑定一个事件处理函数，是JavaScript中的常用方法。addEventListener有三个参数：</p>
 <p>element.addEventListener(event, function, useCapture)第一个参数是需要绑定的事件，第二个参数是触发事件后要执行的函数。而第三个参数默认值是false，表示在事件冒泡的阶段调用事件处理函数，如果参数为true，则表示在事件捕获阶段调用处理函数。</p>
-<h2 id="阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation"><a href="#阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation" class="headerlink" title="阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())"></a>阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())</h2><p>有时候我们开发网页的时候不希望页面出现事件冒泡，我们可以使用阻止事件冒泡处理函数。这个函数使用如下:<br>    stopPropagation:function(evnt){<br>         if(event.stopPropagation){<br>             event.stopPropagation();<br>         }else{<br>             event.cancelBubble=ture;<br>         }</p>
-<p>其中的event.cancelBubble=true是指取消事件冒泡，将事件停止下来，不让事件往上面的元素传递。</p>
+<h2 id="阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation"><a href="#阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation" class="headerlink" title="阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())"></a>阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())</h2><p>有时候我们开发网页的时候不希望页面出现事件冒泡，我们可以使用阻止事件冒泡处理函数。这个函数使用如下:</p>
+<pre><code>stopPropagation:function(evnt){
+    if(event.stopPropagation){
+        event.stopPropagation();
+    }else{
+        event.cancelBubble=ture;
+    }
+</code></pre><p>其中的event.cancelBubble=true是指取消事件冒泡，将事件停止下来，不让事件往上面的元素传递。</p>
 <h2 id="冒泡还是-捕获？"><a href="#冒泡还是-捕获？" class="headerlink" title="冒泡还是 捕获？"></a>冒泡还是 捕获？</h2><p>对于事件代理来说，在事件捕获或者事件冒泡阶段处理并没有明显的优劣之分，但是由于事件冒泡的事件流模型被所有主流的浏览器兼容，从兼容性角度来说还是建议大家使用事件冒泡模型。</p>
-<h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。<br><img src="`(U08RQBUO5_~A{FZ(7S%WH.png" alt="Alt text"><br>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>
+<h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。<br>![Alt text] (`(U08RQBUO5_~A{FZ(7S%WH.png)<br>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>
 
       
     </div>
