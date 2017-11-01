@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。">
+<meta name="description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Js中事件的冒泡和事件的捕获">
 <meta property="og:url" content="http://linyincheng.github.io/2017/10/31/first/index.html">
 <meta property="og:site_name" content="成成的博客">
-<meta property="og:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。">
+<meta property="og:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T10:00:17.124Z">
+<meta property="og:updated_time" content="2017-11-01T11:50:28.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中事件的冒泡和事件的捕获">
-<meta name="twitter:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。">
+<meta name="twitter:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
 
 
 
@@ -306,6 +306,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javscript学习记录/" itemprop="url" rel="index">
+                    <span itemprop="name">javscript学习记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -334,6 +356,17 @@
 
       
         <p>首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。</p>
+<pre><code>&lt;div id=&quot;outer&quot;&gt;
+    &lt;p id=&quot;inner&quot;&gt;点击我！&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理函数，那么我们怎么才能知道哪一个函数会先被触发呢？</p>
+<p>微软和网景这两个公司提出两种相反的概念解决了这个问题。</p>
+<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>事件冒泡可以形象地比喻为一颗石头投入水中，泡泡会一直从水底冒出水面，也就是说，事件会最内层的元素开始触发，一直往上传播，直到document对象为止。</p>
+<p>所以上面的例子在事件冒泡的概念下发生click事件的顺序应该是p -&gt; div -&gt; body -&gt; html -&gt; document。</p>
+<h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><p>事件捕获是和事件冒泡完全相反的概念，也就是说，事件会从最外的document对象开始触发，然后不断往里触发。直到最里面的元素被触发为止。</p>
+<p>上面的例子在事件捕获的概念下发生click事件的顺序应该是document -&gt; html -&gt; body -&gt; div -&gt; p。</p>
+<p>在处理事件冒泡中，IE，DOM2级以及DOM0级分别给出以下的处理方法：<br>    addHandler:function(element,type,handler){//element：元素，type：事件类型“click”。。。handler：处理函数<br>        if(element.addEventListener){ //Dom2级的处理事件<br>            element.addEventListener(type,handler,false);<br>        }else if(element.attachEvent){ // IE处理事件<br>            element.attachEvent(‘on’+type,handler);<br>        }else{      //Dom0级的处理时事件<br>            element[‘on’+type]=handler;<br>        }<br>    }</p>
+<hr>
 
       
     </div>
@@ -452,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -478,6 +520,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
             
 
             
@@ -533,6 +584,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获"><span class="nav-number">2.</span> <span class="nav-text">事件捕获</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
