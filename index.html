@@ -150,7 +150,7 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
-
+       <a href="https://github.com/linyincheng"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -359,58 +359,18 @@
       
         
           
-            <p>首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。</p>
-<pre><code>&lt;div id=&quot;outer&quot;&gt;
+          首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。
+&lt;div id=&quot;outer&quot;&gt;
     &lt;p id=&quot;inner&quot;&gt;点击我！&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><p>上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理函数，那么我们怎么才能知道哪一个函数会先被触发呢？</p>
-<p>微软和网景这两个公司提出两种相反的概念解决了这个问题。</p>
-<h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>事件冒泡可以形象地比喻为一颗石头投入水中，泡泡会一直从水底冒出水面，也就是说，事件会最内层的元素开始触发，一直往上传播，直到document对象为止。</p>
-<p>所以上面的例子在事件冒泡的概念下发生click事件的顺序应该是p -&gt; div -&gt; body -&gt; html -&gt; document。</p>
-<h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><p>事件捕获是和事件冒泡完全相反的概念，也就是说，事件会从最外的document对象开始触发，然后不断往里触发。直到最里面的元素被触发为止。</p>
-<p>上面的例子在事件捕获的概念下发生click事件的顺序应该是document -&gt; html -&gt; body -&gt; div -&gt; p。</p>
-<p>在处理事件冒泡中，IE，DOM2级以及DOM0级分别给出以下的处理方法：</p>
-<pre><code>var EventUtil={
-//通过addEventListener 添加监听事件
-addHandler:function(element,type,handler){
-//element:元素，type:事件类型“click”,handler:处理函数
-    if(element.addEventListener){ //Dom2级的处理事件
-        element.addEventListener(type,handler,false);
-    }else if(element.attachEvent){ // IE处理事件
-        element.attachEvent(&apos;on&apos;+type,handler);
-    }else{      //Dom0级的处理时事件
-        element[&apos;on&apos;+type]=handler;
-    }
-},
-
-//通过removeHandler
-//删除事件
-removeHandler:function(element,type,handler){
-if(element.removeHandler){//Dom2级的处理事件
-    element.removeEventListener(type,handler,false);
-}else if(element.detachEvent){ // IE处理事件
-    element.detachEvent(&apos;on&apos;+type,handler);
-}else{//DOM0级处理事件
-     element[&apos;on&apos;+type]=null;
-}
-},
-}
-</code></pre><hr>
-<h2 id="addEventListener的第三个参数"><a href="#addEventListener的第三个参数" class="headerlink" title="addEventListener的第三个参数"></a>addEventListener的第三个参数</h2><p>“DOM2级事件”中规定的事件流同时支持了事件捕获阶段和事件冒泡阶段，而作为开发者，我们可以选择事件处理函数在哪一个阶段被调用。</p>
-<p>addEventListener方法用来为一个特定的元素绑定一个事件处理函数，是JavaScript中的常用方法。addEventListener有三个参数：</p>
-<p>element.addEventListener(event, function, useCapture)第一个参数是需要绑定的事件，第二个参数是触发事件后要执行的函数。而第三个参数默认值是false，表示在事件冒泡的阶段调用事件处理函数，如果参数为true，则表示在事件捕获阶段调用处理函数。</p>
-<h2 id="阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation"><a href="#阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation" class="headerlink" title="阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())"></a>阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())</h2><p>有时候我们开发网页的时候不希望页面出现事件冒泡，我们可以使用阻止事件冒泡处理函数。这个函数使用如下:</p>
-<pre><code>stopPropagation:function(evnt){
-    if(event.stopPropagation){
-        event.stopPropagation();
-    }else{
-        event.cancelBubble=ture;
-    }
-</code></pre><p>其中的event.cancelBubble=true是指取消事件冒泡，将事件停止下来，不让事件往上面的元素传递。</p>
-<h2 id="冒泡还是-捕获？"><a href="#冒泡还是-捕获？" class="headerlink" title="冒泡还是 捕获？"></a>冒泡还是 捕获？</h2><p>对于事件代理来说，在事件捕获或者事件冒泡阶段处理并没有明显的优劣之分，但是由于事件冒泡的事件流模型被所有主流的浏览器兼容，从兼容性角度来说还是建议大家使用事件冒泡模型。</p>
-<h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。<br>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>
-
-          
+&lt;/d
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/first/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -528,17 +488,15 @@ if(element.removeHandler){//Dom2级的处理事件
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/31/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
