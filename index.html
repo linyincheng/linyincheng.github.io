@@ -366,7 +366,9 @@
     &lt;p id=&quot;inner&quot;&gt;点击我！&lt;/p&gt;
 &lt;/div&gt;
 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理函数，那么我们怎么才能知道哪一个函数会先被触发呢？
-微软和网景这两个公司提出两种相反的概念解决了这个
+微软和网景这两个公司提出两种相反的概念解决了这个问题。
+事件冒泡事件冒泡可以形象地比喻为一颗石头投入水中，泡泡会一直从水底冒出水面，也就是说，事件会最内层的元素开始触发，一直往上传播，直到document对象为止。
+所以上面的例子在事件冒泡的概念下
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -494,6 +496,10 @@
           
           Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
 Quick StartCreate a new post1$ hexo new "My New Post"
+More info: Writing
+Run server1$ hexo server
+More info: Server
+Generate static files1$ hexo generate
 M
           ...
           <!--noindex-->
