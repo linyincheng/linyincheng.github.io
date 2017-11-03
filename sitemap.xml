@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://linyincheng.github.io/about/index.html</loc>
+    
+    <lastmod>2017-11-03T13:01:21.990Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://linyincheng.github.io/tags/index.html</loc>
     
     <lastmod>2017-11-03T11:22:35.408Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://linyincheng.github.io/archives/index.html</loc>
     
     <lastmod>2017-11-01T10:34:36.888Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://linyincheng.github.io/about/index.html</loc>
-    
-    <lastmod>2017-11-01T10:31:02.228Z</lastmod>
     
   </url>
   
