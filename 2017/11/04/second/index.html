@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="成成的博客">
 <meta property="og:description" content="数据类型（变量类型）javascript中的数据类型有：字符串(String)、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空(Null)、未定义(undefined)。 var x ;           //x是undefined类型 var x=123;     //x是数字类型 var x=&amp;quot;123&amp;quot;;  //x是字符串类型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T13:21:34.876Z">
+<meta property="og:updated_time" content="2017-11-04T13:23:16.797Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中数据类型以及变量作用域">
 <meta name="twitter:description" content="数据类型（变量类型）javascript中的数据类型有：字符串(String)、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空(Null)、未定义(undefined)。 var x ;           //x是undefined类型 var x=123;     //x是数字类型 var x=&amp;quot;123&amp;quot;;  //x是字符串类型">
@@ -398,7 +398,8 @@ var i=0;//全局变量
 outPut(i);//调用输出函数结果为0
 function text(){
 var i=1;
-outPut(i);//1,因为text函数里面定义了一个局部变量，所以在text函数调用outPut的时候是输出text函数里面的局部变量i的值，也就是1
+outPut(i);
+//1,因为text函数里面定义了一个局部变量，所以在text函数调用outPut的时候是输出text函数里面的局部变量i的值，也就是1
 }
 text();
 outPut(i)//仍然是0，因为这时候调用输出函数是在text函数之外调用的，所以里面的局部变量没有起作用；
@@ -623,7 +624,7 @@ outPut(b_array);//1,2,3,4
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
