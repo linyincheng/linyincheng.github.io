@@ -5,11 +5,31 @@
     
   <url>
     <loc>http://linyincheng.github.io/2017/11/04/second/</loc>
-    <lastmod>2017-11-04T04:58:48.390Z</lastmod>
+    <lastmod>2017-11-04T13:16:55.920Z</lastmod>
     <data>
         <display>
-        <title>变量作用域的问题</title>
+        <title>Js中数据类型以及变量作用域</title>
         <pubTime>2017-11-04T04:50:14.136Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="http://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://linyincheng.github.io/2017/10/31/first/</loc>
+    <lastmod>2017-11-04T09:36:14.741Z</lastmod>
+    <data>
+        <display>
+        <title>Js中事件的冒泡和事件的捕获</title>
+        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
         
         <tag>JavaScript</tag>
          
@@ -37,28 +57,6 @@
          
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://linyincheng.github.io/2017/10/31/first/</loc>
-    <lastmod>2017-11-03T11:18:55.503Z</lastmod>
-    <data>
-        <display>
-        <title>Js中事件的冒泡和事件的捕获</title>
-        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>DOM</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="http://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
         </display>
     </data>
     </url>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linyincheng.github.io/"/>
-  <updated>2017-11-04T04:58:48.390Z</updated>
+  <updated>2017-11-04T13:16:55.920Z</updated>
   <id>http://linyincheng.github.io/</id>
   
   <author>
@@ -17,13 +17,20 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>变量作用域的问题</title>
+    <title>Js中数据类型以及变量作用域</title>
     <link href="http://linyincheng.github.io/2017/11/04/second/"/>
     <id>http://linyincheng.github.io/2017/11/04/second/</id>
     <published>2017-11-04T04:50:14.136Z</published>
-    <updated>2017-11-04T04:58:48.390Z</updated>
+    <updated>2017-11-04T13:16:55.920Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数据类型（变量类型）"><a href="#数据类型（变量类型）" class="headerlink" title="数据类型（变量类型）"></a>数据类型（变量类型）</h2><p>javascript中的数据类型有：字符串(String)、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空(Null)、未定义(undefined)。<br>    var x ;           //x是undefined类型<br>    var x=123;     //x是数字类型<br>    var x=”123”;  //x是字符串类型<br>    var x=true/false;  //x是布尔类型<br>    var x=[];          //x是数组类型<br>    var x={1,2,3}   //x是一个对象类型<br>但是Null这种数据类型该怎么表示呢？其实Null类型只有一个值：null，但是当我们这样写的时候：var  x=null;  console.log(typeof(x)); 返回的结果却是object,也就是说x是一个对象类型。（在逻辑上，你可以认为null是一个空的对象指针，所以结果为“object”）。<br>那么，我们该如何判断一个类型呢，很简单，我们只要把变量的值与null进行比较即可：<br>    <script><br>    var x=null;<br>    if(x===null){<br>    alert(“is null”);<br>    }<br>    alert(null==undefined);//结果为true<br>    alert(null===undefined); //结果却为false<br>    </script><br>两个等号的时候undefined实际上是从值null派生来的，所以显示true。但是用到严格等于的时候，null和undefined的数据类型是不一样的，所以返回了false。</p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h4 id="变量的声明"><a href="#变量的声明" class="headerlink" title="变量的声明"></a>变量的声明</h4><p>在js中，变量声明分为两种，显示声明和隐式声明<br>    var x=100;//显示声明<br>    x=100;//隐式声明</p><h4 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h4><p>在函数function中使用var声明（即显示声明）的变量是局部变量，而没有var声明（即隐式声明）的变量是全局变量。<br>当我们使用未经任何声明的变量时js就会报错，但是我使用未经声明的而被赋值的变量时js就不会报错了。相反js会认为我们隐式声明了一个全局变量，所以这一点一定要注意。</p><h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>任何程序语言中变量的作用域都是一个很关键的细节。JS中变量的作用域相对与JAVA、C这类语言显得更自由，一个很大的特征就是JS变量没有块级作用域，函数中的变量在整个函数都中有效，看看下面的代码：<br>    <script type="text/javascript"><br>    function outPut(s){<br>    document.writeln(s);//定义一个输出函数<br>    }<br>    var i=0;//全局变量<br>    outPut(i);//调用输出函数结果为0<br>    function text(){<br>    var i=1;<br>    outPut(i);//1,因为text函数里面定义了一个局部变量，所以在text函数调用outPut的时候是输出text函数里面的局部变量i的值，也就是1<br>    }<br>    text();<br>    outPut(i)//仍然是0，因为这时候调用输出函数是在text函数之外调用的，所以里面的局部变量没有起作用；<br>    function aa(){<br>    i=2;//这里使用了前面讲的隐式声明，也就是说这里定义了一个全局变量i，而这个i会把前面定义的 同名的全局变量i给覆盖掉<br>    outPut(i);//2<br>    }<br>    aa();<br>    outPut(i)//2 i=2;<br>    function bb(){<br>        var i;<br>        outPut(i);//undefined<br>        i=1;<br>        outPut(i);//1<br>    }//  这个函数中i已经被var声明了，只是前面未被赋值而已，后面的i虽然是隐式声明的模样，但是别忘了它前面已经被var声明了，<br>    bb();<br>    outPut(i);//2  所以bb()中的i并未被覆盖。<br>    </script><br>从上面就可以证明JS如果用var在函数体中声明变量，那么此变量在且只在该函数体内有效，函数运行结束时，本地变量即可销毁了。</p><h3 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h3><p>　JS不同于JAVA、C这些语言，在变量申明时并不需要声明变量的存储空间。变量中所存储的数据可以分为两类：基本类型和引用类型。其中数值、布尔值、null和undefined属于基本类型，对象、数组和函数属于引用类型。<br>　　基本类型在内存中具有固定的内存大小。例如：数值型在内存中占有八个字节，布尔值只占有一个字节。对于引用型数据，他们可以具有任意长度，因此他们的内存大小是不定的，因此变量中存储的实际上是对此数据的引用，通常是内存地址或者指针，通过它们我们可以找到这个数据。<br>　　引用类型和基本类型在使用行为上也有不同之处：<br>    <script type="text/javascript"><br>    //定义一个输出函数<br>    function outPut(s){<br>    document.writeln(s)<br>    }<br>    var a = 3;<br>    var b = a;<br>    outPut(b);<br>    //3<br>    a = 4;<br>    outPut(a);<br>    //4<br>    outPut(b);<br>    //3<br>    </script><br>对基本类型b进行赋值时，实际上是又开辟了一块内存空间，因此改变变量a的值对变量b没有任何影响。<br>    <script type="text/javascript"><br>    //定义一个输出函数<br>    function outPut(s){<br>    document.writeln(s)<br>    }<br>    var a_array = [1,2,3];<br>    var b_array = a_array;<br>    outPut(b_array); //1,2,3<br>    a_array[3] = 4;<br>    outPut(b_array);//1,2,3,4<br>    </script><br>　上面是对引用类型的变量赋值，实际上他们传递的是对内存地址的引用，因此对a_array和b_array的存取，实际上都是操作的同一块内存区域。如果希望重新分配内存空间存储引用型变量，那么我就需要使用克隆方法或者自定义方法来复制引用变量的数据。</p><p>关于变量作用域我知道的就这些了，这之中有什么写的不对或不够的地方，可以指正出来，也可以和我讨论，分享个人的观点，共同进步。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;数据类型（变量类型）&quot;&gt;&lt;a href=&quot;#数据类型（变量类型）&quot; class=&quot;headerlink&quot; title=&quot;数据类型（变量类型）&quot;&gt;&lt;/a&gt;数据类型（变量类型）&lt;/h2&gt;&lt;p&gt;javascript中的数据类型有：字符串(String)、数字(Numbe
+      
     
     </summary>
     
@@ -39,7 +46,7 @@
     <link href="http://linyincheng.github.io/2017/10/31/first/"/>
     <id>http://linyincheng.github.io/2017/10/31/first/</id>
     <published>2017-10-31T08:42:12.439Z</published>
-    <updated>2017-11-03T11:18:55.503Z</updated>
+    <updated>2017-11-04T09:36:14.741Z</updated>
     
     <content type="html"><![CDATA[<p>首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。</p><pre><code>&lt;div id=&quot;outer&quot;&gt;    &lt;p id=&quot;inner&quot;&gt;点击我！&lt;/p&gt;&lt;/div&gt;</code></pre><p>上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理函数，那么我们怎么才能知道哪一个函数会先被触发呢？</p><p>微软和网景这两个公司提出两种相反的概念解决了这个问题。</p><h2 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h2><p>事件冒泡可以形象地比喻为一颗石头投入水中，泡泡会一直从水底冒出水面，也就是说，事件会最内层的元素开始触发，一直往上传播，直到document对象为止。</p><p>所以上面的例子在事件冒泡的概念下发生click事件的顺序应该是p -&gt; div -&gt; body -&gt; html -&gt; document。</p><h2 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h2><p>事件捕获是和事件冒泡完全相反的概念，也就是说，事件会从最外的document对象开始触发，然后不断往里触发。直到最里面的元素被触发为止。</p><p>上面的例子在事件捕获的概念下发生click事件的顺序应该是document -&gt; html -&gt; body -&gt; div -&gt; p。</p><p>在处理事件冒泡中，IE，DOM2级以及DOM0级分别给出以下的处理方法：</p><pre><code>var EventUtil={//通过addEventListener 添加监听事件addHandler:function(element,type,handler){//element:元素，type:事件类型“click”,handler:处理函数    if(element.addEventListener){ //Dom2级的处理事件        element.addEventListener(type,handler,false);    }else if(element.attachEvent){ // IE处理事件        element.attachEvent(&apos;on&apos;+type,handler);    }else{      //Dom0级的处理时事件        element[&apos;on&apos;+type]=handler;    }},//通过removeHandler//删除事件removeHandler:function(element,type,handler){if(element.removeHandler){//Dom2级的处理事件    element.removeEventListener(type,handler,false);}else if(element.detachEvent){ // IE处理事件    element.detachEvent(&apos;on&apos;+type,handler);}else{//DOM0级处理事件     element[&apos;on&apos;+type]=null;}},}</code></pre><hr><h2 id="addEventListener的第三个参数"><a href="#addEventListener的第三个参数" class="headerlink" title="addEventListener的第三个参数"></a>addEventListener的第三个参数</h2><p>“DOM2级事件”中规定的事件流同时支持了事件捕获阶段和事件冒泡阶段，而作为开发者，我们可以选择事件处理函数在哪一个阶段被调用。</p><p>addEventListener方法用来为一个特定的元素绑定一个事件处理函数，是JavaScript中的常用方法。addEventListener有三个参数：</p><p>element.addEventListener(event, function, useCapture)第一个参数是需要绑定的事件，第二个参数是触发事件后要执行的函数。而第三个参数默认值是false，表示在事件冒泡的阶段调用事件处理函数，如果参数为true，则表示在事件捕获阶段调用处理函数。</p><h2 id="阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation"><a href="#阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation" class="headerlink" title="阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())"></a>阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())</h2><p>有时候我们开发网页的时候不希望页面出现事件冒泡，我们可以使用阻止事件冒泡处理函数。这个函数使用如下:</p><pre><code>stopPropagation:function(evnt){    if(event.stopPropagation){        event.stopPropagation();    }else{        event.cancelBubble=ture;    }</code></pre><p>其中的event.cancelBubble=true是指取消事件冒泡，将事件停止下来，不让事件往上面的元素传递。</p><h2 id="冒泡还是-捕获？"><a href="#冒泡还是-捕获？" class="headerlink" title="冒泡还是 捕获？"></a>冒泡还是 捕获？</h2><p>对于事件代理来说，在事件捕获或者事件冒泡阶段处理并没有明显的优劣之分，但是由于事件冒泡的事件流模型被所有主流的浏览器兼容，从兼容性角度来说还是建议大家使用事件冒泡模型。</p><h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。<br>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>]]></content>
     
@@ -58,8 +65,6 @@
     
     
       <category term="JavaScript" scheme="http://linyincheng.github.io/tags/JavaScript/"/>
-    
-      <category term="DOM" scheme="http://linyincheng.github.io/tags/DOM/"/>
     
   </entry>
   
