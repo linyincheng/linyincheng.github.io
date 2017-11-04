@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="成成的博客">
 <meta property="og:description" content="数据类型（变量类型）javascript中的数据类型有：字符串(String)、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空(Null)、未定义(undefined)。 var x ;           //x是undefined类型 var x=123;     //x是数字类型 var x=&amp;quot;123&amp;quot;;  //x是字符串类型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T13:19:57.482Z">
+<meta property="og:updated_time" content="2017-11-04T13:21:34.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中数据类型以及变量作用域">
 <meta name="twitter:description" content="数据类型（变量类型）javascript中的数据类型有：字符串(String)、数字(Number)、布尔(Boolean)、数组(Array)、对象(Object)、空(Null)、未定义(undefined)。 var x ;           //x是undefined类型 var x=123;     //x是数字类型 var x=&amp;quot;123&amp;quot;;  //x是字符串类型">
@@ -389,7 +389,7 @@ alert(null===undefined); //结果却为false
 <pre><code>var x=100;//显示声明
 x=100;//隐式声明
 </code></pre><h4 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h4><p>在函数function中使用var声明（即显示声明）的变量是局部变量，而没有var声明（即隐式声明）的变量是全局变量。<br>当我们使用未经任何声明的变量时js就会报错，但是我使用未经声明的而被赋值的变量时js就不会报错了。相反js会认为我们隐式声明了一个全局变量，所以这一点一定要注意。</p>
-<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>任何程序语言中变量的作用域都是一个很关键的细节。JS中变量的作用域相对与JAVA、C这类语言显得更自由，一个很大的特征就是JS变量没有块级作用域，函数中的变量在整个函数都中有效，看看下面的代码：</p>
+<h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><p>任何程序语言中变量的作用域都是一个很关键的细节。JS中变量的作用域相对与JAVA、C这类语言显得更自由，一个很大的特征就是JS变量没有块级作用域，函数中的变量在整个函数都中有效，看看下面的代码：</p>
 <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
 function outPut(s){
 document.writeln(s);//定义一个输出函数
@@ -418,7 +418,7 @@ bb();
 outPut(i);//2  所以bb()中的i并未被覆盖。
 &lt;/script&gt;
 </code></pre><p>从上面就可以证明JS如果用var在函数体中声明变量，那么此变量在且只在该函数体内有效，函数运行结束时，本地变量即可销毁了。</p>
-<h3 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h3><p>　JS不同于JAVA、C这些语言，在变量申明时并不需要声明变量的存储空间。变量中所存储的数据可以分为两类：基本类型和引用类型。其中数值、布尔值、null和undefined属于基本类型，对象、数组和函数属于引用类型。<br>　　基本类型在内存中具有固定的内存大小。例如：数值型在内存中占有八个字节，布尔值只占有一个字节。对于引用型数据，他们可以具有任意长度，因此他们的内存大小是不定的，因此变量中存储的实际上是对此数据的引用，通常是内存地址或者指针，通过它们我们可以找到这个数据。<br>　　引用类型和基本类型在使用行为上也有不同之处：</p>
+<h4 id="基本类型和引用类型"><a href="#基本类型和引用类型" class="headerlink" title="基本类型和引用类型"></a>基本类型和引用类型</h4><p>　JS不同于JAVA、C这些语言，在变量申明时并不需要声明变量的存储空间。变量中所存储的数据可以分为两类：基本类型和引用类型。其中数值、布尔值、null和undefined属于基本类型，对象、数组和函数属于引用类型。<br>　　基本类型在内存中具有固定的内存大小。例如：数值型在内存中占有八个字节，布尔值只占有一个字节。对于引用型数据，他们可以具有任意长度，因此他们的内存大小是不定的，因此变量中存储的实际上是对此数据的引用，通常是内存地址或者指针，通过它们我们可以找到这个数据。<br>　　引用类型和基本类型在使用行为上也有不同之处：</p>
 <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
 //定义一个输出函数 
 function outPut(s){ 
@@ -703,7 +703,7 @@ outPut(b_array);//1,2,3,4
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型（变量类型）"><span class="nav-number">1.</span> <span class="nav-text">数据类型（变量类型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的声明"><span class="nav-number">2.0.1.</span> <span class="nav-text">变量的声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量和局部变量"><span class="nav-number">2.0.2.</span> <span class="nav-text">全局变量和局部变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量作用域"><span class="nav-number">2.1.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型和引用类型"><span class="nav-number">2.2.</span> <span class="nav-text">基本类型和引用类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型（变量类型）"><span class="nav-number">1.</span> <span class="nav-text">数据类型（变量类型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量的声明"><span class="nav-number">2.0.1.</span> <span class="nav-text">变量的声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局变量和局部变量"><span class="nav-number">2.0.2.</span> <span class="nav-text">全局变量和局部变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量作用域"><span class="nav-number">2.0.3.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本类型和引用类型"><span class="nav-number">2.0.4.</span> <span class="nav-text">基本类型和引用类型</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
