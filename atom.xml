@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linyincheng.github.io/"/>
-  <updated>2017-11-03T11:18:55.503Z</updated>
+  <updated>2017-11-04T04:58:48.390Z</updated>
   <id>http://linyincheng.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>变量作用域的问题</title>
+    <link href="http://linyincheng.github.io/2017/11/04/second/"/>
+    <id>http://linyincheng.github.io/2017/11/04/second/</id>
+    <published>2017-11-04T04:50:14.136Z</published>
+    <updated>2017-11-04T04:58:48.390Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="javscript学习记录" scheme="http://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="JavaScript" scheme="http://linyincheng.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Js中事件的冒泡和事件的捕获</title>
