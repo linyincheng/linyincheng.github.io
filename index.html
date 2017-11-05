@@ -378,7 +378,9 @@ var x=&quot;123&quot;;  //x是字符串类型
 var x=true/false;  //x是布尔类型
 var x=[];          //x是数组类型
 var x={1,2,3}   //x是一个对象类型
-但是Null这种数据类型该怎么表示呢？其实Null类型只有一个值：null，但是当我们这样写的时候：var  x=null;  con
+但是Null这种数据类型该怎么表示呢？其实Null类型只有一个值：null，但是当我们这样写的时候：var  x=null;  console.log(typeof(x)); 返回的结果却是object,也就是说x是一个对象类型。（在逻辑上，你可以认为null是一个空的对象指针，所以结果为“object”）。那么，我们该如何判断一个类型呢，很简单，我们只要把变量的值与null进行比较即可：
+&lt;script&gt;
+var x
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -533,7 +535,9 @@ var x={1,2,3}   //x是一个对象类型
 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理函数，那么我们怎么才能知道哪一个函数会先被触发呢？
 微软和网景这两个公司提出两种相反的概念解决了这个问题。
 事件冒泡事件冒泡可以形象地比喻为一颗石头投入水中，泡泡会一直从水底冒出水面，也就是说，事件会最内层的元素开始触发，一直往上传播，直到document对象为止。
-所以上面的例子在事件冒泡的概念下
+所以上面的例子在事件冒泡的概念下发生click事件的顺序应该是p -&gt; div -&gt; body -&gt; html -&gt; document。
+事件捕获事件捕获是和事件冒泡完全相反的概念，也就是说，事件会从最外的document对象开始触发，然后不断往里触发。直到最里面的元素被触发为止。
+上面的例子在事件捕获的概
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -665,8 +669,11 @@ More info: Writing
 Run server1$ hexo server
 More info: Server
 Generate static files1$ hexo generate
-M
-          ...
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+More info: Deployment
+
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/31/hello-world/#more" rel="contents">
