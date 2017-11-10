@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linyincheng.github.io/"/>
-  <updated>2017-11-10T04:10:14.999Z</updated>
+  <updated>2017-11-10T12:27:35.035Z</updated>
   <id>http://linyincheng.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo和github搭建个人博客</title>
+    <link href="http://linyincheng.github.io/2017/11/10/forth/"/>
+    <id>http://linyincheng.github.io/2017/11/10/forth/</id>
+    <published>2017-11-10T12:23:54.753Z</published>
+    <updated>2017-11-10T12:27:35.035Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://linyincheng.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="hexo" scheme="http://linyincheng.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://linyincheng.github.io/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>String,Number和Boolean等基本类型的包装对象</title>

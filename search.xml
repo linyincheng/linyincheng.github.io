@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo和github搭建个人博客]]></title>
+    <url>%2F2017%2F11%2F10%2Fforth%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[String,Number和Boolean等基本类型的包装对象]]></title>
     <url>%2F2017%2F11%2F08%2Fthree%2F</url>
     <content type="text"><![CDATA[JavaScript的数据类型被分为两大类：引用类型和基本类型。 基本类型：Undefined,Null,Boolean,Number,String 引用类型：Object,Array,Date,RegExp等,你想的没错，引用类型就是对象。 我们都知道引用类型(即对象)都有属性和方法的，而基本类型是木有的，对吧。但是你一定见到过和下面相似的代码： var s=&quot;text&quot;; var s2=s.charAt(1); alert(s);//e 例子中的s是String类型，也就是基本类型，但是s却可以调用出charAt()方法来，这是为什么呢？ 主要是因为在基本类型中，有三个比较特殊的存在就是：String Number Boolean，这三个基本类型都有自己对应的包装对象。并且随时等候召唤。包装对象呢，其实就是对象，有相应的属性和方法。下面来个栗子： var s=&quot;text&quot;; var s2=s.charAt(1);//解析器在解析到这句代码的时候就会在后台执行下面的代码 (//()里面的程序是在后台执行的; var s=new String(&quot;text&quot;);//后台用new来创建了一个基本类型相同的对象 var s2=s.charAt(1);//然后通过新创建的对象来调用charAt()方法，并且返回给s2 s=null//调用完成之后就把这个对象给销毁了 )//实际上这个操作是在一瞬间就完成的，实际上我们没有改变字符串本身的值 alert(s);//e 由此我们可以知道，引用类型和基本包装对象的区别在于：生存期 引用类型所创建的对象，在执行的期间一直在内存中，而基本包装对象只是存在了一瞬间。 所以我们无法直接给基本类型添加方法： var s=&quot;text&quot;;//创建一个字符串 s.length=4;//给它设置一个 属性值 (//()里面的程序是在后台执行的; var s= new String(&quot;text&quot;); //后台用new来创建了一个基本类型相同的对象 var s.length=4;//通过这个对象调用包装对象下的方法 但结果并没有被任何东西保存 因为这个对象马上要被销毁了 s=null;//对象s又被销毁了； ) var l=s.length;//查询这个属性 alert(l);//undefined alert(s.length)//undefined ( var s= new String(&quot;text&quot;); //后台用new来创建了一个基本类型相同的对象 var s.length=undefined;//因为包装对象下面没有number这个属性，所以又会重新添加，因为没有值，所以值是未定 ;然后弹出结果 s=null;//对象s又被销毁了； ) 当我们要给基本类型加上属性和方法时，我们要在基本包装对象的原型上添加的： //给字符串添加方法 要写到对应的包装对象的原型下才行 var s=&quot;text&quot;; String.prototype.last= fuction(){ return this.charAt(this.length); }; s.last(); ( var str = new String(&apos;hello&apos;);// 找到基本包装对象，new一个和字符串值相同的对象， str.last(); // 通过这个对象找到了包装对象下的方法并调用 str =null; // 这个对象被销毁 )]]></content>
