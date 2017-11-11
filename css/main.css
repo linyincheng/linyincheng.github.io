@@ -1943,7 +1943,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #884b7e;
+  background: #be6c0b;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3245,7 +3245,7 @@ code {
   color: #ff7600;
   background: #fbf7f8;
   margin: 2px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .highlight,
 pre {
