@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://linyincheng.github.io/"/>
-  <updated>2017-11-11T09:56:12.005Z</updated>
+  <updated>2017-11-11T11:26:53.020Z</updated>
   <id>http://linyincheng.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://linyincheng.github.io/2017/11/10/forth/"/>
     <id>http://linyincheng.github.io/2017/11/10/forth/</id>
     <published>2017-11-10T12:23:54.753Z</published>
-    <updated>2017-11-11T09:56:12.005Z</updated>
+    <updated>2017-11-11T11:26:53.020Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="github注册"><a href="#github注册" class="headerlink" title="github注册"></a>github注册</h2><p>gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。<br>所以要使用github，就请先到<a href="https://github.com/" target="_blank" rel="external">github官网</a>进行注测。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="github的注册"><a href="#github的注册" class="headerlink" title="github的注册"></a>github的注册</h3><p>gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。<br>所以要使用github，就请先到<a href="https://github.com/" target="_blank" rel="external">github官网</a>进行注测。具体注册过程和关于git的学习，建议到<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137628548491051ccfaef0ccb470894c858999603fedf000" target="_blank" rel="external">廖雪峰的官方网站</a>,这个网站上面有很详细的git教程，希望仔细阅读。</p><h3 id="node-js下载"><a href="#node-js下载" class="headerlink" title="node.js下载"></a>node.js下载</h3><p>由于hexo是基于Node.js的静态博客框架，所以我们先下载node.js,<a href="https://nodejs.org/" target="_blank" rel="external">Node.js官网</a>下载稳定版即可，下载完成后打开安装(按照默认路径安装即可)。<br>然后打开cmd命令行或者git Bash 输入：</p><pre><code>node -v</code></pre><p>如果出现版本号就说明已经安装成功了。<br>关于github和hexo的内容就到这里。下面就开始我们的主题（hexo和github搭建个人博客）吧。</p><h2 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h2><h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>Node和Git都安装好后,用户存放hexo的配置文件,然后安装Hexo。打开 node.js输入：</p><pre><code>sudo npm install -g hexo 或者(nmp i -g hexo)</code></pre><p>安装完成后，到<a href="https://github.com/" target="_blank" rel="external">github</a>登录你前面注册的账号，然后点击<strong>New repository</strong>新建一个项目，项目名为：<em>yourname.github.io</em>,<strong>注意：一个账号只能建立一个名为yourname.github.io，如果已经有了，就随便建一个 如：blog</strong><br>将项目克隆到本地仓库，打开git Bash上(<em>注意：你想把这个 项目放到哪个磁盘就在哪个磁盘打开git Bash</em>，但是最好不要放在C盘).</p><pre><code>git clone 你项目上的SSh</code></pre><p>克隆完成后，打开文件夹，打开git Bash或者cmd(注意是当前路径就行)输入：</p><pre><code>hexo init</code></pre><p>安装hexo所需要的依赖。<br>好啦，到此为止呢，所有的安装工作都完成了！接下来就是生成博客页面了。</p><h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><pre><code>hexo generate (hexo g)</code></pre><p>这时你的博客页面已经生成，然后再输入：</p><pre><code>hexo sever (hexo s)</code></pre><p>启动本地服务,进行博客页面的预览,完成这一步后,进入<a href="http://localhost:4000/" target="_blank" rel="external">localhost:4000</a>查看hexo页面是否出现,一般来说使用了yourname.github.io创建的项目名都可以看到页面,而其他的看不到页面的,因为你们的环境还没配置好<strong>(不要着急，接着往下看！)</strong></p><h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><p>首先，你要找到项目根目录下的_config.yml文件</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;github注册&quot;&gt;&lt;a href=&quot;#github注册&quot; class=&quot;headerlink&quot; title=&quot;github注册&quot;&gt;&lt;/a&gt;github注册&lt;/h2&gt;&lt;p&gt;gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进
+        &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;h3 id=&quot;github的注册&quot;&gt;&lt;a href=&quot;#github的注册&quot; class=&quot;headerlink&quot; title=
       
     
     </summary>
