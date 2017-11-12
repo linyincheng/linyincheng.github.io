@@ -89,11 +89,11 @@
 <meta name="keywords" content="hexo,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo和github搭建个人博客">
-<meta property="og:url" content="http://linyincheng.github.io/2017/11/10/forth/index.html">
+<meta property="og:url" content="https://linyincheng.github.io/2017/11/10/forth/index.html">
 <meta property="og:site_name" content="成成的博客">
 <meta property="og:description" content="准备工作github的注册gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。所以要使用github，就请先到github官网进行注测。具体注册过程和关于git的学习，建议到廖雪峰的官方网站,这个网站上面有很详细的git教程，希望仔细阅读。 node.js下载由于hexo是基于Node.js的静态博客框架，所以我们先下载node.j">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-11T11:29:08.654Z">
+<meta property="og:updated_time" content="2017-11-12T09:46:06.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo和github搭建个人博客">
 <meta name="twitter:description" content="准备工作github的注册gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。所以要使用github，就请先到github官网进行注测。具体注册过程和关于git的学习，建议到廖雪峰的官方网站,这个网站上面有很详细的git教程，希望仔细阅读。 node.js下载由于hexo是基于Node.js的静态博客框架，所以我们先下载node.j">
@@ -126,7 +126,7 @@
 
 
 
-  <link rel="canonical" href="http://linyincheng.github.io/2017/11/10/forth/"/>
+  <link rel="canonical" href="https://linyincheng.github.io/2017/11/10/forth/"/>
 
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://linyincheng.github.io/2017/11/10/forth/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/10/forth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tianyun">
@@ -408,7 +408,38 @@
 </code></pre><p>这时你的博客页面已经生成，然后再输入：</p>
 <pre><code>hexo sever (hexo s)
 </code></pre><p>启动本地服务,进行博客页面的预览,完成这一步后,进入<a href="http://localhost:4000/" target="_blank" rel="external">localhost:4000</a>查看hexo页面是否出现,一般来说使用了yourname.github.io创建的项目名都可以看到页面,而其他的看不到页面的,因为你们的环境还没配置好<strong>(不要着急，接着往下看！)</strong></p>
-<h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><p>首先，你要找到项目根目录下的_config.yml文件</p>
+<h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><p>首先，你要找到项目根目录下的_config.yml文件,打开文件进行配置。</p>
+<h5 id="Site-基本信息部分"><a href="#Site-基本信息部分" class="headerlink" title="Site(基本信息部分)"></a>Site(基本信息部分)</h5><pre><code># Site
+title: //博客名
+subtitle: //可填可不填
+description: //你博客的描述
+author: //作者
+language: zh-Hans
+timezone: Asia/Shanghai
+</code></pre><p><strong>特别提醒：冒号后面有个空格，这个空格必不可少！！下面的内容也一样！！！！</strong></p>
+<h5 id="URL-博客地址"><a href="#URL-博客地址" class="headerlink" title="URL(博客地址)"></a>URL(博客地址)</h5><p>如果你是使用<em>yourname.github.io</em>为项目名的话，那你就如下配置就行。<strong>root</strong>后面不能为空</p>
+<pre><code>url: https://yourname.github.io/
+root: /    
+</code></pre><p>要是你是用其他的项目名的话，比如blog,请按照下面配置：</p>
+<pre><code>url: https://yourname.github.io/blog
+root: /blog
+</code></pre><p>完成这里之后,看到文件的最后。</p>
+<h5 id="Deployment-部署信息"><a href="#Deployment-部署信息" class="headerlink" title="Deployment(部署信息)"></a>Deployment(部署信息)</h5><pre><code>deploy:
+   type: git
+   repository: 你项目的SSH
+   branch: master(如果博客地址是“https://yourname.github.io/blog”,分支名就是gh-pages)
+</code></pre><p>全局配置结束。这时候你需要更新你的本地仓库。在命令行输入：</p>
+<pre><code>hexo generate(hexo g)
+hexo sever  (hexo s)    
+</code></pre><p>点击<a href="http://localhost:4000/" target="_blank" rel="external">localhost:4000</a>,如果页面标题是你前面配置Site里的title.恭喜你更新成功。</p>
+<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3><p>在部署到github之前还需要安装一个依赖 在命令行输入：</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>安装完后再输入：</p>
+<pre><code>hexo deploy (hexo d)
+</code></pre><p>部署到github上了,这时候你到github打开你的项目，你会看到你在本地仓库的文件都传到了这里。这时，你可以用你的博客地址来查看你的博客了。</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p><a href="https://hexo.io/themes/" target="_blank" rel="external">hexo</a>这里有各种各样的主题，总用一款适合你。<br>选好主题之后,进入主题,里面有很详细的配置信息。按照里面的介绍配置即可,在这里我就不再啰嗦了<br><em>注意：记得在根目录的_config.yml下主题theme那加上你的主题名</em></p>
+<pre><code>theme: 你的主题名
+</code></pre><p>然后更新上传即可</p>
 
       
     </div>
@@ -741,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github的注册"><span class="nav-number">1.1.</span> <span class="nav-text">github的注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-js下载"><span class="nav-number">1.2.</span> <span class="nav-text">node.js下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建过程"><span class="nav-number">2.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态页面"><span class="nav-number">2.2.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">2.3.</span> <span class="nav-text">全局配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#github的注册"><span class="nav-number">1.1.</span> <span class="nav-text">github的注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node-js下载"><span class="nav-number">1.2.</span> <span class="nav-text">node.js下载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建过程"><span class="nav-number">2.</span> <span class="nav-text">搭建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.1.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成静态页面"><span class="nav-number">2.2.</span> <span class="nav-text">生成静态页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局配置"><span class="nav-number">2.3.</span> <span class="nav-text">全局配置</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Site-基本信息部分"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">Site(基本信息部分)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#URL-博客地址"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">URL(博客地址)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Deployment-部署信息"><span class="nav-number">2.3.0.3.</span> <span class="nav-text">Deployment(部署信息)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github"><span class="nav-number">2.4.</span> <span class="nav-text">部署到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题配置"><span class="nav-number">2.5.</span> <span class="nav-text">主题配置</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -782,7 +813,7 @@
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.8k字</span>
+  <span class="post-count">博客全站共4.3k字</span>
 </div>
 
 
