@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2017-11-12T09:46:06.319Z</updated>
+  <updated>2017-11-18T12:55:42.063Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>this的用法</title>
+    <link href="https://linyincheng.github.io/2017/11/18/fifth/"/>
+    <id>https://linyincheng.github.io/2017/11/18/fifth/</id>
+    <published>2017-11-18T12:42:19.406Z</published>
+    <updated>2017-11-18T12:55:42.063Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-this是啥？"><a href="#1-this是啥？" class="headerlink" title="1 this是啥？"></a>1 this是啥？</h2><p>简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。</p><h2 id="2-this有什么用呢？"><a href="#2-this有什么用呢？" class="headerlink" title="2 this有什么用呢？"></a>2 this有什么用呢？</h2><p>既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子：</p><pre><code>function identify() {return this.name.toUpperCase();}    function sayHello() {var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this );console.log( greeting );}    var person1= {name: &quot;Kyle&quot;};    var person2= {name: &quot;Reader&quot;};    identify.call( person1); // KYLEidentify.call( person2); // READERsayHello.call( person1); // Hello, I&apos;m KYLEsayHello.call( person2); // Hello, I&apos;m READER</code></pre><p>这段代码很简单，我们定义了两个函数，分别为identify和sayHello。并且在不同的对象环境下执行了它们，达到了复用的效果，而不用为了在不同的对象环境下执行而必须针对不同的对象环境写对应的函数了。简言之，this给函数带来了复用。那边客官又问了，我不用this一样可以实现。如：</p><pre><code>function identify(context) {return context.name.toUpperCase();}                    function sayHello(context) {var greeting = &quot;Hello, I&apos;m &quot; + identify( context);console.log( greeting );}    var person1= {name: &quot;Kyle&quot;};    var person2= {name: &quot;Reader&quot;};    identify( person1); // KYLEidentify( person2); // READER    sayHello( person1); // Hello, I&apos;m KYLE    sayHello( person2); // Hello, I&apos;m READER</code></pre><p>仔细一看，这位客官给出的解决方法的确也达到了类似的效果。赞一个！我想说的是，随着代码的增加，函数嵌套、各级调用等变得越来越复杂，那么传递一个对象的引用将变得越来越不明智，它会把你的代码弄得非常乱，甚至你自己都无法理解清楚。而this机制提供了一个更加优雅而灵便的方案，传递一个隐式的对象引用让代码变得更加简洁和复用。好了，知道了this的用处，那么再看看我们对它的误解。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-this是啥？&quot;&gt;&lt;a href=&quot;#1-this是啥？&quot; class=&quot;headerlink&quot; title=&quot;1 this是啥？&quot;&gt;&lt;/a&gt;1 this是啥？&lt;/h2&gt;&lt;p&gt;简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动
+      
+    
+    </summary>
+    
+      <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo和github搭建个人博客</title>

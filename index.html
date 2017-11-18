@@ -303,6 +303,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/18/fifth/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tianyun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/B1814.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="成成的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/18/fifth/" itemprop="url">this的用法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-18T20:42:19+08:00">
+                2017-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javscript学习记录/" itemprop="url" rel="index">
+                    <span itemprop="name">javscript学习记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          1 this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。
+2 this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子：
+function identify() {
+return this.name.toUpperCase();
+}    
+function sayHello() {
+var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this );
+console.log( greeting );
+}    
+var person1= {
+name: &quot;Kyle&quot;
+};    
+var person2= {
+name: &quot;Reader&quot;
+};    
+identify.call( person1); // KYLE
+identify.call( person2)
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/18/fifth/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    
+  
+
+    <div>
+      
+</div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/10/forth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1133,7 +1303,7 @@ More info: Deployment
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1155,7 +1325,7 @@ More info: Deployment
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1274,7 +1444,7 @@ More info: Deployment
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共4.3k字</span>
+  <span class="post-count">博客全站共4.8k字</span>
 </div>
 
 
