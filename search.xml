@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Ajax的基本应用]]></title>
     <url>%2F2017%2F12%2F28%2Fsuibi%2F</url>
-    <content type="text"><![CDATA[AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境[xampp](https://www.apachefriends.org/zh_cn/index.html)由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。 Ajax请求纯文本首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧 js代码如下： &lt;script&gt; document.getElementsById(&quot;btn&quot;).addEventlistener(&apos;click&apos;,loadTxt); function loadTxt(){ var XHR = new XmlHttpRequest();//创建一个对象 XHR.open(&apos;GET&apos;,&apos;slow.txt&apos;,true); XHR.onload = funciton(){ document.write(this.response); }; XHR.send(); } &lt;/script&gt;]]></content>
+    <content type="text"><![CDATA[AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。 Ajax请求纯文本首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧 js代码如下： &lt;script&gt; document.getElementsById(&quot;btn&quot;).addEventlistener(&apos;click&apos;,loadTxt); function loadTxt(){ var XHR = new XmlHttpRequest();//创建一个对象 XHR.open(&apos;GET&apos;,&apos;slow.txt&apos;,true); XHR.onload = funciton(){ document.write(this.response); }; XHR.send(); } &lt;/script&gt;]]></content>
       <tags>
         <tag>前端开发</tag>
         <tag>javascript</tag>
@@ -17,8 +17,8 @@
         <category>javscript学习记录</category>
       </categories>
       <tags>
-        <tag>前端开发</tag>
         <tag>JavaScript</tag>
+        <tag>前端开发</tag>
       </tags>
   </entry>
   <entry>

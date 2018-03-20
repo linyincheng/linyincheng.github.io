@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2018-03-20T00:56:03.904Z</updated>
+  <updated>2018-03-20T00:59:20.374Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="https://linyincheng.github.io/2017/12/28/suibi/"/>
     <id>https://linyincheng.github.io/2017/12/28/suibi/</id>
     <published>2017-12-28T09:49:46.698Z</published>
-    <updated>2018-03-20T00:56:03.904Z</updated>
+    <updated>2018-03-20T00:59:20.374Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><pre><code>Ajax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。</code></pre><h2 id="Ajax的使用"><a href="#Ajax的使用" class="headerlink" title="Ajax的使用"></a>Ajax的使用</h2><pre><code>使用Ajax需要下载安装它的运行环境[xampp](https://www.apachefriends.org/zh_cn/index.html)由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。</code></pre><h3 id="Ajax请求纯文本"><a href="#Ajax请求纯文本" class="headerlink" title="Ajax请求纯文本"></a>Ajax请求纯文本</h3><pre><code>首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧js代码如下：&lt;script&gt;document.getElementsById(&quot;btn&quot;).addEventlistener(&apos;click&apos;,loadTxt);function loadTxt(){var XHR = new XmlHttpRequest();//创建一个对象XHR.open(&apos;GET&apos;,&apos;slow.txt&apos;,true);XHR.onload = funciton(){document.write(this.response);};XHR.send();}&lt;/script&gt;</code></pre>]]></content>
+    <content type="html"><![CDATA[<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>Ajax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。</p><h2 id="Ajax的使用"><a href="#Ajax的使用" class="headerlink" title="Ajax的使用"></a>Ajax的使用</h2><p>使用Ajax需要下载安装它的运行环境<a href="https://www.apachefriends.org/zh_cn/index.html" target="_blank" rel="external">xampp</a>由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。</p><h3 id="Ajax请求纯文本"><a href="#Ajax请求纯文本" class="headerlink" title="Ajax请求纯文本"></a>Ajax请求纯文本</h3><pre><code>首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧js代码如下：&lt;script&gt;document.getElementsById(&quot;btn&quot;).addEventlistener(&apos;click&apos;,loadTxt);function loadTxt(){var XHR = new XmlHttpRequest();//创建一个对象XHR.open(&apos;GET&apos;,&apos;slow.txt&apos;,true);XHR.onload = funciton(){document.write(this.response);};XHR.send();}&lt;/script&gt;</code></pre>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;Ajax&quot;&gt;&lt;a href=&quot;#Ajax&quot; class=&quot;headerlink&quot; title=&quot;Ajax&quot;&gt;&lt;/a&gt;Ajax&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;Ajax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台
+        &lt;h2 id=&quot;Ajax&quot;&gt;&lt;a href=&quot;#Ajax&quot; class=&quot;headerlink&quot; title=&quot;Ajax&quot;&gt;&lt;/a&gt;Ajax&lt;/h2&gt;&lt;p&gt;Ajax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行
       
     
     </summary>
@@ -62,9 +62,9 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
       <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
