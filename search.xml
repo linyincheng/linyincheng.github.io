@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Ajax的基本应用]]></title>
+    <url>%2F2017%2F12%2F28%2Fsuibi%2F</url>
+    <content type="text"><![CDATA[AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境[xampp](https://www.apachefriends.org/zh_cn/index.html)由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。 Ajax请求纯文本首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧 js代码如下： &lt;script&gt; document.getElementsById(&quot;btn&quot;).addEventlistener(&apos;click&apos;,loadTxt); function loadTxt(){ var XHR = new XmlHttpRequest();//创建一个对象 XHR.open(&apos;GET&apos;,&apos;slow.txt&apos;,true); XHR.onload = funciton(){ document.write(this.response); }; XHR.send(); } &lt;/script&gt;]]></content>
+      <tags>
+        <tag>前端开发</tag>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[this的用法]]></title>
     <url>%2F2017%2F11%2F18%2Ffifth%2F</url>
-    <content type="text"><![CDATA[1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return this.name.toUpperCase(); } function sayHello() { var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this ); console.log( greeting ); } var person1= { name: &quot;Kyle&quot; }; var person2= { name: &quot;Reader&quot; }; identify.call( person1); // KYLE identify.call( person2); // READER sayHello.call( person1); // Hello, I&apos;m KYLE sayHello.call( person2); // Hello, I&apos;m READER 这段代码很简单，我们定义了两个函数，分别为identify和sayHello。并且在不同的对象环境下执行了它们，达到了复用的效果，而不用为了在不同的对象环境下执行而必须针对不同的对象环境写对应的函数了。简言之，this给函数带来了复用。那边客官又问了，我不用this一样可以实现。如： function identify(context) { return context.name.toUpperCase(); } function sayHello(context) { var greeting = &quot;Hello, I&apos;m &quot; + identify( context); console.log( greeting ); } var person1= { name: &quot;Kyle&quot; }; var person2= { name: &quot;Reader&quot; }; identify( person1); // KYLE identify( person2); // READER sayHello( person1); // Hello, I&apos;m KYLE sayHello( person2); // Hello, I&apos;m READER 仔细一看，这位兄弟给出的解决方法的确也达到了类似的效果。赞一个！我想说的是，随着代码的增加，函数嵌套、各级调用等变得越来越复杂，那么传递一个对象的引用将变得越来越不明智，它会把你的代码弄得非常乱，甚至你自己都无法理解清楚。而this机制提供了一个更加优雅而灵便的方案，传递一个隐式的对象引用让代码变得更加简洁和复用。好了，知道了this的用处，那么再看看我们对它的误解。 3. 我们对this的误解我们都学过其他语言，在很多编程语言中都有this机制，我们会惯性地把其他语言里对this的理解带入到JavaScript中来，同时，由于this这个单词的理解导致我们对this产生了误解，我们先澄清一下对它的误解。 3.1.误解一 this引用function本身我们都知道，在函数里引用函数可以达到递归和给函数属性赋值的效果。而这在很多应用场景下显得非常有用。所以，很多人都误以为this就是指引function本身。例如： function fn(num){ console.log(&quot;fn:&quot;+num); this.count++; } fn.count=0; var i; for(i=0;i&lt;10;i++){ if(i&gt;5){ fn(i); } } //fn:6 //fn:7 //fn:8 //fn:9 console.log(fn.count);//0]]></content>
+    <content type="text"><![CDATA[1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return this.name.toUpperCase(); } function sayHello() { var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this ); console.log( greeting ); } var person1= { name: &quot;Kyle&quot; }; var person2= { name: &quot;Reader&quot; }; identify.call( person1); // KYLE identify.call( person2); // READER sayHello.call( person1); // Hello, I&apos;m KYLE sayHello.call( person2); // Hello, I&apos;m READER 这段代码很简单，我们定义了两个函数，分别为identify和sayHello。并且在不同的对象环境下执行了它们，达到了复用的效果，而不用为了在不同的对象环境下执行而必须针对不同的对象环境写对应的函数了。简言之，this给函数带来了复用。那边客官又问了，我不用this一样可以实现。如： function identify(context) { return context.name.toUpperCase(); } function sayHello(context) { var greeting = &quot;Hello, I&apos;m &quot; + identify( context); console.log( greeting ); } var person1= { name: &quot;Kyle&quot; }; var person2= { name: &quot;Reader&quot; }; identify( person1); // KYLE identify( person2); // READER sayHello( person1); // Hello, I&apos;m KYLE sayHello( person2); // Hello, I&apos;m READER 仔细一看，这位兄弟给出的解决方法的确也达到了类似的效果。赞一个！我想说的是，随着代码的增加，函数嵌套、各级调用等变得越来越复杂，那么传递一个对象的引用将变得越来越不明智，它会把你的代码弄得非常乱，甚至你自己都无法理解清楚。而this机制提供了一个更加优雅而灵便的方案，传递一个隐式的对象引用让代码变得更加简洁和复用。好了，知道了this的用处，那么再看看我们对它的误解。 3. 我们对this的误解我们都学过其他语言，在很多编程语言中都有this机制，我们会惯性地把其他语言里对this的理解带入到JavaScript中来，同时，由于this这个单词的理解导致我们对this产生了误解，我们先澄清一下对它的误解。 3.1.误解一 this引用function本身我们都知道，在函数里引用函数可以达到递归和给函数属性赋值的效果。而这在很多应用场景下显得非常有用。所以，很多人都误以为this就是指引function本身。例如： function fn(num){ console.log(&quot;fn:&quot;+num); this.count++; } fn.count=0; var i; for(i=0;i&lt;10;i++){ if(i&gt;5){ fn(i); } } //fn:6 //fn:7 //fn:8 //fn:9 console.log(fn.count);//0 我们对this的误解二]]></content>
       <categories>
         <category>javscript学习记录</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>前端开发</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
