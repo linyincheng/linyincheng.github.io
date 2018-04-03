@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="成成的博客">
 <meta property="og:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-03T13:04:06.359Z">
+<meta property="og:updated_time" content="2018-04-03T13:06:17.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax的基本应用">
 <meta name="twitter:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网">
@@ -436,8 +436,10 @@ XHR.send();
 <pre><code>xhr.setRequestHeader(&apos;Content-type&apos;,&apos;application/x-www-form-urlencoded&apos;);
 xhr.send(params);
 </code></pre><h3 id="get请求和post请求两者的区别"><a href="#get请求和post请求两者的区别" class="headerlink" title="get请求和post请求两者的区别"></a>get请求和post请求两者的区别</h3><p>（1）使用Get请求时,参数在URL中显示,而使用Post请求,则不会显示出来；<br>（2）Post传输的数据量大，可以达到2M，而Get方法由于受到URL长度的限制,只能传递大约1024字节.<br>（3）Get请求请求需注意缓存问题,Post请求不需担心这个问题；<br>（4）Post请求必须设置Content-Type值为application/x-form-www-urlencoded；<br>（5）发送请求时,因为Get请求的参数都在url里,所以send函数发送的参数为null,而Post请求在使用send方法时,却需赋予其参数；<br>（6）GET方式请求的数据会被浏览器缓存起来，因此其他人就可以从浏览器的历史记录中读取到这些数据，例如账号和密码等。在某种情况下，GET方式会带来严重的安全问题。而POST方式相对来说就可以避免这些问题。 </p>
-<p>post请求<br>    function postMethod(){</p>
-<pre><code>var xhr = new createXHR();
+<p>post请求</p>
+<pre><code>function postMethod(){
+
+var xhr = new createXHR();
 
 var userName = document.getElementById(&quot;userName&quot;).value;
 var age = document.getElementById(&quot;age&quot;).value;
@@ -456,9 +458,9 @@ xhr.onreadystatechange = function(){
 //发送请求,要data数据
 xhr.send( data );
 </code></pre><p>}</p>
-<p>get请求<br>    function getMethod(){</p>
-<pre><code>var xhr = new createXHR();
-
+<p>get请求</p>
+<pre><code>function getMethod(){
+var xhr = new createXHR();
 var userName = document.getElementById(&quot;userName&quot;).value;
 var age = document.getElementById(&quot;age&quot;).value;
 
