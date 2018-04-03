@@ -377,13 +377,9 @@
         
           
           AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。
-Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。
-Ajax请求纯文本首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧
-js代码如下：
-&lt;script&gt;
-document.getElementsById(&quot;btn&quot;).addEventlistener(&apos;click&apos;,loadTxt);
-function loadTxt(){
-
+Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网站，可能会比较慢。进去之后选择与你电脑相匹配的系统版本下载安装，一直点击下一步即可。安装完成后，找到根目录下有一个xampp.contrl.exe 的应用程序，打开这个程序，开启Apache服务器就可以使用了。第一步创建XmlHttpRequest()对象,调用这个对象的open方法，open()接收三个参数，第一个参数是请求方式, 第二个是请求文本的 URL,第三个是是否异步，true表示异步，false表示同步
+Ajax请求纯文本或Ajax请求PHP文件首先在xampp/htdocs的路径下新建一个文件夹（名字任你），进去新建一个.txt的文件，里面随便写点吧js代码如下：
+&lt;scr
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1585,7 +1581,7 @@ More info: Deployment
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.3k字</span>
+  <span class="post-count">博客全站共6.3k字</span>
 </div>
 
 
