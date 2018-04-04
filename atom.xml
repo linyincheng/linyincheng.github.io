@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Sliver</title>
+  <title>Sliver city</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://linyincheng.github.io/</id>
   
   <author>
-    <name>Tianyun</name>
+    <name>Sliver city</name>
     
   </author>
   
