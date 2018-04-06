@@ -4,19 +4,22 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2017/12/28/suibi/</loc>
-    <lastmod>2018-04-03T13:06:17.908Z</lastmod>
+    <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
+    <lastmod>2018-04-06T10:39:09.701Z</lastmod>
     <data>
         <display>
-        <title>Ajax的基本应用</title>
-        <pubTime>2017-12-28T09:49:46.698Z</pubTime>
+        <title>JS原型，原型链，继承和闭包的理解</title>
+        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
         
-        <tag>前端开发</tag>
+        <tag>JavaScript</tag>
          
-        <tag>javascript</tag>
+        <tag>前端开发</tag>
          
          
            
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
         </display>
     </data>
     </url>
@@ -24,7 +27,7 @@
     
   <url>
     <loc>https://linyincheng.github.io/2017/11/18/fifth/</loc>
-    <lastmod>2017-12-28T09:54:43.147Z</lastmod>
+    <lastmod>2018-04-06T10:29:26.558Z</lastmod>
     <data>
         <display>
         <title>this的用法</title>
@@ -39,6 +42,25 @@
              
               <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2017/12/28/suibi/</loc>
+    <lastmod>2018-04-03T13:06:17.908Z</lastmod>
+    <data>
+        <display>
+        <title>Ajax的基本应用</title>
+        <pubTime>2017-12-28T09:49:46.698Z</pubTime>
+        
+        <tag>前端开发</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
         </display>
     </data>
     </url>

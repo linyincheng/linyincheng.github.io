@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T09:54:43.147Z">
+<meta property="og:updated_time" content="2018-04-06T10:29:26.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="this的用法">
 <meta name="twitter:description" content="1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return">
@@ -449,7 +449,74 @@ fn(i);
 
 
 console.log(fn.count);//0 
-</code></pre><h3 id="我们对this的误解二"><a href="#我们对this的误解二" class="headerlink" title="我们对this的误解二"></a>我们对this的误解二</h3>
+</code></pre><p>上面我们想要记录fn被调用的次数，可是明显fn被调用了四次但count仍然为0。咋回事捏？这里简单解释下，fn里第4行的自增隐式的创建了一个全局变量count，由于初始值为undefined，所以每一次自增其实依然不是一个数字，你在全局环境下打印count（window.count）输出的应该是NaN。而第6行定义的函数熟悉变量count依然没变，还是0。如果对这个执行结果不清楚的，欢迎去看我前些天的那篇博文（聊一下JS中的作用域scope和闭包closure scope和closure），在这里你只需要知道，this引用的是function这种理解是错误的就行。<br>这边就会又有人问了，既然this不是引用function，那么我要实现递归函数，该咋引用呢?这里简单回答下介个问题，两种方法：①函数体内用函数名来引用函数本身②函数体内使用arguments.callee来引用函数（不推荐）。那么既然第二种方法不推荐，匿名函数咋引用呢？用第一种，并且给匿名函数一个函数名即可（推荐）。</p>
+<h3 id="我们对this的误解二：this引用的是function的词法作用域"><a href="#我们对this的误解二：this引用的是function的词法作用域" class="headerlink" title="我们对this的误解二：this引用的是function的词法作用域"></a>我们对this的误解二：this引用的是function的词法作用域</h3><p>JS的引擎内对词法作用域的实现的确像是一个对象，拥有属性和函数，但是这仅仅是JS引擎的一种实现，对代码来说是不可见的，也就是说词法作用域“对象”在JS代码中取不到。</p>
+<pre><code>funciton fn1(){
+var a=2;
+this.fn2();//以为this引用的是fn1的词法作用域
+}
+function fn2(){
+console.log(this.a);
+}
+fn1();//ReferenceError;
+</code></pre><p>面的代码明显没有执行出想要的结果，从而可以看到this并没有引用函数的词法作用域。甚至，可以肯定的说，这个例子里fn2可以在fn1里正确执行都是偶然的</p>
+<h3 id="this到底跟啥有关系呢？"><a href="#this到底跟啥有关系呢？" class="headerlink" title="this到底跟啥有关系呢？"></a>this到底跟啥有关系呢？</h3><p>其实this跟函数在哪里定义没有半毛钱关系，函数在哪里调用才决定了this到底引用的是啥。也就是说this跟函数的定义没关系，跟函数的执行有大大的关系。所以，记住，“函数在哪里调用才决定了this到底引用的是啥”。</p>
+<h3 id="this机制的四种规则"><a href="#this机制的四种规则" class="headerlink" title="this机制的四种规则"></a>this机制的四种规则</h3><h4 id="默认绑定全局变量"><a href="#默认绑定全局变量" class="headerlink" title="默认绑定全局变量"></a>默认绑定全局变量</h4><pre><code>function fn(){
+console.log(this.a);
+}
+
+var a= 1111;
+fn();//这里结果是1111
+</code></pre><p>this绑定的是全局变量a，这种机制是最常见的。</p>
+<h4 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h4><p>隐式调用的意思是，函数调用时拥有一个上下文对象，就好像这个函数是属于该对象的一样。例如：</p>
+<pre><code>function fn(){
+   console.log(this.a);
+}
+var obj = {
+a:2,
+fn:fn
+}; 
+obj.fn();//2 --this引用obj。
+</code></pre><p>最后一个调用该函数的对象是传到函数的上下文对象（绕懵了）。如：</p>
+<pre><code>function fn(){
+   console.log(this.a);
+}
+var obj1 = {
+   a:2, 
+   obj2:obj2
+};
+var obj2 = {
+     a:42,
+     fn:fn
+};
+obj1.obj2.fn()//42  this引用的是obj2;
+</code></pre><p>当this失去隐式绑定时，指向全局变量。如：</p>
+<pre><code>function fn(){
+   console.log(this.a);
+}
+var obj = {
+    a:2,
+    fn:fn
+};
+var bar = obj.fn;//这里存在隐式绑定但它执行的结果是把fn赋给bar
+var a=0;
+bar() //0
+</code></pre><h4 id="显示绑定"><a href="#显示绑定" class="headerlink" title="显示绑定"></a>显示绑定</h4><pre><code>function fn(){
+   console.log(this.a);
+}
+var obj = {
+    a:2,
+};
+fn.call(obj);//2
+</code></pre><p>call(),bind()和apply()它们接收的第一个参数即是上下文对象并将其赋值给this。</p>
+<h4 id="new新对象的绑定"><a href="#new新对象的绑定" class="headerlink" title="new新对象的绑定"></a>new新对象的绑定</h4><p>如果是一个构造函数，那么用new来调用，那么绑定的将是新创建的对象。如：</p>
+<pre><code>function Fn(a) {
+    this.a = a;
+}
+var bar = new Fn( 2 );
+console.log( bar.a );// 2
+</code></pre><p>现实写代码的过程中肯定比这要多和复杂，但是无论多复杂多乱，它们都是混合应用上面的几个规则和情况而已。只要你的思路和理解是清晰的，那肯定没问题的。</p>
+
       
     </div>
     
@@ -650,7 +717,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -766,7 +833,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-this是啥？"><span class="nav-number">1.</span> <span class="nav-text">1. this是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-this有什么用呢？"><span class="nav-number">2.</span> <span class="nav-text">2. this有什么用呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-我们对this的误解"><span class="nav-number">3.</span> <span class="nav-text">3. 我们对this的误解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-误解一-this引用function本身"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.误解一  this引用function本身</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们对this的误解二"><span class="nav-number">3.2.</span> <span class="nav-text">我们对this的误解二</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-this是啥？"><span class="nav-number">1.</span> <span class="nav-text">1. this是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-this有什么用呢？"><span class="nav-number">2.</span> <span class="nav-text">2. this有什么用呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-我们对this的误解"><span class="nav-number">3.</span> <span class="nav-text">3. 我们对this的误解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-误解一-this引用function本身"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.误解一  this引用function本身</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们对this的误解二：this引用的是function的词法作用域"><span class="nav-number">3.2.</span> <span class="nav-text">我们对this的误解二：this引用的是function的词法作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this到底跟啥有关系呢？"><span class="nav-number">3.3.</span> <span class="nav-text">this到底跟啥有关系呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this机制的四种规则"><span class="nav-number">3.4.</span> <span class="nav-text">this机制的四种规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认绑定全局变量"><span class="nav-number">3.4.1.</span> <span class="nav-text">默认绑定全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式绑定"><span class="nav-number">3.4.2.</span> <span class="nav-text">隐式绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示绑定"><span class="nav-number">3.4.3.</span> <span class="nav-text">显示绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new新对象的绑定"><span class="nav-number">3.4.4.</span> <span class="nav-text">new新对象的绑定</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -807,7 +874,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共6.3k字</span>
+  <span class="post-count">博客全站共7.3k字</span>
 </div>
 
 

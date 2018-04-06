@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2018-04-03T13:06:17.908Z</updated>
+  <updated>2018-04-06T10:39:09.701Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS原型，原型链，继承和闭包的理解</title>
+    <link href="https://linyincheng.github.io/2018/04/06/life/"/>
+    <id>https://linyincheng.github.io/2018/04/06/life/</id>
+    <published>2018-04-06T09:38:05.509Z</published>
+    <updated>2018-04-06T10:39:09.701Z</updated>
+    
+    <content type="html"><![CDATA[<p>Javascript是一门面向对象的编程语言,万物皆对象。但对象也是有区别的。分为普通对象，函数对象，Object，Function 是 JS 自带的函数对象。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Javascript是一门面向对象的编程语言,万物皆对象。但对象也是有区别的。分为普通对象，函数对象，Object，Function 是 JS 自带的函数对象。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Ajax的基本应用</title>
@@ -46,9 +74,9 @@
     <link href="https://linyincheng.github.io/2017/11/18/fifth/"/>
     <id>https://linyincheng.github.io/2017/11/18/fifth/</id>
     <published>2017-11-18T12:42:19.406Z</published>
-    <updated>2017-12-28T09:54:43.147Z</updated>
+    <updated>2018-04-06T10:29:26.558Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-this是啥？"><a href="#1-this是啥？" class="headerlink" title="1. this是啥？"></a>1. this是啥？</h2><p>简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。</p><h2 id="2-this有什么用呢？"><a href="#2-this有什么用呢？" class="headerlink" title="2. this有什么用呢？"></a>2. this有什么用呢？</h2><p>既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子：</p><pre><code>function identify() {return this.name.toUpperCase();}    function sayHello() {var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this );console.log( greeting );}    var person1= {name: &quot;Kyle&quot;};    var person2= {name: &quot;Reader&quot;};    identify.call( person1); // KYLEidentify.call( person2); // READERsayHello.call( person1); // Hello, I&apos;m KYLEsayHello.call( person2); // Hello, I&apos;m READER</code></pre><p>这段代码很简单，我们定义了两个函数，分别为identify和sayHello。并且在不同的对象环境下执行了它们，达到了复用的效果，而不用为了在不同的对象环境下执行而必须针对不同的对象环境写对应的函数了。简言之，this给函数带来了复用。那边客官又问了，我不用this一样可以实现。如：</p><pre><code>function identify(context) {return context.name.toUpperCase();}                    function sayHello(context) {var greeting = &quot;Hello, I&apos;m &quot; + identify( context);console.log( greeting );}    var person1= {name: &quot;Kyle&quot;};    var person2= {name: &quot;Reader&quot;};    identify( person1); // KYLEidentify( person2); // READER    sayHello( person1); // Hello, I&apos;m KYLE    sayHello( person2); // Hello, I&apos;m READER</code></pre><p>仔细一看，这位兄弟给出的解决方法的确也达到了类似的效果。赞一个！我想说的是，随着代码的增加，函数嵌套、各级调用等变得越来越复杂，那么传递一个对象的引用将变得越来越不明智，它会把你的代码弄得非常乱，甚至你自己都无法理解清楚。而this机制提供了一个更加优雅而灵便的方案，传递一个隐式的对象引用让代码变得更加简洁和复用。好了，知道了this的用处，那么再看看我们对它的误解。</p><h2 id="3-我们对this的误解"><a href="#3-我们对this的误解" class="headerlink" title="3. 我们对this的误解"></a>3. 我们对this的误解</h2><p>我们都学过其他语言，在很多编程语言中都有this机制，我们会惯性地把其他语言里对this的理解带入到JavaScript中来，同时，由于this这个单词的理解导致我们对this产生了误解，我们先澄清一下对它的误解。</p><h3 id="3-1-误解一-this引用function本身"><a href="#3-1-误解一-this引用function本身" class="headerlink" title="3.1.误解一  this引用function本身"></a>3.1.误解一  this引用function本身</h3><p>我们都知道，在函数里引用函数可以达到递归和给函数属性赋值的效果。而这在很多应用场景下显得非常有用。所以，很多人都误以为this就是指引function本身。例如：</p><pre><code>function fn(num){console.log(&quot;fn:&quot;+num);this.count++;}fn.count=0;var i;for(i=0;i&lt;10;i++){if(i&gt;5){fn(i);}} //fn:6//fn:7//fn:8//fn:9console.log(fn.count);//0 </code></pre><h3 id="我们对this的误解二"><a href="#我们对this的误解二" class="headerlink" title="我们对this的误解二"></a>我们对this的误解二</h3>]]></content>
+    <content type="html"><![CDATA[<h2 id="1-this是啥？"><a href="#1-this是啥？" class="headerlink" title="1. this是啥？"></a>1. this是啥？</h2><p>简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。</p><h2 id="2-this有什么用呢？"><a href="#2-this有什么用呢？" class="headerlink" title="2. this有什么用呢？"></a>2. this有什么用呢？</h2><p>既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子：</p><pre><code>function identify() {return this.name.toUpperCase();}    function sayHello() {var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this );console.log( greeting );}    var person1= {name: &quot;Kyle&quot;};    var person2= {name: &quot;Reader&quot;};    identify.call( person1); // KYLEidentify.call( person2); // READERsayHello.call( person1); // Hello, I&apos;m KYLEsayHello.call( person2); // Hello, I&apos;m READER</code></pre><p>这段代码很简单，我们定义了两个函数，分别为identify和sayHello。并且在不同的对象环境下执行了它们，达到了复用的效果，而不用为了在不同的对象环境下执行而必须针对不同的对象环境写对应的函数了。简言之，this给函数带来了复用。那边客官又问了，我不用this一样可以实现。如：</p><pre><code>function identify(context) {return context.name.toUpperCase();}                    function sayHello(context) {var greeting = &quot;Hello, I&apos;m &quot; + identify( context);console.log( greeting );}    var person1= {name: &quot;Kyle&quot;};    var person2= {name: &quot;Reader&quot;};    identify( person1); // KYLEidentify( person2); // READER    sayHello( person1); // Hello, I&apos;m KYLE    sayHello( person2); // Hello, I&apos;m READER</code></pre><p>仔细一看，这位兄弟给出的解决方法的确也达到了类似的效果。赞一个！我想说的是，随着代码的增加，函数嵌套、各级调用等变得越来越复杂，那么传递一个对象的引用将变得越来越不明智，它会把你的代码弄得非常乱，甚至你自己都无法理解清楚。而this机制提供了一个更加优雅而灵便的方案，传递一个隐式的对象引用让代码变得更加简洁和复用。好了，知道了this的用处，那么再看看我们对它的误解。</p><h2 id="3-我们对this的误解"><a href="#3-我们对this的误解" class="headerlink" title="3. 我们对this的误解"></a>3. 我们对this的误解</h2><p>我们都学过其他语言，在很多编程语言中都有this机制，我们会惯性地把其他语言里对this的理解带入到JavaScript中来，同时，由于this这个单词的理解导致我们对this产生了误解，我们先澄清一下对它的误解。</p><h3 id="3-1-误解一-this引用function本身"><a href="#3-1-误解一-this引用function本身" class="headerlink" title="3.1.误解一  this引用function本身"></a>3.1.误解一  this引用function本身</h3><p>我们都知道，在函数里引用函数可以达到递归和给函数属性赋值的效果。而这在很多应用场景下显得非常有用。所以，很多人都误以为this就是指引function本身。例如：</p><pre><code>function fn(num){console.log(&quot;fn:&quot;+num);this.count++;}fn.count=0;var i;for(i=0;i&lt;10;i++){if(i&gt;5){fn(i);}} //fn:6//fn:7//fn:8//fn:9console.log(fn.count);//0 </code></pre><p>上面我们想要记录fn被调用的次数，可是明显fn被调用了四次但count仍然为0。咋回事捏？这里简单解释下，fn里第4行的自增隐式的创建了一个全局变量count，由于初始值为undefined，所以每一次自增其实依然不是一个数字，你在全局环境下打印count（window.count）输出的应该是NaN。而第6行定义的函数熟悉变量count依然没变，还是0。如果对这个执行结果不清楚的，欢迎去看我前些天的那篇博文（聊一下JS中的作用域scope和闭包closure scope和closure），在这里你只需要知道，this引用的是function这种理解是错误的就行。<br>这边就会又有人问了，既然this不是引用function，那么我要实现递归函数，该咋引用呢?这里简单回答下介个问题，两种方法：①函数体内用函数名来引用函数本身②函数体内使用arguments.callee来引用函数（不推荐）。那么既然第二种方法不推荐，匿名函数咋引用呢？用第一种，并且给匿名函数一个函数名即可（推荐）。</p><h3 id="我们对this的误解二：this引用的是function的词法作用域"><a href="#我们对this的误解二：this引用的是function的词法作用域" class="headerlink" title="我们对this的误解二：this引用的是function的词法作用域"></a>我们对this的误解二：this引用的是function的词法作用域</h3><p>JS的引擎内对词法作用域的实现的确像是一个对象，拥有属性和函数，但是这仅仅是JS引擎的一种实现，对代码来说是不可见的，也就是说词法作用域“对象”在JS代码中取不到。</p><pre><code>funciton fn1(){var a=2;this.fn2();//以为this引用的是fn1的词法作用域}function fn2(){console.log(this.a);}fn1();//ReferenceError;</code></pre><p>面的代码明显没有执行出想要的结果，从而可以看到this并没有引用函数的词法作用域。甚至，可以肯定的说，这个例子里fn2可以在fn1里正确执行都是偶然的</p><h3 id="this到底跟啥有关系呢？"><a href="#this到底跟啥有关系呢？" class="headerlink" title="this到底跟啥有关系呢？"></a>this到底跟啥有关系呢？</h3><p>其实this跟函数在哪里定义没有半毛钱关系，函数在哪里调用才决定了this到底引用的是啥。也就是说this跟函数的定义没关系，跟函数的执行有大大的关系。所以，记住，“函数在哪里调用才决定了this到底引用的是啥”。</p><h3 id="this机制的四种规则"><a href="#this机制的四种规则" class="headerlink" title="this机制的四种规则"></a>this机制的四种规则</h3><h4 id="默认绑定全局变量"><a href="#默认绑定全局变量" class="headerlink" title="默认绑定全局变量"></a>默认绑定全局变量</h4><pre><code>function fn(){console.log(this.a);}var a= 1111;fn();//这里结果是1111</code></pre><p>this绑定的是全局变量a，这种机制是最常见的。</p><h4 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h4><p>隐式调用的意思是，函数调用时拥有一个上下文对象，就好像这个函数是属于该对象的一样。例如：</p><pre><code>function fn(){   console.log(this.a);}var obj = {a:2,fn:fn}; obj.fn();//2 --this引用obj。</code></pre><p>最后一个调用该函数的对象是传到函数的上下文对象（绕懵了）。如：</p><pre><code>function fn(){   console.log(this.a);}var obj1 = {   a:2,    obj2:obj2};var obj2 = {     a:42,     fn:fn};obj1.obj2.fn()//42  this引用的是obj2;</code></pre><p>当this失去隐式绑定时，指向全局变量。如：</p><pre><code>function fn(){   console.log(this.a);}var obj = {    a:2,    fn:fn};var bar = obj.fn;//这里存在隐式绑定但它执行的结果是把fn赋给barvar a=0;bar() //0</code></pre><h4 id="显示绑定"><a href="#显示绑定" class="headerlink" title="显示绑定"></a>显示绑定</h4><pre><code>function fn(){   console.log(this.a);}var obj = {    a:2,};fn.call(obj);//2</code></pre><p>call(),bind()和apply()它们接收的第一个参数即是上下文对象并将其赋值给this。</p><h4 id="new新对象的绑定"><a href="#new新对象的绑定" class="headerlink" title="new新对象的绑定"></a>new新对象的绑定</h4><p>如果是一个构造函数，那么用new来调用，那么绑定的将是新创建的对象。如：</p><pre><code>function Fn(a) {    this.a = a;}var bar = new Fn( 2 );console.log( bar.a );// 2</code></pre><p>现实写代码的过程中肯定比这要多和复杂，但是无论多复杂多乱，它们都是混合应用上面的几个规则和情况而已。只要你的思路和理解是清晰的，那肯定没问题的。</p>]]></content>
     
     <summary type="html">
     
