@@ -3,16 +3,17 @@
 
 
     
-    
   <url>
-    <loc>https://linyincheng.github.io/2017/10/31/first/</loc>
-    <lastmod>2018-04-06T11:03:31.796Z</lastmod>
+    <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
+    <lastmod>2018-04-11T08:54:47.478Z</lastmod>
     <data>
         <display>
-        <title>Js中事件的冒泡和事件的捕获</title>
-        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
+        <title>JS原型，原型链，继承和闭包的理解</title>
+        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
         
         <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
          
          
            
@@ -24,17 +25,16 @@
     </url>
 
     
+    
   <url>
-    <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
-    <lastmod>2018-04-06T10:39:09.701Z</lastmod>
+    <loc>https://linyincheng.github.io/2017/10/31/first/</loc>
+    <lastmod>2018-04-06T11:03:31.796Z</lastmod>
     <data>
         <display>
-        <title>JS原型，原型链，继承和闭包的理解</title>
-        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
+        <title>Js中事件的冒泡和事件的捕获</title>
+        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-        <tag>前端开发</tag>
          
          
            
