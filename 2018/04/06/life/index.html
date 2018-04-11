@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-11T08:54:47.478Z">
+<meta property="og:updated_time" content="2018-04-11T09:00:32.450Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原型，原型链，继承和闭包的理解">
 <meta name="twitter:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
@@ -425,6 +425,7 @@ var person2 = new Person(&quot;lyl&quot;,20,&quot;女&quot;);
 <pre><code>console.log(person1.constructor == Person);//true
 console.log(person2.constructor == Person);//true
 </code></pre><p><em>person1和person2是构造函数Person的实例化</em>。<br><em>实例的属性constructor永远指向它的构造函数</em>。</p>
+<hr>
 <h3 id="原型对象（终于进入主题了-）"><a href="#原型对象（终于进入主题了-）" class="headerlink" title="原型对象（终于进入主题了(-_-)）"></a>原型对象（终于进入主题了(-_-)）</h3><p>Javascript中，我们每定义一个对象（函数也是对象）时，JavaScript都会在对象中预定义一些属性。其中每个函数对象都有一个<em>prototype属性</em>,这个属性指向的是函数对象的<em>原型对象</em>。举个栗子：</p>
 <pre><code>function Person(){}  //创建一个函数对象
 //利用函数对象的prototype属性在原型上设置属性                                                           
