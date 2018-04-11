@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-11T09:00:32.450Z">
+<meta property="og:updated_time" content="2018-04-11T09:04:03.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原型，原型链，继承和闭包的理解">
 <meta name="twitter:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
@@ -411,7 +411,7 @@ console.log(typeof f3); //function
 console.log(typeof o1); //object 
 console.log(typeof o2); //object 
 console.log(typeof o3); //object
-</code></pre><p>以上例子中，o1,o2,o3都是普通对象，f1,f2,f3都是函数对象<br><em>凡是通过new Function创建的对象都是函数对象，其他都是普通对象（通常通过Object创建），可以通过typeof来判断。</em></p>
+</code></pre><p>以上例子中，o1,o2,o3都是普通对象，f1,f2,f3都是函数对象<br><strong>凡是通过new Function创建的对象都是函数对象，其他都是普通对象（通常通过Object创建），可以通过typeof来判断。</strong></p>
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre><code>function Person(name,age,sex){
 this.name = name;
 this.age = age;
@@ -424,9 +424,9 @@ var person2 = new Person(&quot;lyl&quot;,20,&quot;女&quot;);
 </code></pre><p>person1,person2都是Person的实例，它们都有一个constructor（指针）属性指向Person。</p>
 <pre><code>console.log(person1.constructor == Person);//true
 console.log(person2.constructor == Person);//true
-</code></pre><p><em>person1和person2是构造函数Person的实例化</em>。<br><em>实例的属性constructor永远指向它的构造函数</em>。</p>
+</code></pre><p><strong>person1和person2是构造函数Person的实例化</strong>。<br><strong>实例的属性constructor永远指向它的构造函数</strong>。</p>
 <hr>
-<h3 id="原型对象（终于进入主题了-）"><a href="#原型对象（终于进入主题了-）" class="headerlink" title="原型对象（终于进入主题了(-_-)）"></a>原型对象（终于进入主题了(-_-)）</h3><p>Javascript中，我们每定义一个对象（函数也是对象）时，JavaScript都会在对象中预定义一些属性。其中每个函数对象都有一个<em>prototype属性</em>,这个属性指向的是函数对象的<em>原型对象</em>。举个栗子：</p>
+<h3 id="原型对象（终于进入主题了-）"><a href="#原型对象（终于进入主题了-）" class="headerlink" title="原型对象（终于进入主题了(-_-)）"></a>原型对象（终于进入主题了(-_-)）</h3><p>Javascript中，我们每定义一个对象（函数也是对象）时，JavaScript都会在对象中预定义一些属性。其中每个函数对象都有一个<strong>prototype属性</strong>,这个属性指向的是函数对象的<strong>原型对象</strong>。举个栗子：</p>
 <pre><code>function Person(){}  //创建一个函数对象
 //利用函数对象的prototype属性在原型上设置属性                                                           
 Person.prototype.name = &quot;Nicholas&quot;;              
@@ -450,7 +450,7 @@ console.log(person2.age);//23
     job:&quot;Worker&quot;,
     sayName:function(){alert(this.name)}
 };
-</code></pre><p>上面我设置了四个属性，其实它还有一个默认属性constructor属性，这个属性不指向Person这个函数对象了。<br><em>原型对象Person.prototype就是Person的实例</em>。</p>
+</code></pre><p>上面我设置了四个属性，其实它还有一个默认属性constructor属性，这个属性不指向Person这个函数对象了。<br><strong>原型对象Person.prototype就是Person的实例</strong>。</p>
 <pre><code>person1.__proto__ === Person.prototype;
 Person.__proto__ === Function.prototype;//构造函数
 Person.prototype.__proto__ === Object.prototype;
@@ -519,7 +519,7 @@ function Child(name,age,grade){
 var chi= new Child(&quot;林云&quot;,22,69);
     chi.sayHi();
     chi.sayGrade();
-</code></pre>
+</code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3>
       
     </div>
     
@@ -832,7 +832,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通对象和函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象和函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象（终于进入主题了-）"><span class="nav-number">3.</span> <span class="nav-text">原型对象（终于进入主题了(-_-)）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的继承"><span class="nav-number">4.</span> <span class="nav-text">属性的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型继承"><span class="nav-number">4.1.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数实现继承"><span class="nav-number">4.2.</span> <span class="nav-text">构造函数实现继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-apply实现继承"><span class="nav-number">4.3.</span> <span class="nav-text">call,apply实现继承</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通对象和函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象和函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象（终于进入主题了-）"><span class="nav-number">3.</span> <span class="nav-text">原型对象（终于进入主题了(-_-)）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的继承"><span class="nav-number">4.</span> <span class="nav-text">属性的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型继承"><span class="nav-number">4.1.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数实现继承"><span class="nav-number">4.2.</span> <span class="nav-text">构造函数实现继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-apply实现继承"><span class="nav-number">4.3.</span> <span class="nav-text">call,apply实现继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">5.</span> <span class="nav-text">闭包</span></a></li></ol></div>
             
 
           </div>
@@ -873,7 +873,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.3k字</span>
+  <span class="post-count">博客全站共8.4k字</span>
 </div>
 
 
