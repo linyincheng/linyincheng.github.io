@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2018-04-14T12:35:33.527Z</updated>
+  <updated>2018-04-14T13:05:47.769Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>学习随笔</title>
+    <link href="https://linyincheng.github.io/2018/04/14/liver/"/>
+    <id>https://linyincheng.github.io/2018/04/14/liver/</id>
+    <published>2018-04-14T13:00:04.061Z</published>
+    <updated>2018-04-14T13:05:47.769Z</updated>
+    
+    <content type="html"><![CDATA[<p>我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="学习与生活" scheme="https://linyincheng.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活，学习" scheme="https://linyincheng.github.io/tags/%E7%94%9F%E6%B4%BB%EF%BC%8C%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>关于函数闭包的理解</title>

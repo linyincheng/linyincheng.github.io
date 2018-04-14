@@ -88,7 +88,7 @@
 <meta name="description" content="一枚有冲劲的前端小菜鸟">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Sliver city">
-<meta property="og:url" content="https://linyincheng.github.io/tags/javascript/index.html">
+<meta property="og:url" content="https://linyincheng.github.io/tags/生活，学习/index.html">
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="一枚有冲劲的前端小菜鸟">
 <meta property="og:locale" content="zh-Hans">
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://linyincheng.github.io/tags/javascript/"/>
+  <link rel="canonical" href="https://linyincheng.github.io/tags/生活，学习/"/>
 
 
 
 
 
-  <title>标签: javascript | Sliver city</title>
+  <title>标签: 生活，学习 | Sliver city</title>
   
 
 
@@ -293,7 +293,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>javascript<small>标签</small>
+        <h1>生活，学习<small>标签</small>
         </h1>
       </div>
 
@@ -305,9 +305,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/28/suibi/" itemprop="url">
+            <a class="post-title-link" href="/2018/04/14/liver/" itemprop="url">
               
-                <span itemprop="name">Ajax的基本应用</span>
+                <span itemprop="name">学习随笔</span>
               
             </a>
         
@@ -315,9 +315,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-28T17:49:46+08:00"
-              content="2017-12-28" >
-          12-28
+              datetime="2018-04-14T21:00:04+08:00"
+              content="2018-04-14" >
+          04-14
         </time>
       </div>
 
@@ -918,114 +918,6 @@
                   if (slicesOfTitle.length != 0) {
                     resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
                   } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'manual') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-  <script type="text/javascript" color="0,0,0" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
-  
-</body>
-</html>
-  } else {
                     resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
                   }
 

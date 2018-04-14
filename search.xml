@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[学习随笔]]></title>
+    <url>%2F2018%2F04%2F14%2Fliver%2F</url>
+    <content type="text"><![CDATA[我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。]]></content>
+      <categories>
+        <category>学习与生活</category>
+      </categories>
+      <tags>
+        <tag>生活，学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于函数闭包的理解]]></title>
     <url>%2F2018%2F04%2F14%2FwebStudy%2F</url>
     <content type="text"><![CDATA[学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。]]></content>
