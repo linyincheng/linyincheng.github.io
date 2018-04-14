@@ -88,14 +88,14 @@
 <meta name="description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 <meta name="keywords" content="JavaScript,前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS原型，原型链，继承和闭包的理解">
+<meta property="og:title" content="JS原型，原型链和继承的理解">
 <meta property="og:url" content="https://linyincheng.github.io/2018/04/06/life/index.html">
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-11T09:04:03.732Z">
+<meta property="og:updated_time" content="2018-04-14T12:09:05.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS原型，原型链，继承和闭包的理解">
+<meta name="twitter:title" content="JS原型，原型链和继承的理解">
 <meta name="twitter:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>JS原型，原型链，继承和闭包的理解 | Sliver city</title>
+  <title>JS原型，原型链和继承的理解 | Sliver city</title>
   
 
 
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS原型，原型链，继承和闭包的理解</h1>
+          <h1 class="post-title" itemprop="name headline">JS原型，原型链和继承的理解</h1>
         
 
         <div class="post-meta">
@@ -519,7 +519,7 @@ function Child(name,age,grade){
 var chi= new Child(&quot;林云&quot;,22,69);
     chi.sayHi();
     chi.sayGrade();
-</code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3>
+</code></pre>
       
     </div>
     
@@ -605,6 +605,10 @@ var chi= new Child(&quot;林云&quot;,22,69);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/14/webStudy/" rel="prev" title="关于函数闭包的理解">
+                关于函数闭包的理解 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -716,7 +720,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -832,7 +836,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通对象和函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象和函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象（终于进入主题了-）"><span class="nav-number">3.</span> <span class="nav-text">原型对象（终于进入主题了(-_-)）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的继承"><span class="nav-number">4.</span> <span class="nav-text">属性的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型继承"><span class="nav-number">4.1.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数实现继承"><span class="nav-number">4.2.</span> <span class="nav-text">构造函数实现继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-apply实现继承"><span class="nav-number">4.3.</span> <span class="nav-text">call,apply实现继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包"><span class="nav-number">5.</span> <span class="nav-text">闭包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通对象和函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象和函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象（终于进入主题了-）"><span class="nav-number">3.</span> <span class="nav-text">原型对象（终于进入主题了(-_-)）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的继承"><span class="nav-number">4.</span> <span class="nav-text">属性的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型继承"><span class="nav-number">4.1.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数实现继承"><span class="nav-number">4.2.</span> <span class="nav-text">构造函数实现继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-apply实现继承"><span class="nav-number">4.3.</span> <span class="nav-text">call,apply实现继承</span></a></li></ol></li></ol></div>
             
 
           </div>

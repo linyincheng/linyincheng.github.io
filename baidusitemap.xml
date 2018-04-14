@@ -4,11 +4,33 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
-    <lastmod>2018-04-11T09:04:03.732Z</lastmod>
+    <loc>https://linyincheng.github.io/2018/04/14/webStudy/</loc>
+    <lastmod>2018-04-14T12:35:33.527Z</lastmod>
     <data>
         <display>
-        <title>JS原型，原型链，继承和闭包的理解</title>
+        <title>关于函数闭包的理解</title>
+        <pubTime>2018-04-14T12:10:18.211Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
+    <lastmod>2018-04-14T12:09:05.236Z</lastmod>
+    <data>
+        <display>
+        <title>JS原型，原型链和继承的理解</title>
         <pubTime>2018-04-06T09:38:05.509Z</pubTime>
         
         <tag>JavaScript</tag>
