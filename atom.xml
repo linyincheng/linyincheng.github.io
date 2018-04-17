@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2018-04-14T13:05:47.769Z</updated>
+  <updated>2018-04-17T13:26:09.708Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="https://linyincheng.github.io/2018/04/14/liver/"/>
     <id>https://linyincheng.github.io/2018/04/14/liver/</id>
     <published>2018-04-14T13:00:04.061Z</published>
-    <updated>2018-04-14T13:05:47.769Z</updated>
+    <updated>2018-04-17T13:26:09.708Z</updated>
     
-    <content type="html"><![CDATA[<p>我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。</p>]]></content>
+    <content type="html"><![CDATA[<p>我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。</p><h4 id="2018-4-17"><a href="#2018-4-17" class="headerlink" title="2018/4/17"></a>2018/4/17</h4><p>今天学习了Js动画库的封装，看了老师讲的视频，感觉挺简单的，但是到自己动手去实践的时候，发现有很多基础的知识还没掌握，这反映了自己在之前的学习的状态，Js动画的原理其实也不是很难，很多都是日常生活中或者我们在一些大型的网站见过的一些动画效果，比如说最基础的轮播图，缓动动画，滚动条的滚动原理，返回顶部等等这些动画效果。<br>其实，这两天自己的学习状态一直不是很好，常常会多想（很尴尬），整个人感觉很浮躁，不能安下心来学习。学习的时候老是在那多想，就是不肯动手去敲代码，学编程一定要多练。从明天开始，每天至少都要敲200行代码或者用学到的知识做一个案例出来。严格要求自己。加油！</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。&lt;/p&gt;
-
+&lt;h4 id=&quot;2018-4-17&quot;&gt;&lt;a href=&quot;#2018-4-17&quot; class=&quot;head
       
     
     </summary>
@@ -47,16 +47,16 @@
     <link href="https://linyincheng.github.io/2018/04/14/webStudy/"/>
     <id>https://linyincheng.github.io/2018/04/14/webStudy/</id>
     <published>2018-04-14T12:10:18.211Z</published>
-    <updated>2018-04-14T12:35:33.527Z</updated>
+    <updated>2018-04-17T13:35:55.505Z</updated>
     
-    <content type="html"><![CDATA[<p>学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。</p>]]></content>
+    <content type="html"><![CDATA[<p>学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解：</p><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p>首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点;</p><h4 id="特点一（函数能访问到函数外部的变量）"><a href="#特点一（函数能访问到函数外部的变量）" class="headerlink" title="特点一（函数能访问到函数外部的变量）"></a>特点一（函数能访问到函数外部的变量）</h4><pre><code>var num =10;function fn1(){    console.log(num);}fn1();       //10</code></pre><h4 id="特点二（函数内部线的变量不能被函数外部访问）"><a href="#特点二（函数内部线的变量不能被函数外部访问）" class="headerlink" title="特点二（函数内部线的变量不能被函数外部访问）"></a>特点二（函数内部线的变量不能被函数外部访问）</h4><pre><code>function fn2(){   var num =10; }console.log(num);//结果为undefined;</code></pre>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。&lt;/p&gt;
-
+        &lt;p&gt;学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解：&lt;/p&gt;
+&lt;h3 id=&quot;函数作用域&quot;&gt;&lt;a href=&quot;#函数作用域&quot; class=&quot;headerlink&quot; title=&quot;函数作用域
       
     
     </summary>

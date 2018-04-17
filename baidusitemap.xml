@@ -3,30 +3,9 @@
 
 
     
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
-    <lastmod>2018-04-14T13:05:47.769Z</lastmod>
-    <data>
-        <display>
-        <title>学习随笔</title>
-        <pubTime>2018-04-14T13:00:04.061Z</pubTime>
-        
-        <tag>生活，学习</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习与生活" url="https://linyincheng.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>https://linyincheng.github.io/2018/04/14/webStudy/</loc>
-    <lastmod>2018-04-14T12:35:33.527Z</lastmod>
+    <lastmod>2018-04-17T13:35:55.505Z</lastmod>
     <data>
         <display>
         <title>关于函数闭包的理解</title>
@@ -45,6 +24,27 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
+    <lastmod>2018-04-17T13:26:09.708Z</lastmod>
+    <data>
+        <display>
+        <title>学习随笔</title>
+        <pubTime>2018-04-14T13:00:04.061Z</pubTime>
+        
+        <tag>生活，学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习与生活" url="https://linyincheng.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
