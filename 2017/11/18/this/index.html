@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="前端开发,JavaScript," />
 
 
 
@@ -85,17 +85,18 @@
 
 
 
-<meta name="description" content="一枚有冲劲的前端小菜鸟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://linyincheng.github.io/tags/index.html">
+<meta name="description" content="1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return">
+<meta name="keywords" content="前端开发,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="this的用法">
+<meta property="og:url" content="https://linyincheng.github.io/2017/11/18/this/index.html">
 <meta property="og:site_name" content="Sliver city">
-<meta property="og:description" content="一枚有冲劲的前端小菜鸟">
+<meta property="og:description" content="1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-03T11:22:35.408Z">
+<meta property="og:updated_time" content="2018-04-06T10:29:26.558Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="一枚有冲劲的前端小菜鸟">
+<meta name="twitter:title" content="this的用法">
+<meta name="twitter:description" content="1. this是啥？简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。 2. this有什么用呢？既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子： function identify() { return">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://linyincheng.github.io/tags/"/>
+  <link rel="canonical" href="https://linyincheng.github.io/2017/11/18/this/"/>
 
 
 
 
 
-  <title>tags | Sliver city</title>
+  <title>this的用法 | Sliver city</title>
   
 
 
@@ -289,40 +290,367 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/18/this/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sliver city">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/B1814.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sliver city">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 6 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/JavaScript/" style="font-size: 30px; color: #111">JavaScript</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 18px; color: #8e8e8e">hexo</a> <a href="/tags/javascript/" style="font-size: 12px; color: #ccc">javascript</a> <a href="/tags/前端开发/" style="font-size: 24px; color: #4f4f4f">前端开发</a> <a href="/tags/生活，学习/" style="font-size: 12px; color: #ccc">生活，学习</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">this的用法</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-18T20:42:19+08:00">
+                2017-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javscript学习记录/" itemprop="url" rel="index">
+                    <span itemprop="name">javscript学习记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="1-this是啥？"><a href="#1-this是啥？" class="headerlink" title="1. this是啥？"></a>1. this是啥？</h2><p>简言之，this是JavaScript语言中定义的众多关键字之一，它的特殊在于它自动定义于每一个函数域内，但是this倒地指引啥东西却让很多人张二摸不着头脑。这里我们留个小悬念，希望看完这篇文章了你能回答出来this到底指引个甚。</p>
+<h2 id="2-this有什么用呢？"><a href="#2-this有什么用呢？" class="headerlink" title="2. this有什么用呢？"></a>2. this有什么用呢？</h2><p>既然this这么难以理解，那么为个甚还要用它呢？我们来看个例子：</p>
+<pre><code>function identify() {
+return this.name.toUpperCase();
+}    
+function sayHello() {
+var greeting = &quot;Hello, I&apos;m &quot; + identify.call( this );
+console.log( greeting );
+}    
+var person1= {
+name: &quot;Kyle&quot;
+};    
+var person2= {
+name: &quot;Reader&quot;
+};    
+identify.call( person1); // KYLE
+identify.call( person2); // READER
+sayHello.call( person1); // Hello, I&apos;m KYLE
+sayHello.call( person2); // Hello, I&apos;m READER
+</code></pre><p>这段代码很简单，我们定义了两个函数，分别为identify和sayHello。并且在不同的对象环境下执行了它们，达到了复用的效果，而不用为了在不同的对象环境下执行而必须针对不同的对象环境写对应的函数了。简言之，this给函数带来了复用。那边客官又问了，我不用this一样可以实现。如：</p>
+<pre><code>function identify(context) {
+return context.name.toUpperCase();
+}                    
+function sayHello(context) {
+var greeting = &quot;Hello, I&apos;m &quot; + identify( context);
+console.log( greeting );
+}    
+var person1= {
+name: &quot;Kyle&quot;
+};    
+var person2= {
+name: &quot;Reader&quot;
+};    
+identify( person1); // KYLE
+identify( person2); // READER    
+sayHello( person1); // Hello, I&apos;m KYLE    
+sayHello( person2); // Hello, I&apos;m READER
+</code></pre><p>仔细一看，这位兄弟给出的解决方法的确也达到了类似的效果。赞一个！我想说的是，随着代码的增加，函数嵌套、各级调用等变得越来越复杂，那么传递一个对象的引用将变得越来越不明智，它会把你的代码弄得非常乱，甚至你自己都无法理解清楚。而this机制提供了一个更加优雅而灵便的方案，传递一个隐式的对象引用让代码变得更加简洁和复用。好了，知道了this的用处，那么再看看我们对它的误解。</p>
+<h2 id="3-我们对this的误解"><a href="#3-我们对this的误解" class="headerlink" title="3. 我们对this的误解"></a>3. 我们对this的误解</h2><p>我们都学过其他语言，在很多编程语言中都有this机制，我们会惯性地把其他语言里对this的理解带入到JavaScript中来，同时，由于this这个单词的理解导致我们对this产生了误解，我们先澄清一下对它的误解。</p>
+<h3 id="3-1-误解一-this引用function本身"><a href="#3-1-误解一-this引用function本身" class="headerlink" title="3.1.误解一  this引用function本身"></a>3.1.误解一  this引用function本身</h3><p>我们都知道，在函数里引用函数可以达到递归和给函数属性赋值的效果。而这在很多应用场景下显得非常有用。所以，很多人都误以为this就是指引function本身。例如：</p>
+<pre><code>function fn(num){
+console.log(&quot;fn:&quot;+num);
+this.count++;
+}
+fn.count=0;
+var i;
+for(i=0;i&lt;10;i++){
+if(i&gt;5){
+fn(i);
+}
+} 
+//fn:6
+//fn:7
+//fn:8
+//fn:9
+
+
+console.log(fn.count);//0 
+</code></pre><p>上面我们想要记录fn被调用的次数，可是明显fn被调用了四次但count仍然为0。咋回事捏？这里简单解释下，fn里第4行的自增隐式的创建了一个全局变量count，由于初始值为undefined，所以每一次自增其实依然不是一个数字，你在全局环境下打印count（window.count）输出的应该是NaN。而第6行定义的函数熟悉变量count依然没变，还是0。如果对这个执行结果不清楚的，欢迎去看我前些天的那篇博文（聊一下JS中的作用域scope和闭包closure scope和closure），在这里你只需要知道，this引用的是function这种理解是错误的就行。<br>这边就会又有人问了，既然this不是引用function，那么我要实现递归函数，该咋引用呢?这里简单回答下介个问题，两种方法：①函数体内用函数名来引用函数本身②函数体内使用arguments.callee来引用函数（不推荐）。那么既然第二种方法不推荐，匿名函数咋引用呢？用第一种，并且给匿名函数一个函数名即可（推荐）。</p>
+<h3 id="我们对this的误解二：this引用的是function的词法作用域"><a href="#我们对this的误解二：this引用的是function的词法作用域" class="headerlink" title="我们对this的误解二：this引用的是function的词法作用域"></a>我们对this的误解二：this引用的是function的词法作用域</h3><p>JS的引擎内对词法作用域的实现的确像是一个对象，拥有属性和函数，但是这仅仅是JS引擎的一种实现，对代码来说是不可见的，也就是说词法作用域“对象”在JS代码中取不到。</p>
+<pre><code>funciton fn1(){
+var a=2;
+this.fn2();//以为this引用的是fn1的词法作用域
+}
+function fn2(){
+console.log(this.a);
+}
+fn1();//ReferenceError;
+</code></pre><p>面的代码明显没有执行出想要的结果，从而可以看到this并没有引用函数的词法作用域。甚至，可以肯定的说，这个例子里fn2可以在fn1里正确执行都是偶然的</p>
+<h3 id="this到底跟啥有关系呢？"><a href="#this到底跟啥有关系呢？" class="headerlink" title="this到底跟啥有关系呢？"></a>this到底跟啥有关系呢？</h3><p>其实this跟函数在哪里定义没有半毛钱关系，函数在哪里调用才决定了this到底引用的是啥。也就是说this跟函数的定义没关系，跟函数的执行有大大的关系。所以，记住，“函数在哪里调用才决定了this到底引用的是啥”。</p>
+<h3 id="this机制的四种规则"><a href="#this机制的四种规则" class="headerlink" title="this机制的四种规则"></a>this机制的四种规则</h3><h4 id="默认绑定全局变量"><a href="#默认绑定全局变量" class="headerlink" title="默认绑定全局变量"></a>默认绑定全局变量</h4><pre><code>function fn(){
+console.log(this.a);
+}
+
+var a= 1111;
+fn();//这里结果是1111
+</code></pre><p>this绑定的是全局变量a，这种机制是最常见的。</p>
+<h4 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h4><p>隐式调用的意思是，函数调用时拥有一个上下文对象，就好像这个函数是属于该对象的一样。例如：</p>
+<pre><code>function fn(){
+   console.log(this.a);
+}
+var obj = {
+a:2,
+fn:fn
+}; 
+obj.fn();//2 --this引用obj。
+</code></pre><p>最后一个调用该函数的对象是传到函数的上下文对象（绕懵了）。如：</p>
+<pre><code>function fn(){
+   console.log(this.a);
+}
+var obj1 = {
+   a:2, 
+   obj2:obj2
+};
+var obj2 = {
+     a:42,
+     fn:fn
+};
+obj1.obj2.fn()//42  this引用的是obj2;
+</code></pre><p>当this失去隐式绑定时，指向全局变量。如：</p>
+<pre><code>function fn(){
+   console.log(this.a);
+}
+var obj = {
+    a:2,
+    fn:fn
+};
+var bar = obj.fn;//这里存在隐式绑定但它执行的结果是把fn赋给bar
+var a=0;
+bar() //0
+</code></pre><h4 id="显示绑定"><a href="#显示绑定" class="headerlink" title="显示绑定"></a>显示绑定</h4><pre><code>function fn(){
+   console.log(this.a);
+}
+var obj = {
+    a:2,
+};
+fn.call(obj);//2
+</code></pre><p>call(),bind()和apply()它们接收的第一个参数即是上下文对象并将其赋值给this。</p>
+<h4 id="new新对象的绑定"><a href="#new新对象的绑定" class="headerlink" title="new新对象的绑定"></a>new新对象的绑定</h4><p>如果是一个构造函数，那么用new来调用，那么绑定的将是新创建的对象。如：</p>
+<pre><code>function Fn(a) {
+    this.a = a;
+}
+var bar = new Fn( 2 );
+console.log( bar.a );// 2
+</code></pre><p>现实写代码的过程中肯定比这要多和复杂，但是无论多复杂多乱，它们都是混合应用上面的几个规则和情况而已。只要你的思路和理解是清晰的，那肯定没问题的。</p>
+
       
     </div>
     
     
     
+    
+  
+    <div>
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    </div>
+  
+
+    <div>
+      
+        
+      
+</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Sliver city 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Sliver city 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/10/hexo-github/" rel="next" title="hexo和github搭建个人博客">
+                <i class="fa fa-chevron-left"></i> hexo和github搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/28/ajax/" rel="prev" title="Ajax的基本应用">
+                Ajax的基本应用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -331,6 +659,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -351,8 +688,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -477,6 +823,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-this是啥？"><span class="nav-number">1.</span> <span class="nav-text">1. this是啥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-this有什么用呢？"><span class="nav-number">2.</span> <span class="nav-text">2. this有什么用呢？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-我们对this的误解"><span class="nav-number">3.</span> <span class="nav-text">3. 我们对this的误解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-误解一-this引用function本身"><span class="nav-number">3.1.</span> <span class="nav-text">3.1.误解一  this引用function本身</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#我们对this的误解二：this引用的是function的词法作用域"><span class="nav-number">3.2.</span> <span class="nav-text">我们对this的误解二：this引用的是function的词法作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this到底跟啥有关系呢？"><span class="nav-number">3.3.</span> <span class="nav-text">this到底跟啥有关系呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this机制的四种规则"><span class="nav-number">3.4.</span> <span class="nav-text">this机制的四种规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认绑定全局变量"><span class="nav-number">3.4.1.</span> <span class="nav-text">默认绑定全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式绑定"><span class="nav-number">3.4.2.</span> <span class="nav-text">隐式绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示绑定"><span class="nav-number">3.4.3.</span> <span class="nav-text">显示绑定</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new新对象的绑定"><span class="nav-number">3.4.4.</span> <span class="nav-text">new新对象的绑定</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -658,6 +1020,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2160685"></script>
+      <!-- UY END -->
     
   
 

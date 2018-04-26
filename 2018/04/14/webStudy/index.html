@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript,前端开发," />
+  <meta name="keywords" content="前端开发,JavaScript," />
 
 
 
@@ -86,14 +86,14 @@
 
 
 <meta name="description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
-<meta name="keywords" content="JavaScript,前端开发">
+<meta name="keywords" content="前端开发,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于函数闭包的理解">
 <meta property="og:url" content="https://linyincheng.github.io/2018/04/14/webStudy/index.html">
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-17T13:35:55.505Z">
+<meta property="og:updated_time" content="2018-04-21T12:26:18.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于函数闭包的理解">
 <meta name="twitter:description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
@@ -402,6 +402,17 @@ fn1();       //10
    var num =10; 
 }
 console.log(num);//结果为undefined;
+</code></pre><h4 id="来个最简单的闭包看看"><a href="#来个最简单的闭包看看" class="headerlink" title="来个最简单的闭包看看"></a>来个最简单的闭包看看</h4><pre><code>function fn1(){
+    var a=1 ;
+    function fn2(){
+     var b=11;
+     console.log(a)
+    }
+    fn2();
+    console.log(b);
+}
+fn1();//结果只打印了a的值，也就是执行了fn2();而没有打印b的值,而是出现了一个b is undefined的错误；
+（&quot;Uncaught ReferenceError: b is not defined&quot;）
 </code></pre>
       
     </div>
@@ -464,9 +475,9 @@ console.log(num);//结果为undefined;
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
-          
             <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
           
         </div>
       
@@ -479,7 +490,7 @@ console.log(num);//结果为undefined;
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/life/" rel="next" title="JS原型，原型链和继承的理解">
+              <a href="/2018/04/06/property/" rel="next" title="JS原型，原型链和继承的理解">
                 <i class="fa fa-chevron-left"></i> JS原型，原型链和继承的理解
               </a>
             
@@ -719,7 +730,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数作用域"><span class="nav-number">1.</span> <span class="nav-text">函数作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点一（函数能访问到函数外部的变量）"><span class="nav-number">1.1.</span> <span class="nav-text">特点一（函数能访问到函数外部的变量）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点二（函数内部线的变量不能被函数外部访问）"><span class="nav-number">1.2.</span> <span class="nav-text">特点二（函数内部线的变量不能被函数外部访问）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数作用域"><span class="nav-number">1.</span> <span class="nav-text">函数作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点一（函数能访问到函数外部的变量）"><span class="nav-number">1.1.</span> <span class="nav-text">特点一（函数能访问到函数外部的变量）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点二（函数内部线的变量不能被函数外部访问）"><span class="nav-number">1.2.</span> <span class="nav-text">特点二（函数内部线的变量不能被函数外部访问）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来个最简单的闭包看看"><span class="nav-number">1.3.</span> <span class="nav-text">来个最简单的闭包看看</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -760,7 +771,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.8k字</span>
+  <span class="post-count">博客全站共8.9k字</span>
 </div>
 
 

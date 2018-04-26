@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="前端开发,JavaScript," />
 
 
 
@@ -85,17 +85,18 @@
 
 
 
-<meta name="description" content="一枚有冲劲的前端小菜鸟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="https://linyincheng.github.io/tags/index.html">
+<meta name="description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
+<meta name="keywords" content="前端开发,JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原型，原型链和继承的理解">
+<meta property="og:url" content="https://linyincheng.github.io/2018/04/06/property/index.html">
 <meta property="og:site_name" content="Sliver city">
-<meta property="og:description" content="一枚有冲劲的前端小菜鸟">
+<meta property="og:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-03T11:22:35.408Z">
+<meta property="og:updated_time" content="2018-04-14T12:09:05.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="一枚有冲劲的前端小菜鸟">
+<meta name="twitter:title" content="JS原型，原型链和继承的理解">
+<meta name="twitter:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://linyincheng.github.io/tags/"/>
+  <link rel="canonical" href="https://linyincheng.github.io/2018/04/06/property/"/>
 
 
 
 
 
-  <title>tags | Sliver city</title>
+  <title>JS原型，原型链和继承的理解 | Sliver city</title>
   
 
 
@@ -289,40 +290,370 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2018/04/06/property/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sliver city">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/B1814.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sliver city">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 6 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/JavaScript/" style="font-size: 30px; color: #111">JavaScript</a> <a href="/tags/github/" style="font-size: 12px; color: #ccc">github</a> <a href="/tags/hexo/" style="font-size: 18px; color: #8e8e8e">hexo</a> <a href="/tags/javascript/" style="font-size: 12px; color: #ccc">javascript</a> <a href="/tags/前端开发/" style="font-size: 24px; color: #4f4f4f">前端开发</a> <a href="/tags/生活，学习/" style="font-size: 12px; color: #ccc">生活，学习</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">JS原型，原型链和继承的理解</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-06T17:38:05+08:00">
+                2018-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javscript学习记录/" itemprop="url" rel="index">
+                    <span itemprop="name">javscript学习记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <p>在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。</p>
+<h3 id="普通对象和函数对象"><a href="#普通对象和函数对象" class="headerlink" title="普通对象和函数对象"></a>普通对象和函数对象</h3><p>JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。<br>函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。<br>举例说明一下函数对象和普通对象：</p>
+<pre><code>var o1 = {}; 
+var o2 =new Object();
+var o3 = new f1();
+
+function f1(){}; ==(等价于) var f1 = new Function();
+var f2 = function(){};
+var f3 = new Function(&apos;str&apos;,&apos;console.log(str)&apos;);
+
+console.log(typeof Object); //function 
+console.log(typeof Function); //function  
+
+console.log(typeof f1); //function 
+console.log(typeof f2); //function 
+console.log(typeof f3); //function  
+
+console.log(typeof o1); //object 
+console.log(typeof o2); //object 
+console.log(typeof o3); //object
+</code></pre><p>以上例子中，o1,o2,o3都是普通对象，f1,f2,f3都是函数对象<br><strong>凡是通过new Function创建的对象都是函数对象，其他都是普通对象（通常通过Object创建），可以通过typeof来判断。</strong></p>
+<h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><pre><code>function Person(name,age,sex){
+this.name = name;
+this.age = age;
+this.sex = sex;
+this.sayName =function(){ alert(this.name)};
+}
+
+var person1 = new Person(&quot;lyc&quot;,21,&quot;男&quot;);
+var person2 = new Person(&quot;lyl&quot;,20,&quot;女&quot;);
+</code></pre><p>person1,person2都是Person的实例，它们都有一个constructor（指针）属性指向Person。</p>
+<pre><code>console.log(person1.constructor == Person);//true
+console.log(person2.constructor == Person);//true
+</code></pre><p><strong>person1和person2是构造函数Person的实例化</strong>。<br><strong>实例的属性constructor永远指向它的构造函数</strong>。</p>
+<hr>
+<h3 id="原型对象（终于进入主题了-）"><a href="#原型对象（终于进入主题了-）" class="headerlink" title="原型对象（终于进入主题了(-_-)）"></a>原型对象（终于进入主题了(-_-)）</h3><p>Javascript中，我们每定义一个对象（函数也是对象）时，JavaScript都会在对象中预定义一些属性。其中每个函数对象都有一个<strong>prototype属性</strong>,这个属性指向的是函数对象的<strong>原型对象</strong>。举个栗子：</p>
+<pre><code>function Person(){}  //创建一个函数对象
+//利用函数对象的prototype属性在原型上设置属性                                                           
+Person.prototype.name = &quot;Nicholas&quot;;              
+Person.prototype.age = 23;
+Person.prototype.job = &quot;Worker&quot;;
+Person.prototype.sayName = function(){
+        alert(this.name);
+}
+//创建实例化对象
+var person1 = new Person();
+var person2 = new Person();
+
+console.log(person1.name);//Nicholas
+console.log(person2.name);//Nicholas
+console.log(person1.age);//23
+console.log(person2.age);//23
+</code></pre><p>每个对象都有一个<strong>proto</strong>属性，但只有函数对象才有prototype属性。<br>所谓原型对象：</p>
+<pre><code>Person.prototype = {
+    name:&quot;Nicholas&quot;,
+    age: 23,
+    job:&quot;Worker&quot;,
+    sayName:function(){alert(this.name)}
+};
+</code></pre><p>上面我设置了四个属性，其实它还有一个默认属性constructor属性，这个属性不指向Person这个函数对象了。<br><strong>原型对象Person.prototype就是Person的实例</strong>。</p>
+<pre><code>person1.__proto__ === Person.prototype;
+Person.__proto__ === Function.prototype;//构造函数
+Person.prototype.__proto__ === Object.prototype;
+Object.__proto__ === Function.prototype;//构造函数
+Object.prototype.__proto__ === null; 
+</code></pre><p>由上面的等式我们知道 person1–&gt;Person.prototype–&gt;Object.prototype–&gt;null,构成了这样的一条原型链，null是原型链的最顶端。就比如说，你是你妈妈生的，而你妈妈是你姥姥生的，一直追溯到类人猿是从null中进化而来的。</p>
+<h3 id="属性的继承"><a href="#属性的继承" class="headerlink" title="属性的继承"></a>属性的继承</h3><p>原型属性的出现就是为了继承的，就像上面的栗子中，person1和person2的属性都是从它们共同的原型上继承而来的。当然person1和person2也可以有自己的属性。就好比，你可以继承家里的财产，同时你也可以有自己的的财产。<br>在JavaScript中有三继承方式分别是原型继承（也叫拷贝继承），构造函数实现继承和call，apply实现继承。</p>
+<h4 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h4><p>原型继承其实就是借助已有的对象去创建子对象，把子对象的原型属性prototype指向父对象。</p>
+<pre><code>function Parents(name,age){
+            this.name = name;
+            this.age = age;
+            this.sayHi = function(){
+                alert(&quot;my name is &quot;+this.name+&quot;my age is &quot;+this.age);
+            };
+        }
+
+        function Child(grade){
+            this.grade = grade ;
+            this.sayGrade = function(){
+                alert(&quot;my grade is&quot;+this.grade);
+            };
+        }
+
+        Child.prototype = new Parents(&quot;林云&quot;,&quot;22&quot;);
+        var chi= new Child(69);
+        chi.sayHi();
+        chi.sayGrade();
+</code></pre><h4 id="构造函数实现继承"><a href="#构造函数实现继承" class="headerlink" title="构造函数实现继承"></a>构造函数实现继承</h4><pre><code>function Parents(name,age){
+            this.name = name;
+            this.age = age;
+            this.sayHi = function(){
+                alert(&quot;my name is &quot;+this.name+&quot;my age is &quot;+this.age);
+            };
+    }
+
+        function Child(name,age,grade){ 
+            this.grade = grade ;
+            this.sayHi= Parents;//这里构造了sayHi函数
+            this.sayHi(name,age);
+            this.sayGrade = function(){
+                alert(&quot;my grade is&quot;+this.grade);
+            };
+        }
+
+        var chi= new Child(&quot;林云&quot;,22,69);
+        chi.sayHi();
+        chi.sayGrade();
+</code></pre><h4 id="call-apply实现继承"><a href="#call-apply实现继承" class="headerlink" title="call,apply实现继承"></a>call,apply实现继承</h4><pre><code>function Parents(name,age){
+            this.name = name;
+            this.age = age;
+            this.sayHi = function(){
+                alert(&quot;my name is &quot;+this.name+&quot;my age is &quot;+this.age);
+            };
+    }
+
+function Child(name,age,grade){ 
+    this.grade = grade ;
+    //Person.call(this,name,age);
+    //Person.apply(this,[name,age]);
+    Person.apply(this,arguments);
+    this.sayGrade = function(){
+    alert(&quot;my grade is&quot;+this.grade);
+    };
+}
+
+var chi= new Child(&quot;林云&quot;,22,69);
+    chi.sayHi();
+    chi.sayGrade();
+</code></pre>
       
     </div>
     
     
     
+    
+  
+    <div>
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    </div>
+  
+
+    <div>
+      
+        
+      
+</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Sliver city 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Sliver city 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/28/ajax/" rel="next" title="Ajax的基本应用">
+                <i class="fa fa-chevron-left"></i> Ajax的基本应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/14/webStudy/" rel="prev" title="关于函数闭包的理解">
+                关于函数闭包的理解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -331,6 +662,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="uyan_frame"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -351,8 +691,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -477,6 +826,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通对象和函数对象"><span class="nav-number">1.</span> <span class="nav-text">普通对象和函数对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数"><span class="nav-number">2.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型对象（终于进入主题了-）"><span class="nav-number">3.</span> <span class="nav-text">原型对象（终于进入主题了(-_-)）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性的继承"><span class="nav-number">4.</span> <span class="nav-text">属性的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原型继承"><span class="nav-number">4.1.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造函数实现继承"><span class="nav-number">4.2.</span> <span class="nav-text">构造函数实现继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#call-apply实现继承"><span class="nav-number">4.3.</span> <span class="nav-text">call,apply实现继承</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -658,6 +1023,10 @@
   
     
 
+    
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2160685"></script>
+      <!-- UY END -->
     
   
 

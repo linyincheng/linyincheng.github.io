@@ -4,52 +4,8 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
-    <lastmod>2018-04-17T13:40:42.233Z</lastmod>
-    <data>
-        <display>
-        <title>基于Js的图片预加载和懒加载技术</title>
-        <pubTime>2018-04-17T13:39:23.086Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>前端开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/14/webStudy/</loc>
-    <lastmod>2018-04-17T13:35:55.505Z</lastmod>
-    <data>
-        <display>
-        <title>关于函数闭包的理解</title>
-        <pubTime>2018-04-14T12:10:18.211Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>前端开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
-    <lastmod>2018-04-17T13:26:09.708Z</lastmod>
+    <lastmod>2018-04-26T13:00:02.192Z</lastmod>
     <data>
         <display>
         <title>学习随笔</title>
@@ -67,18 +23,39 @@
     </url>
 
     
-    
   <url>
-    <loc>https://linyincheng.github.io/2018/04/06/life/</loc>
-    <lastmod>2018-04-14T12:09:05.236Z</lastmod>
+    <loc>https://linyincheng.github.io/2018/04/14/webStudy/</loc>
+    <lastmod>2018-04-21T12:26:18.855Z</lastmod>
     <data>
         <display>
-        <title>JS原型，原型链和继承的理解</title>
-        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
+        <title>关于函数闭包的理解</title>
+        <pubTime>2018-04-14T12:10:18.211Z</pubTime>
         
+        <tag>前端开发</tag>
+         
         <tag>JavaScript</tag>
          
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
+    <lastmod>2018-04-17T13:40:42.233Z</lastmod>
+    <data>
+        <display>
+        <title>基于Js的图片预加载和懒加载技术</title>
+        <pubTime>2018-04-17T13:39:23.086Z</pubTime>
+        
         <tag>前端开发</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -92,7 +69,30 @@
     
     
   <url>
-    <loc>https://linyincheng.github.io/2017/10/31/first/</loc>
+    <loc>https://linyincheng.github.io/2018/04/06/property/</loc>
+    <lastmod>2018-04-14T12:09:05.236Z</lastmod>
+    <data>
+        <display>
+        <title>JS原型，原型链和继承的理解</title>
+        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
+        
+        <tag>前端开发</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://linyincheng.github.io/2017/10/31/event/</loc>
     <lastmod>2018-04-06T11:03:31.796Z</lastmod>
     <data>
         <display>
@@ -112,16 +112,16 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2017/11/18/fifth/</loc>
+    <loc>https://linyincheng.github.io/2017/11/18/this/</loc>
     <lastmod>2018-04-06T10:29:26.558Z</lastmod>
     <data>
         <display>
         <title>this的用法</title>
         <pubTime>2017-11-18T12:42:19.406Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>前端开发</tag>
+         
+        <tag>JavaScript</tag>
          
          
            
@@ -134,7 +134,7 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2017/12/28/suibi/</loc>
+    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
     <lastmod>2018-04-03T13:06:17.908Z</lastmod>
     <data>
         <display>
@@ -153,7 +153,7 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2017/11/10/forth/</loc>
+    <loc>https://linyincheng.github.io/2017/11/10/hexo-github/</loc>
     <lastmod>2017-11-12T09:46:06.319Z</lastmod>
     <data>
         <display>
@@ -175,7 +175,7 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2017/11/08/three/</loc>
+    <loc>https://linyincheng.github.io/2017/11/08/Object/</loc>
     <lastmod>2017-11-11T09:55:16.277Z</lastmod>
     <data>
         <display>

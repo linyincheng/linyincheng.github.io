@@ -30,9 +30,9 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -41,7 +41,7 @@
     <link href="https://linyincheng.github.io/2018/04/14/liver/"/>
     <id>https://linyincheng.github.io/2018/04/14/liver/</id>
     <published>2018-04-14T13:00:04.061Z</published>
-    <updated>2018-04-17T13:26:09.708Z</updated>
+    <updated>2018-04-26T13:00:02.192Z</updated>
     
     <content type="html"><![CDATA[<p>我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。</p><h4 id="2018-4-17"><a href="#2018-4-17" class="headerlink" title="2018/4/17"></a>2018/4/17</h4><p>今天学习了Js动画库的封装，看了老师讲的视频，感觉挺简单的，但是到自己动手去实践的时候，发现有很多基础的知识还没掌握，这反映了自己在之前的学习的状态，Js动画的原理其实也不是很难，很多都是日常生活中或者我们在一些大型的网站见过的一些动画效果，比如说最基础的轮播图，缓动动画，滚动条的滚动原理，返回顶部等等这些动画效果。<br>其实，这两天自己的学习状态一直不是很好，常常会多想（很尴尬），整个人感觉很浮躁，不能安下心来学习。学习的时候老是在那多想，就是不肯动手去敲代码，学编程一定要多练。从明天开始，每天至少都要敲200行代码或者用学到的知识做一个案例出来。严格要求自己。加油！</p>]]></content>
     
@@ -67,9 +67,9 @@
     <link href="https://linyincheng.github.io/2018/04/14/webStudy/"/>
     <id>https://linyincheng.github.io/2018/04/14/webStudy/</id>
     <published>2018-04-14T12:10:18.211Z</published>
-    <updated>2018-04-17T13:35:55.505Z</updated>
+    <updated>2018-04-21T12:26:18.855Z</updated>
     
-    <content type="html"><![CDATA[<p>学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解：</p><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p>首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点;</p><h4 id="特点一（函数能访问到函数外部的变量）"><a href="#特点一（函数能访问到函数外部的变量）" class="headerlink" title="特点一（函数能访问到函数外部的变量）"></a>特点一（函数能访问到函数外部的变量）</h4><pre><code>var num =10;function fn1(){    console.log(num);}fn1();       //10</code></pre><h4 id="特点二（函数内部线的变量不能被函数外部访问）"><a href="#特点二（函数内部线的变量不能被函数外部访问）" class="headerlink" title="特点二（函数内部线的变量不能被函数外部访问）"></a>特点二（函数内部线的变量不能被函数外部访问）</h4><pre><code>function fn2(){   var num =10; }console.log(num);//结果为undefined;</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解：</p><h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p>首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点;</p><h4 id="特点一（函数能访问到函数外部的变量）"><a href="#特点一（函数能访问到函数外部的变量）" class="headerlink" title="特点一（函数能访问到函数外部的变量）"></a>特点一（函数能访问到函数外部的变量）</h4><pre><code>var num =10;function fn1(){    console.log(num);}fn1();       //10</code></pre><h4 id="特点二（函数内部线的变量不能被函数外部访问）"><a href="#特点二（函数内部线的变量不能被函数外部访问）" class="headerlink" title="特点二（函数内部线的变量不能被函数外部访问）"></a>特点二（函数内部线的变量不能被函数外部访问）</h4><pre><code>function fn2(){   var num =10; }console.log(num);//结果为undefined;</code></pre><h4 id="来个最简单的闭包看看"><a href="#来个最简单的闭包看看" class="headerlink" title="来个最简单的闭包看看"></a>来个最简单的闭包看看</h4><pre><code>function fn1(){    var a=1 ;    function fn2(){     var b=11;     console.log(a)    }    fn2();    console.log(b);}fn1();//结果只打印了a的值，也就是执行了fn2();而没有打印b的值,而是出现了一个b is undefined的错误；（&quot;Uncaught ReferenceError: b is not defined&quot;）</code></pre>]]></content>
     
     <summary type="html">
     
@@ -84,16 +84,16 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JS原型，原型链和继承的理解</title>
-    <link href="https://linyincheng.github.io/2018/04/06/life/"/>
-    <id>https://linyincheng.github.io/2018/04/06/life/</id>
+    <link href="https://linyincheng.github.io/2018/04/06/property/"/>
+    <id>https://linyincheng.github.io/2018/04/06/property/</id>
     <published>2018-04-06T09:38:05.509Z</published>
     <updated>2018-04-14T12:09:05.236Z</updated>
     
@@ -112,16 +112,16 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>Ajax的基本应用</title>
-    <link href="https://linyincheng.github.io/2017/12/28/suibi/"/>
-    <id>https://linyincheng.github.io/2017/12/28/suibi/</id>
+    <link href="https://linyincheng.github.io/2017/12/28/ajax/"/>
+    <id>https://linyincheng.github.io/2017/12/28/ajax/</id>
     <published>2017-12-28T09:49:46.698Z</published>
     <updated>2018-04-03T13:06:17.908Z</updated>
     
@@ -145,8 +145,8 @@
   
   <entry>
     <title>this的用法</title>
-    <link href="https://linyincheng.github.io/2017/11/18/fifth/"/>
-    <id>https://linyincheng.github.io/2017/11/18/fifth/</id>
+    <link href="https://linyincheng.github.io/2017/11/18/this/"/>
+    <id>https://linyincheng.github.io/2017/11/18/this/</id>
     <published>2017-11-18T12:42:19.406Z</published>
     <updated>2018-04-06T10:29:26.558Z</updated>
     
@@ -164,16 +164,16 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
-    
       <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>hexo和github搭建个人博客</title>
-    <link href="https://linyincheng.github.io/2017/11/10/forth/"/>
-    <id>https://linyincheng.github.io/2017/11/10/forth/</id>
+    <link href="https://linyincheng.github.io/2017/11/10/hexo-github/"/>
+    <id>https://linyincheng.github.io/2017/11/10/hexo-github/</id>
     <published>2017-11-10T12:23:54.753Z</published>
     <updated>2017-11-12T09:46:06.319Z</updated>
     
@@ -199,8 +199,8 @@
   
   <entry>
     <title>String,Number和Boolean等基本类型的包装对象</title>
-    <link href="https://linyincheng.github.io/2017/11/08/three/"/>
-    <id>https://linyincheng.github.io/2017/11/08/three/</id>
+    <link href="https://linyincheng.github.io/2017/11/08/Object/"/>
+    <id>https://linyincheng.github.io/2017/11/08/Object/</id>
     <published>2017-11-08T12:40:29.000Z</published>
     <updated>2017-11-11T09:55:16.277Z</updated>
     
@@ -251,8 +251,8 @@
   
   <entry>
     <title>Js中事件的冒泡和事件的捕获</title>
-    <link href="https://linyincheng.github.io/2017/10/31/first/"/>
-    <id>https://linyincheng.github.io/2017/10/31/first/</id>
+    <link href="https://linyincheng.github.io/2017/10/31/event/"/>
+    <id>https://linyincheng.github.io/2017/10/31/event/</id>
     <published>2017-10-31T08:42:12.439Z</published>
     <updated>2018-04-06T11:03:31.796Z</updated>
     

@@ -715,8 +715,18 @@ fn1();       //10
    var num =10; 
 }
 console.log(num);//结果为undefined;
-
-          
+来个最简单的闭包看看function fn1(){
+    var a=1 ;
+    function fn2(){
+     var b=11;
+     console.log(a)
+    }
+    fn2();
+    console.log(b);
+}
+fn1();//结果只打印了a的值，也就是执行了fn2();而没有打印b的值,而是出现了一个b is undefined的错误；
+（&quot;
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/14/webStudy/#more" rel="contents">
@@ -776,7 +786,7 @@ console.log(num);//结果为undefined;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2018/04/06/life/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2018/04/06/property/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -795,7 +805,7 @@ console.log(num);//结果为undefined;
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/06/life/" itemprop="url">JS原型，原型链和继承的理解</a></h1>
+                <a class="post-title-link" href="/2018/04/06/property/" itemprop="url">JS原型，原型链和继承的理解</a></h1>
         
 
         <div class="post-meta">
@@ -886,7 +896,7 @@ conso
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/06/life/#more" rel="contents">
+            <a class="btn" href="/2018/04/06/property/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -943,7 +953,7 @@ conso
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/12/28/suibi/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/12/28/ajax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -962,7 +972,7 @@ conso
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/28/suibi/" itemprop="url">Ajax的基本应用</a></h1>
+                <a class="post-title-link" href="/2017/12/28/ajax/" itemprop="url">Ajax的基本应用</a></h1>
         
 
         <div class="post-meta">
@@ -1021,7 +1031,7 @@ Ajax请求纯文本或Ajax请求PHP文件首先在xampp/htdocs的路径下新建
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/28/suibi/#more" rel="contents">
+            <a class="btn" href="/2017/12/28/ajax/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1078,7 +1088,7 @@ Ajax请求纯文本或Ajax请求PHP文件首先在xampp/htdocs的路径下新建
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/18/fifth/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/18/this/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -1097,7 +1107,7 @@ Ajax请求纯文本或Ajax请求PHP文件首先在xampp/htdocs的路径下新建
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/18/fifth/" itemprop="url">this的用法</a></h1>
+                <a class="post-title-link" href="/2017/11/18/this/" itemprop="url">this的用法</a></h1>
         
 
         <div class="post-meta">
@@ -1191,7 +1201,7 @@ identify.call( person
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/18/fifth/#more" rel="contents">
+            <a class="btn" href="/2017/11/18/this/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1248,7 +1258,7 @@ identify.call( person
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/10/forth/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/10/hexo-github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -1267,7 +1277,7 @@ identify.call( person
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/10/forth/" itemprop="url">hexo和github搭建个人博客</a></h1>
+                <a class="post-title-link" href="/2017/11/10/hexo-github/" itemprop="url">hexo和github搭建个人博客</a></h1>
         
 
         <div class="post-meta">
@@ -1351,7 +1361,7 @@ sudo npm install -g hexo 或者(nmp i -g hexo)
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/10/forth/#more" rel="contents">
+            <a class="btn" href="/2017/11/10/hexo-github/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1408,7 +1418,7 @@ sudo npm install -g hexo 或者(nmp i -g hexo)
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/08/three/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/11/08/Object/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -1427,7 +1437,7 @@ sudo npm install -g hexo 或者(nmp i -g hexo)
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/08/three/" itemprop="url">String,Number和Boolean等基本类型的包装对象</a></h1>
+                <a class="post-title-link" href="/2017/11/08/Object/" itemprop="url">String,Number和Boolean等基本类型的包装对象</a></h1>
         
 
         <div class="post-meta">
@@ -1517,7 +1527,7 @@ var s2=s.charAt(1);//解析器在解析到这句代码的时候就会在后台�
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/11/08/three/#more" rel="contents">
+            <a class="btn" href="/2017/11/08/Object/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1737,7 +1747,7 @@ var x
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/10/31/first/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2017/10/31/event/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -1756,7 +1766,7 @@ var x
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/31/first/" itemprop="url">Js中事件的冒泡和事件的捕获</a></h1>
+                <a class="post-title-link" href="/2017/10/31/event/" itemprop="url">Js中事件的冒泡和事件的捕获</a></h1>
         
 
         <div class="post-meta">
@@ -1843,7 +1853,7 @@ var x
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/31/first/#more" rel="contents">
+            <a class="btn" href="/2017/10/31/event/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2082,7 +2092,7 @@ var x
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.8k字</span>
+  <span class="post-count">博客全站共8.9k字</span>
 </div>
 
 
