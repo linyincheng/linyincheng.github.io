@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://linyincheng.github.io/2018/04/14/bibao/</loc>
+    <lastmod>2018-05-01T12:13:13.543Z</lastmod>
+    <data>
+        <display>
+        <title>关于函数闭包的理解</title>
+        <pubTime>2018-04-14T12:10:18.211Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2017/10/31/event/</loc>
+    <lastmod>2018-04-27T03:49:34.454Z</lastmod>
+    <data>
+        <display>
+        <title>Js中事件的冒泡和事件的捕获</title>
+        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
     <lastmod>2018-04-26T13:00:02.192Z</lastmod>
     <data>
@@ -24,28 +66,6 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2018/04/14/webStudy/</loc>
-    <lastmod>2018-04-21T12:26:18.855Z</lastmod>
-    <data>
-        <display>
-        <title>关于函数闭包的理解</title>
-        <pubTime>2018-04-14T12:10:18.211Z</pubTime>
-        
-        <tag>前端开发</tag>
-         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
     <lastmod>2018-04-17T13:40:42.233Z</lastmod>
     <data>
@@ -53,9 +73,9 @@
         <title>基于Js的图片预加载和懒加载技术</title>
         <pubTime>2018-04-17T13:39:23.086Z</pubTime>
         
-        <tag>前端开发</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
          
          
            
@@ -76,10 +96,10 @@
         <title>JS原型，原型链和继承的理解</title>
         <pubTime>2018-04-06T09:38:05.509Z</pubTime>
         
+        <tag>JavaScript</tag>
+         
         <tag>前端开发</tag>
          
-        <tag>JavaScript</tag>
-         
          
            
              
@@ -90,26 +110,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://linyincheng.github.io/2017/10/31/event/</loc>
-    <lastmod>2018-04-06T11:03:31.796Z</lastmod>
-    <data>
-        <display>
-        <title>Js中事件的冒泡和事件的捕获</title>
-        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://linyincheng.github.io/2017/11/18/this/</loc>
@@ -119,9 +119,9 @@
         <title>this的用法</title>
         <pubTime>2017-11-18T12:42:19.406Z</pubTime>
         
-        <tag>前端开发</tag>
-         
         <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
          
          
            

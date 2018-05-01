@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript,前端开发," />
 
 
 
@@ -85,17 +85,18 @@
 
 
 
-<meta name="description" content="一枚有冲劲的前端小菜鸟">
-<meta property="og:type" content="website">
-<meta property="og:title" content="search">
-<meta property="og:url" content="https://linyincheng.github.io/search/index.html">
+<meta name="description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
+<meta name="keywords" content="JavaScript,前端开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于函数闭包的理解">
+<meta property="og:url" content="https://linyincheng.github.io/2018/04/14/bibao/index.html">
 <meta property="og:site_name" content="Sliver city">
-<meta property="og:description" content="一枚有冲劲的前端小菜鸟">
+<meta property="og:description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-06T13:39:03.708Z">
+<meta property="og:updated_time" content="2018-05-01T12:13:13.543Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="search">
-<meta name="twitter:description" content="一枚有冲劲的前端小菜鸟">
+<meta name="twitter:title" content="关于函数闭包的理解">
+<meta name="twitter:description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
 
 
 
@@ -125,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://linyincheng.github.io/search/"/>
+  <link rel="canonical" href="https://linyincheng.github.io/2018/04/14/bibao/"/>
 
 
 
 
 
-  <title>search | Sliver city</title>
+  <title>关于函数闭包的理解 | Sliver city</title>
   
 
 
@@ -289,33 +290,266 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2018/04/14/bibao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sliver city">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/B1814.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sliver city">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">search</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
+          <h1 class="post-title" itemprop="name headline">关于函数闭包的理解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-14T20:10:18+08:00">
+                2018-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javscript学习记录/" itemprop="url" rel="index">
+                    <span itemprop="name">javscript学习记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <p>学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解：</p>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><p>首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点;</p>
+<h4 id="特点一（函数能访问到函数外部的变量）"><a href="#特点一（函数能访问到函数外部的变量）" class="headerlink" title="特点一（函数能访问到函数外部的变量）"></a>特点一（函数能访问到函数外部的变量）</h4><pre><code>var num =10;
+function fn1(){
+    console.log(num);
+}
+fn1();       //10
+</code></pre><h4 id="特点二（函数内部线的变量不能被函数外部访问）"><a href="#特点二（函数内部线的变量不能被函数外部访问）" class="headerlink" title="特点二（函数内部线的变量不能被函数外部访问）"></a>特点二（函数内部线的变量不能被函数外部访问）</h4><pre><code>function fn2(){
+   var num =10; 
+}
+console.log(num);//结果为undefined;
+</code></pre><p>如何在函数外部访问函数内部的变量呢，正常情况下，是访问不到的。因此我们要通过一种变通的方法，就是在函数内部定义一个函数，这个函数就可以访问外层函数的变量。</p>
+<h4 id="来个最简单的闭包看看"><a href="#来个最简单的闭包看看" class="headerlink" title="来个最简单的闭包看看"></a>来个最简单的闭包看看</h4><pre><code>function fn1(){
+    var a=1 ;
+    function fn2(){
+     var b=11;
+     console.log(a)
+    }
+    fn2();
+    console.log(b);
+}
+fn1();//结果只打印了a的值，也就是执行了fn2();而没有打印b的值,而是出现了一个b is undefined的错误；
+（&quot;Uncaught ReferenceError: b is not defined&quot;）
+</code></pre><p>简单来说闭包就是在嵌套函数中有访问外层函数成员变量权限的函数</p>
+
       
     </div>
     
     
     
+    
+  
+    <div>
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    </div>
+  
+
+    <div>
+      
+        
+      
+</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Sliver city 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Sliver city 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/06/property/" rel="next" title="JS原型，原型链和继承的理解">
+                <i class="fa fa-chevron-left"></i> JS原型，原型链和继承的理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/14/liver/" rel="prev" title="学习随笔">
+                学习随笔 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
   </div>
 
 
@@ -353,8 +587,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -479,6 +722,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数作用域"><span class="nav-number">1.</span> <span class="nav-text">函数作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#特点一（函数能访问到函数外部的变量）"><span class="nav-number">1.1.</span> <span class="nav-text">特点一（函数能访问到函数外部的变量）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点二（函数内部线的变量不能被函数外部访问）"><span class="nav-number">1.2.</span> <span class="nav-text">特点二（函数内部线的变量不能被函数外部访问）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来个最简单的闭包看看"><span class="nav-number">1.3.</span> <span class="nav-text">来个最简单的闭包看看</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

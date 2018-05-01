@@ -611,7 +611,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2018/04/14/webStudy/">
+    <link itemprop="mainEntityOfPage" href="https://linyincheng.github.io/2018/04/14/bibao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sliver city">
@@ -630,7 +630,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/14/webStudy/" itemprop="url">关于函数闭包的理解</a></h1>
+                <a class="post-title-link" href="/2018/04/14/bibao/" itemprop="url">关于函数闭包的理解</a></h1>
         
 
         <div class="post-meta">
@@ -715,6 +715,7 @@ fn1();       //10
    var num =10; 
 }
 console.log(num);//结果为undefined;
+如何在函数外部访问函数内部的变量呢，正常情况下，是访问不到的。因此我们要通过一种变通的方法，就是在函数内部定义一个函数，这个函数就可以访问外层函数的变量。
 来个最简单的闭包看看function fn1(){
     var a=1 ;
     function fn2(){
@@ -722,14 +723,11 @@ console.log(num);//结果为undefined;
      console.log(a)
     }
     fn2();
-    console.log(b);
-}
-fn1();//结果只打印了a的值，也就是执行了fn2();而没有打印b的值,而是出现了一个b is undefined的错误；
-（&quot;
+    console.log(
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/14/webStudy/#more" rel="contents">
+            <a class="btn" href="/2018/04/14/bibao/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2092,7 +2090,7 @@ var x
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.9k字</span>
+  <span class="post-count">博客全站共9.0k字</span>
 </div>
 
 
