@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
+    <lastmod>2018-05-04T13:25:15.406Z</lastmod>
+    <data>
+        <display>
+        <title>基于Js的图片预加载和懒加载技术</title>
+        <pubTime>2018-04-17T13:39:23.086Z</pubTime>
+        
+        <tag>前端开发</tag>
+         
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
+    <lastmod>2018-05-04T13:04:29.426Z</lastmod>
+    <data>
+        <display>
+        <title>学习随笔</title>
+        <pubTime>2018-04-14T13:00:04.061Z</pubTime>
+        
+        <tag>生活，学习</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习与生活" url="https://linyincheng.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://linyincheng.github.io/2018/04/14/bibao/</loc>
     <lastmod>2018-05-01T12:13:13.543Z</lastmod>
     <data>
@@ -33,48 +75,6 @@
         <title>Js中事件的冒泡和事件的捕获</title>
         <pubTime>2017-10-31T08:42:12.439Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
-    <lastmod>2018-04-26T13:00:02.192Z</lastmod>
-    <data>
-        <display>
-        <title>学习随笔</title>
-        <pubTime>2018-04-14T13:00:04.061Z</pubTime>
-        
-        <tag>生活，学习</tag>
-         
-         
-           
-             
-              <breadCrumb title="学习与生活" url="https://linyincheng.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
-    <lastmod>2018-04-17T13:40:42.233Z</lastmod>
-    <data>
-        <display>
-        <title>基于Js的图片预加载和懒加载技术</title>
-        <pubTime>2018-04-17T13:39:23.086Z</pubTime>
-        
-        <tag>前端开发</tag>
-         
         <tag>JavaScript</tag>
          
          

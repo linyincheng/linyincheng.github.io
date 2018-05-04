@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2018-04-17T13:40:42.233Z</updated>
+  <updated>2018-05-04T13:25:15.406Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -21,9 +21,17 @@
     <link href="https://linyincheng.github.io/2018/04/17/lazyload/"/>
     <id>https://linyincheng.github.io/2018/04/17/lazyload/</id>
     <published>2018-04-17T13:39:23.086Z</published>
-    <updated>2018-04-17T13:40:42.233Z</updated>
+    <updated>2018-05-04T13:25:15.406Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="各种宽高"><a href="#各种宽高" class="headerlink" title="各种宽高"></a>各种宽高</h2><pre><code>页可见区域宽： document.body.clientWidth;网页可见区域高： document.body.clientHeight;网页可见区域宽： document.body.offsetWidth (包括边线的宽);网页可见区域高： document.body.offsetHeight (包括边线的宽);网页正文全文宽： document.body.scrollWidth;网页正文全文高： document.body.scrollHeight;网页被卷去的高： document.body.scrollTop;网页被卷去的左： document.body.scrollLeft;网页正文部分上： window.screenTop;网页正文部分左： window.screenLeft;屏幕分辨率的高： window.screen.height;屏幕分辨率的宽： window.screen.width;屏幕可用工作区高度： window.screen.availHeight;</code></pre><h2 id="懒加载技术"><a href="#懒加载技术" class="headerlink" title="懒加载技术"></a>懒加载技术</h2><h4 id="为什么要用到懒加载"><a href="#为什么要用到懒加载" class="headerlink" title="为什么要用到懒加载"></a>为什么要用到懒加载</h4><p>在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。</p><h4 id="怎样实现懒加载呢？"><a href="#怎样实现懒加载呢？" class="headerlink" title="怎样实现懒加载呢？"></a>怎样实现懒加载呢？</h4><p>思路：将页面里所有img属性src属性用data-xx代替，当页面滚动直至此图片出现在可视区域时，用js取到该图片的data-xx的值赋给src。<br>代码实现：如下所示</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;各种宽高&quot;&gt;&lt;a href=&quot;#各种宽高&quot; class=&quot;headerlink&quot; title=&quot;各种宽高&quot;&gt;&lt;/a&gt;各种宽高&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;页可见区域宽： document.body.clientWidth;
+网页可见区域高： document.b
+      
     
     </summary>
     
@@ -41,9 +49,9 @@
     <link href="https://linyincheng.github.io/2018/04/14/liver/"/>
     <id>https://linyincheng.github.io/2018/04/14/liver/</id>
     <published>2018-04-14T13:00:04.061Z</published>
-    <updated>2018-04-26T13:00:02.192Z</updated>
+    <updated>2018-05-04T13:04:29.426Z</updated>
     
-    <content type="html"><![CDATA[<p>我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。</p><h4 id="2018-4-17"><a href="#2018-4-17" class="headerlink" title="2018/4/17"></a>2018/4/17</h4><p>今天学习了Js动画库的封装，看了老师讲的视频，感觉挺简单的，但是到自己动手去实践的时候，发现有很多基础的知识还没掌握，这反映了自己在之前的学习的状态，Js动画的原理其实也不是很难，很多都是日常生活中或者我们在一些大型的网站见过的一些动画效果，比如说最基础的轮播图，缓动动画，滚动条的滚动原理，返回顶部等等这些动画效果。<br>其实，这两天自己的学习状态一直不是很好，常常会多想（很尴尬），整个人感觉很浮躁，不能安下心来学习。学习的时候老是在那多想，就是不肯动手去敲代码，学编程一定要多练。从明天开始，每天至少都要敲200行代码或者用学到的知识做一个案例出来。严格要求自己。加油！</p>]]></content>
+    <content type="html"><![CDATA[<p>我发现我最近都喜欢上写博客，总是想着把生活中的一些琐事以及学习中遇到的问题写在博客上。因为我感觉可以通过写博客来表达自己对生活和学习的感受，可以更清楚的了解自己。</p><h4 id="2018-4-17"><a href="#2018-4-17" class="headerlink" title="2018/4/17"></a>2018/4/17</h4><p>今天学习了Js动画库的封装，看了老师讲的视频，感觉挺简单的，但是到自己动手去实践的时候，发现有很多基础的知识还没掌握，这反映了自己在之前的学习的状态，Js动画的原理其实也不是很难，很多都是日常生活中或者我们在一些大型的网站见过的一些动画效果，比如说最基础的轮播图，缓动动画，滚动条的滚动原理，返回顶部等等这些动画效果。<br>其实，这两天自己的学习状态一直不是很好，常常会多想（很尴尬），整个人感觉很浮躁，不能安下心来学习。学习的时候老是在那多想，就是不肯动手去敲代码，学编程一定要多练。从明天开始，每天至少都要敲200行代码或者用学到的知识做一个案例出来。严格要求自己。加油！</p><h3 id="2018-5-4"><a href="#2018-5-4" class="headerlink" title="2018/5/4"></a>2018/5/4</h3><p>这几天都在学ES6语法，感觉信息量有点大，看得不是很懂，可能跟ES5的基础不牢固有关吧，特别是字符串扩展和正则表达式的扩展。这两个内容的有些概念不太能够理解，对Unicode字符集不是很了解，特意去百度了，但是没找到想要的答案，看了知乎上的一些网友的解释，感觉还是懵懵懂懂的样子。</p>]]></content>
     
     <summary type="html">
     
