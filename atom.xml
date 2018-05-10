@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://linyincheng.github.io/"/>
-  <updated>2018-05-04T13:25:15.406Z</updated>
+  <updated>2018-05-10T12:56:40.670Z</updated>
   <id>https://linyincheng.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于Js的图片预加载和懒加载技术</title>
+    <title>原生Js的图片预加载和懒加载技术</title>
     <link href="https://linyincheng.github.io/2018/04/17/lazyload/"/>
     <id>https://linyincheng.github.io/2018/04/17/lazyload/</id>
     <published>2018-04-17T13:39:23.086Z</published>
-    <updated>2018-05-04T13:25:15.406Z</updated>
+    <updated>2018-05-10T12:56:40.670Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="各种宽高"><a href="#各种宽高" class="headerlink" title="各种宽高"></a>各种宽高</h2><pre><code>页可见区域宽： document.body.clientWidth;网页可见区域高： document.body.clientHeight;网页可见区域宽： document.body.offsetWidth (包括边线的宽);网页可见区域高： document.body.offsetHeight (包括边线的宽);网页正文全文宽： document.body.scrollWidth;网页正文全文高： document.body.scrollHeight;网页被卷去的高： document.body.scrollTop;网页被卷去的左： document.body.scrollLeft;网页正文部分上： window.screenTop;网页正文部分左： window.screenLeft;屏幕分辨率的高： window.screen.height;屏幕分辨率的宽： window.screen.width;屏幕可用工作区高度： window.screen.availHeight;</code></pre><h2 id="懒加载技术"><a href="#懒加载技术" class="headerlink" title="懒加载技术"></a>懒加载技术</h2><h4 id="为什么要用到懒加载"><a href="#为什么要用到懒加载" class="headerlink" title="为什么要用到懒加载"></a>为什么要用到懒加载</h4><p>在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。</p><h4 id="怎样实现懒加载呢？"><a href="#怎样实现懒加载呢？" class="headerlink" title="怎样实现懒加载呢？"></a>怎样实现懒加载呢？</h4><p>思路：将页面里所有img属性src属性用data-xx代替，当页面滚动直至此图片出现在可视区域时，用js取到该图片的data-xx的值赋给src。<br>代码实现：如下所示</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="各种宽高"><a href="#各种宽高" class="headerlink" title="各种宽高"></a>各种宽高</h2><pre><code>页可见区域宽： document.body.clientWidth;网页可见区域高： document.body.clientHeight;网页可见区域宽： document.body.offsetWidth (包括边线的宽);网页可见区域高： document.body.offsetHeight (包括边线的宽);网页正文全文宽： document.body.scrollWidth;网页正文全文高： document.body.scrollHeight;网页被卷去的高： document.body.scrollTop;网页被卷去的左： document.body.scrollLeft;网页正文部分上： window.screenTop;网页正文部分左： window.screenLeft;屏幕分辨率的高： window.screen.height;屏幕分辨率的宽： window.screen.width;屏幕可用工作区高度： window.screen.availHeight;</code></pre><h2 id="懒加载技术"><a href="#懒加载技术" class="headerlink" title="懒加载技术"></a>懒加载技术</h2><h4 id="为什么要用到懒加载"><a href="#为什么要用到懒加载" class="headerlink" title="为什么要用到懒加载"></a>为什么要用到懒加载</h4><p>在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。</p><h4 id="怎样实现懒加载呢？"><a href="#怎样实现懒加载呢？" class="headerlink" title="怎样实现懒加载呢？"></a>怎样实现懒加载呢？</h4><p>思路：将页面里所有img属性src属性用data-xx代替，监听滚动，直接用window.onscroll(),当页面滚动直至此图片出现在可视区域时，用js取到该图片的data-xx的值赋给src。<br>img标签代码实现：如下所示<br>    <image src="default.png" :data-src="item.allPics" class="lazyloadimg"></image></p><p>加载代码实现：</p><pre><code>window.onscroll =_.throttle(this.watchscroll, 200);watchscroll () {var bodyScrollHeight = document.body.scrollTop;// body滚动高度var windowHeight = window.innerHeight;// 视窗高度var imgs = document.getElementsByClassName(&apos;lazyloadimg&apos;);for (var i =0; i &lt; imgs.length; i++) {var imgHeight = imgs[i].offsetTop;// 图片距离顶部高度if (imgHeight &lt; windowHeight + bodyScrollHeight) {imgs[i].src = imgs[i].getAttribute(&apos;data-src&apos;); //src属性由data-src属性替代了img[i].className = img[i].className.replace(&apos;lazyloadimg&apos;,&apos;&apos;);        }    }}</code></pre>]]></content>
     
     <summary type="html">
     
@@ -38,9 +38,9 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
       <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -92,9 +92,9 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
       <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -120,9 +120,9 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
       <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
@@ -172,9 +172,9 @@
       <category term="javscript学习记录" scheme="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
-    
       <category term="JavaScript" scheme="https://linyincheng.github.io/tags/JavaScript/"/>
+    
+      <category term="前端开发" scheme="https://linyincheng.github.io/tags/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   

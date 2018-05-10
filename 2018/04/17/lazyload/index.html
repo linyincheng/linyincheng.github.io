@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="前端开发,JavaScript," />
+  <meta name="keywords" content="JavaScript,前端开发," />
 
 
 
@@ -86,16 +86,16 @@
 
 
 <meta name="description" content="各种宽高页可见区域宽： document.body.clientWidth; 网页可见区域高： document.body.clientHeight; 网页可见区域宽： document.body.offsetWidth (包括边线的宽); 网页可见区域高： document.body.offsetHeight (包括边线的宽); 网页正文全文宽： document.body.scrollWidt">
-<meta name="keywords" content="前端开发,JavaScript">
+<meta name="keywords" content="JavaScript,前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Js的图片预加载和懒加载技术">
+<meta property="og:title" content="原生Js的图片预加载和懒加载技术">
 <meta property="og:url" content="https://linyincheng.github.io/2018/04/17/lazyload/index.html">
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="各种宽高页可见区域宽： document.body.clientWidth; 网页可见区域高： document.body.clientHeight; 网页可见区域宽： document.body.offsetWidth (包括边线的宽); 网页可见区域高： document.body.offsetHeight (包括边线的宽); 网页正文全文宽： document.body.scrollWidt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-04T13:25:15.406Z">
+<meta property="og:updated_time" content="2018-05-10T12:56:40.670Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Js的图片预加载和懒加载技术">
+<meta name="twitter:title" content="原生Js的图片预加载和懒加载技术">
 <meta name="twitter:description" content="各种宽高页可见区域宽： document.body.clientWidth; 网页可见区域高： document.body.clientHeight; 网页可见区域宽： document.body.offsetWidth (包括边线的宽); 网页可见区域高： document.body.offsetHeight (包括边线的宽); 网页正文全文宽： document.body.scrollWidt">
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title>基于Js的图片预加载和懒加载技术 | Sliver city</title>
+  <title>原生Js的图片预加载和懒加载技术 | Sliver city</title>
   
 
 
@@ -319,7 +319,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于Js的图片预加载和懒加载技术</h1>
+          <h1 class="post-title" itemprop="name headline">原生Js的图片预加载和懒加载技术</h1>
         
 
         <div class="post-meta">
@@ -405,8 +405,22 @@
 屏幕分辨率的宽： window.screen.width;
 屏幕可用工作区高度： window.screen.availHeight;
 </code></pre><h2 id="懒加载技术"><a href="#懒加载技术" class="headerlink" title="懒加载技术"></a>懒加载技术</h2><h4 id="为什么要用到懒加载"><a href="#为什么要用到懒加载" class="headerlink" title="为什么要用到懒加载"></a>为什么要用到懒加载</h4><p>在实际的项目开发中，我们通常会遇见这样的场景：一个页面有很多图片，而首屏出现的图片大概就一两张，那么我们还要一次性把所有图片都加载出来吗？显然这是愚蠢的，不仅影响页面渲染速度，还浪费带宽。这也就是们通常所说的首屏加载，技术上现实其中要用的技术就是图片懒加载–到可视区域再加载。</p>
-<h4 id="怎样实现懒加载呢？"><a href="#怎样实现懒加载呢？" class="headerlink" title="怎样实现懒加载呢？"></a>怎样实现懒加载呢？</h4><p>思路：将页面里所有img属性src属性用data-xx代替，当页面滚动直至此图片出现在可视区域时，用js取到该图片的data-xx的值赋给src。<br>代码实现：如下所示</p>
-
+<h4 id="怎样实现懒加载呢？"><a href="#怎样实现懒加载呢？" class="headerlink" title="怎样实现懒加载呢？"></a>怎样实现懒加载呢？</h4><p>思路：将页面里所有img属性src属性用data-xx代替，监听滚动，直接用window.onscroll(),当页面滚动直至此图片出现在可视区域时，用js取到该图片的data-xx的值赋给src。<br>img标签代码实现：如下所示<br>    <image src="default.png" :data-src="item.allPics" class="lazyloadimg"></image></p>
+<p>加载代码实现：</p>
+<pre><code>window.onscroll =_.throttle(this.watchscroll, 200);
+watchscroll () {
+var bodyScrollHeight = document.body.scrollTop;// body滚动高度
+var windowHeight = window.innerHeight;// 视窗高度
+var imgs = document.getElementsByClassName(&apos;lazyloadimg&apos;);
+for (var i =0; i &lt; imgs.length; i++) {
+var imgHeight = imgs[i].offsetTop;// 图片距离顶部高度
+if (imgHeight &lt; windowHeight + bodyScrollHeight) {
+imgs[i].src = imgs[i].getAttribute(&apos;data-src&apos;); //src属性由data-src属性替代了
+img[i].className = img[i].className.replace(&apos;lazyloadimg&apos;,&apos;&apos;);
+        }
+    }
+}
+</code></pre>
       
     </div>
     
@@ -468,9 +482,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
-          
             <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/前端开发/" rel="tag"><i class="fa fa-tag"></i> 前端开发</a>
           
         </div>
       
@@ -760,7 +774,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.5k字</span>
+  <span class="post-count">博客全站共9.6k字</span>
 </div>
 
 
