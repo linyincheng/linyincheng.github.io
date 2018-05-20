@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T12:56:53.532Z">
+<meta property="og:updated_time" content="2018-05-18T13:44:58.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax的基本应用">
 <meta name="twitter:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp由于是国外的网">
@@ -432,49 +432,10 @@ XHR.send();
 <pre><code>xhr.setRequestHeader(&apos;Content-type&apos;,&apos;application/x-www-form-urlencoded&apos;);
 xhr.send(params);
 </code></pre><h3 id="get请求和post请求两者的区别"><a href="#get请求和post请求两者的区别" class="headerlink" title="get请求和post请求两者的区别"></a>get请求和post请求两者的区别</h3><p>（1）使用Get请求时,参数在URL中显示,而使用Post请求,则不会显示出来；<br>（2）Post传输的数据量大，可以达到2M，而Get方法由于受到URL长度的限制,只能传递大约1024字节.<br>（3）Get请求请求需注意缓存问题,Post请求不需担心这个问题；<br>（4）Post请求必须设置Content-Type值为application/x-form-www-urlencoded；<br>（5）发送请求时,因为Get请求的参数都在url里,所以send函数发送的参数为null,而Post请求在使用send方法时,却需赋予其参数；<br>（6）GET方式请求的数据会被浏览器缓存起来，因此其他人就可以从浏览器的历史记录中读取到这些数据，例如账号和密码等。在某种情况下，GET方式会带来严重的安全问题。而POST方式相对来说就可以避免这些问题。 </p>
-<p>post请求</p>
-<pre><code>function postMethod(){
-
-var xhr = new createXHR();
-
-var userName = document.getElementById(&quot;userName&quot;).value;
-var age = document.getElementById(&quot;age&quot;).value;
-var data = &quot;userName=&quot; + encodeURTComponent( userName ) + &quot;&amp;age=&quot; + encodeURTComponent( age );
-
-//不用担心缓存问题
-xhr.open( &quot;post&quot;, &quot;example.php&quot;, true );
-
-//必须设置,否则服务器端收不到参数
-xhr.setRequestHeader( &quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot; );
-xhr.onreadystatechange = function(){
-    if( xhr.readyState = 4 &amp;&amp; xhr.status == 200 ){
-        document.getElementById(&quot;result&quot;).innerHTML = xhr.responseText;
-    }
-}
-//发送请求,要data数据
-xhr.send( data );
-</code></pre><p>}</p>
-<p>get请求</p>
-<pre><code>function getMethod(){
-var xhr = new createXHR();
-var userName = document.getElementById(&quot;userName&quot;).value;
-var age = document.getElementById(&quot;age&quot;).value;
-
-//添加参数,以求每次访问不同的url,以避免缓存问题
-xhr.open( &quot;get&quot;, &quot;example.php?userName=&quot; + encodeURTComponent( userName ) + &quot;&amp;age=&quot; + encodeURTComponent( age ) + &quot;&amp;random=&quot; + Math.random(), true );
-
-xhr.onreadystatechange = function(){
-
-    if( xhr.readyState == 4 &amp;&amp; xhr.status == 200 ){
-
-        document.getElementById(&quot;result&quot;).innerHTML = xhr.responseText;
-    }
-}
-
-//发送请求,参数为null
-xhr.send( null );
-</code></pre><p>}</p>
-
+<p>post请求<br>    function postMethod(){<br>    var xhr = new createXHR();<br>    var userName = document.getElementById(“userName”).value;<br>    var age = document.getElementById(“age”).value;<br>    var data = “userName=” + encodeURTComponent( userName ) + “&amp;age=” + encodeURTComponent( age );<br>    //不用担心缓存问题<br>    xhr.open( “post”, “example.php”, true );<br>    //必须设置,否则服务器端收不到参数<br>    xhr.setRequestHeader( “Content-Type”, “application/x-www-form-urlencoded” );<br>    xhr.onreadystatechange = function(){<br>        if( xhr.readyState = 4 &amp;&amp; xhr.status == 200 ){<br>            document.getElementById(“result”).innerHTML = xhr.responseText;<br>        }<br>    }<br>    //发送请求,要data数据<br>    xhr.send( data );<br>    }</p>
+<p>get请求<br>    function getMethod(){<br>    var xhr = new createXHR();<br>    var userName = document.getElementById(“userName”).value;<br>    var age = document.getElementById(“age”).value;<br>    //添加参数,以求每次访问不同的url,以避免缓存问题<br>    xhr.open( “get”, “example.php?userName=” + encodeURTComponent( userName ) + “&amp;age=” + encodeURTComponent( age ) + “&amp;random=” + Math.random(), true );<br>    xhr.onreadystatechange = function(){<br>        if( xhr.readyState == 4 &amp;&amp; xhr.status == 200 ){<br>            document.getElementById(“result”).innerHTML = xhr.responseText;<br>        }<br>    }<br>    //发送请求,参数为null<br>    xhr.send( null );<br>    }</p>
+<hr>
+<h2 id="跨域请求的几种方法"><a href="#跨域请求的几种方法" class="headerlink" title="跨域请求的几种方法"></a>跨域请求的几种方法</h2><h4 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h4>
       
     </div>
     
@@ -675,7 +636,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -697,7 +658,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -791,7 +752,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax的使用"><span class="nav-number">2.</span> <span class="nav-text">Ajax的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax请求纯文本或Ajax请求PHP文件"><span class="nav-number">2.1.</span> <span class="nav-text">Ajax请求纯文本或Ajax请求PHP文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax请求Json对象"><span class="nav-number">2.2.</span> <span class="nav-text">Ajax请求Json对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax请求网络接口-以github接口为例"><span class="nav-number">2.3.</span> <span class="nav-text">Ajax请求网络接口(以github接口为例)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax的两种请求方式（get请求和post请求）"><span class="nav-number">2.4.</span> <span class="nav-text">Ajax的两种请求方式（get请求和post请求）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get请求和post请求两者的区别"><span class="nav-number">2.5.</span> <span class="nav-text">get请求和post请求两者的区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax的使用"><span class="nav-number">2.</span> <span class="nav-text">Ajax的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax请求纯文本或Ajax请求PHP文件"><span class="nav-number">2.1.</span> <span class="nav-text">Ajax请求纯文本或Ajax请求PHP文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax请求Json对象"><span class="nav-number">2.2.</span> <span class="nav-text">Ajax请求Json对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax请求网络接口-以github接口为例"><span class="nav-number">2.3.</span> <span class="nav-text">Ajax请求网络接口(以github接口为例)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ajax的两种请求方式（get请求和post请求）"><span class="nav-number">2.4.</span> <span class="nav-text">Ajax的两种请求方式（get请求和post请求）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get请求和post请求两者的区别"><span class="nav-number">2.5.</span> <span class="nav-text">get请求和post请求两者的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跨域请求的几种方法"><span class="nav-number">3.</span> <span class="nav-text">跨域请求的几种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是跨域？"><span class="nav-number">3.0.1.</span> <span class="nav-text">什么是跨域？</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -832,7 +793,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.0k字</span>
+  <span class="post-count">博客全站共10.1k字</span>
 </div>
 
 

@@ -4,6 +4,67 @@
 
     
   <url>
+    <loc>https://linyincheng.github.io/2017/11/08/Object/</loc>
+    <lastmod>2018-05-20T08:27:35.452Z</lastmod>
+    <data>
+        <display>
+        <title>String,Number和Boolean等基本类型的包装对象</title>
+        <pubTime>2017-11-08T12:40:29.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/05/18/ES6/</loc>
+    <lastmod>2018-05-18T13:48:06.152Z</lastmod>
+    <data>
+        <display>
+        <title>ES6的学习总结</title>
+        <pubTime>2018-05-18T13:46:15.258Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
+    <lastmod>2018-05-18T13:44:58.080Z</lastmod>
+    <data>
+        <display>
+        <title>Ajax的基本应用</title>
+        <pubTime>2017-12-28T09:49:46.699Z</pubTime>
+        
+        <tag>前端开发</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
     <lastmod>2018-05-16T13:04:04.640Z</lastmod>
     <data>
@@ -40,25 +101,6 @@
              
               <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
-    <lastmod>2018-05-08T12:56:53.532Z</lastmod>
-    <data>
-        <display>
-        <title>Ajax的基本应用</title>
-        <pubTime>2017-12-28T09:49:46.698Z</pubTime>
-        
-        <tag>前端开发</tag>
-         
-        <tag>javascript</tag>
-         
-         
-           
         </display>
     </data>
     </url>
@@ -168,26 +210,6 @@
            
              
               <breadCrumb title="随笔" url="https://linyincheng.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2017/11/08/Object/</loc>
-    <lastmod>2017-11-11T09:55:16.277Z</lastmod>
-    <data>
-        <display>
-        <title>String,Number和Boolean等基本类型的包装对象</title>
-        <pubTime>2017-11-08T12:40:29.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
           
         </display>
     </data>
