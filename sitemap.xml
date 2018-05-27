@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://linyincheng.github.io/about/jianli.html</loc>
+    
+    <lastmod>2018-05-27T13:16:40.496Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
+    
+    <lastmod>2018-05-22T09:50:14.830Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://linyincheng.github.io/2017/11/08/Object/</loc>
     
     <lastmod>2018-05-20T08:27:35.452Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://linyincheng.github.io/2018/05/18/ES6/</loc>
     
     <lastmod>2018-05-18T13:48:06.152Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
-    
-    <lastmod>2018-05-18T13:44:58.080Z</lastmod>
     
   </url>
   
