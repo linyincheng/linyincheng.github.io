@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
+    
+    <lastmod>2018-05-27T13:17:39.916Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://linyincheng.github.io/about/jianli.html</loc>
     
     <lastmod>2018-05-27T13:16:40.496Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://linyincheng.github.io/2018/04/14/liver/</loc>
     
     <lastmod>2018-05-16T13:04:04.640Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
-    
-    <lastmod>2018-05-10T12:56:40.670Z</lastmod>
     
   </url>
   

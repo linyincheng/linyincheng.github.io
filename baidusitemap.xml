@@ -3,6 +3,28 @@
 
 
     
+  <url>
+    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
+    <lastmod>2018-05-27T13:17:39.916Z</lastmod>
+    <data>
+        <display>
+        <title>原生Js的图片预加载和懒加载技术</title>
+        <pubTime>2018-04-17T13:39:23.087Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
@@ -79,28 +101,6 @@
            
              
               <breadCrumb title="学习与生活" url="https://linyincheng.github.io/categories/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E7%94%9F%E6%B4%BB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
-    <lastmod>2018-05-10T12:56:40.670Z</lastmod>
-    <data>
-        <display>
-        <title>原生Js的图片预加载和懒加载技术</title>
-        <pubTime>2018-04-17T13:39:23.086Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>前端开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
           
         </display>
     </data>
