@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
+    
+    <lastmod>2018-05-28T13:33:58.704Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://linyincheng.github.io/2018/05/18/ES6/</loc>
+    
+    <lastmod>2018-05-28T13:25:25.757Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
     
     <lastmod>2018-05-27T13:17:39.916Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
-    
-    <lastmod>2018-05-22T09:50:14.830Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://linyincheng.github.io/2017/11/08/Object/</loc>
     
     <lastmod>2018-05-20T08:27:35.452Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://linyincheng.github.io/2018/05/18/ES6/</loc>
-    
-    <lastmod>2018-05-18T13:48:06.152Z</lastmod>
     
   </url>
   

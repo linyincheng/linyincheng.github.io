@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp https:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-22T09:50:14.830Z">
+<meta property="og:updated_time" content="2018-05-28T13:33:58.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax的基本应用">
 <meta name="twitter:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp https:">
@@ -382,8 +382,34 @@ document.write(this.response);
 };
 XHR.send();
 }
-&lt;/script&gt;
-</code></pre><h3 id="Ajax请求Json对象"><a href="#Ajax请求Json对象" class="headerlink" title="Ajax请求Json对象"></a>Ajax请求Json对象</h3><pre><code>function loadUser(){
+//这里做一下兼容,因为IE浏览器支持的是ActiveXobject()的方法
+//这里封装一个createXHR()函数;
+/**
+/*param createXHR()
+/* 封装一个兼容ie5，6，7的XmlHttpRequeat的使用函数
+/*/
+function createXHR(){
+if(typeof XMLHttpRequest != &quot;undefined&quot;){//ie7+，Firefox chrome
+    return new XMLHttpRequest;
+}else if(typeof ActiveXObject !=&quot;undefined&quot;){//ie6以下
+    if(typeof arguments.callee.activeXString !=&quot;string&quot;){
+        var versions = [&quot;MSXML2.XMLHttp.6.0&quot;,&quot;MSXML2.XMLHttp.3.0&quot;,&quot;MSXML2.XMLHttp&quot;],i,len;
+        for(i=0,len=versions.length;i&lt;len;i++){
+            try{
+                new ActiveXObject(versions[i]);
+                arguments.callee.activeXString = versions[i];
+                break;
+            }catch(ex){    
+                //跳过
+            }
+        }
+    }
+    return new ActiveXObject(arguments.callee.activeXString);
+}else{
+    throw newError(&quot;No XHR object available.&quot;);
+}
+</code></pre><p>}<br>    </p>
+<h3 id="Ajax请求Json对象"><a href="#Ajax请求Json对象" class="headerlink" title="Ajax请求Json对象"></a>Ajax请求Json对象</h3><pre><code>function loadUser(){
         var xhr = new XMLHttpRequest();
         xhr.open(&quot;GET&quot;,&quot;user.json&quot;,true);//用Get请求
         xhr.onload = function(){
@@ -794,7 +820,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.1k字</span>
+  <span class="post-count">博客全站共10.3k字</span>
 </div>
 
 

@@ -4,6 +4,47 @@
 
     
   <url>
+    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
+    <lastmod>2018-05-28T13:33:58.704Z</lastmod>
+    <data>
+        <display>
+        <title>Ajax的基本应用</title>
+        <pubTime>2017-12-28T09:49:46.699Z</pubTime>
+        
+        <tag>前端开发</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/05/18/ES6/</loc>
+    <lastmod>2018-05-28T13:25:25.757Z</lastmod>
+    <data>
+        <display>
+        <title>ES6的学习总结</title>
+        <pubTime>2018-05-18T13:46:15.258Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://linyincheng.github.io/2018/04/17/lazyload/</loc>
     <lastmod>2018-05-27T13:17:39.916Z</lastmod>
     <data>
@@ -27,25 +68,6 @@
     
     
   <url>
-    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
-    <lastmod>2018-05-22T09:50:14.830Z</lastmod>
-    <data>
-        <display>
-        <title>Ajax的基本应用</title>
-        <pubTime>2017-12-28T09:49:46.699Z</pubTime>
-        
-        <tag>前端开发</tag>
-         
-        <tag>javascript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://linyincheng.github.io/2017/11/08/Object/</loc>
     <lastmod>2018-05-20T08:27:35.452Z</lastmod>
     <data>
@@ -54,28 +76,6 @@
         <pubTime>2017-11-08T12:40:29.000Z</pubTime>
         
         <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/05/18/ES6/</loc>
-    <lastmod>2018-05-18T13:48:06.152Z</lastmod>
-    <data>
-        <display>
-        <title>ES6的学习总结</title>
-        <pubTime>2018-05-18T13:46:15.258Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>ES6</tag>
          
          
            
