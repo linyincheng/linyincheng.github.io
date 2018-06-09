@@ -93,10 +93,12 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp https:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T00:26:13.981Z">
+<meta property="og:image" content="https://linyincheng.github.io/2017/12/28/ajax/%22kuayu.png%22">
+<meta property="og:updated_time" content="2018-06-09T11:36:34.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax的基本应用">
 <meta name="twitter:description" content="AjaxAjax是前后台实现数据交互的一门技术，可以在无需加载整个网页的情况下能够更新部分网页的技术，也就是说在后台与服务器之间进行少量的数据交互可以使网页不用更新整体，只是更新更改的那一部分。Ajax 在浏览器与 Web 服务器之间使用异步数据传输（HTTP 请求），这样就可使网页从服务器请求少量的信息，而不是整个页面。 Ajax的使用使用Ajax需要下载安装它的运行环境xampp https:">
+<meta name="twitter:image" content="https://linyincheng.github.io/2017/12/28/ajax/%22kuayu.png%22">
 
 
 
@@ -458,10 +460,41 @@ if(typeof XMLHttpRequest != &quot;undefined&quot;){//ie7+，Firefox chrome
 <pre><code>xhr.setRequestHeader(&apos;Content-type&apos;,&apos;application/x-www-form-urlencoded&apos;);
 xhr.send(params);
 </code></pre><h3 id="get请求和post请求两者的区别"><a href="#get请求和post请求两者的区别" class="headerlink" title="get请求和post请求两者的区别"></a>get请求和post请求两者的区别</h3><p>（1）使用Get请求时,参数在URL中显示,而使用Post请求,则不会显示出来；<br>（2）Post传输的数据量大，可以达到2M，而Get方法由于受到URL长度的限制,只能传递大约1024字节.<br>（3）Get请求请求需注意缓存问题,Post请求不需担心这个问题；<br>（4）Post请求必须设置Content-Type值为application/x-form-www-urlencoded；<br>（5）发送请求时,因为Get请求的参数都在url里,所以send函数发送的参数为null,而Post请求在使用send方法时,却需赋予其参数；<br>（6）GET方式请求的数据会被浏览器缓存起来，因此其他人就可以从浏览器的历史记录中读取到这些数据，例如账号和密码等。在某种情况下，GET方式会带来严重的安全问题。而POST方式相对来说就可以避免这些问题。 </p>
-<p>post请求：<br>    function postMethod(){<br>    var xhr = new createXHR();<br>    var userName = document.getElementById(“userName”).value;<br>    var age = document.getElementById(“age”).value;<br>    var data = “userName=” + encodeURTComponent( userName ) + “&amp;age=” + encodeURTComponent( age );<br>    //不用担心缓存问题<br>    xhr.open( “post”, “example.php”, true );<br>    //必须设置,否则服务器端收不到参数<br>    xhr.setRequestHeader( “Content-Type”, “application/x-www-form-urlencoded” );<br>    xhr.onreadystatechange = function(){<br>        if( xhr.readyState = 4 &amp;&amp; xhr.status == 200 ){<br>            document.getElementById(“result”).innerHTML = xhr.responseText;<br>        }<br>    }<br>    //发送请求,要data数据<br>    xhr.send( data );<br>    }</p>
-<p>get请求：<br>    function getMethod(){<br>    var xhr = new createXHR();<br>    var userName = document.getElementById(“userName”).value;<br>    var age = document.getElementById(“age”).value;<br>    //添加参数,以求每次访问不同的url,以避免缓存问题<br>    xhr.open( “get”, “example.php?userName=” + encodeURTComponent( userName ) + “&amp;age=” + encodeURTComponent( age ) + “&amp;random=” + Math.random(), true );<br>    xhr.onreadystatechange = function(){<br>        if( xhr.readyState == 4 &amp;&amp; xhr.status == 200 ){<br>            document.getElementById(“result”).innerHTML = xhr.responseText;<br>        }<br>    }<br>    //发送请求,参数为null<br>    xhr.send( null );<br>    }</p>
-<hr>
-<h2 id="跨域请求的几种方法"><a href="#跨域请求的几种方法" class="headerlink" title="跨域请求的几种方法"></a>跨域请求的几种方法</h2><h4 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h4><p>跨域是指从一个域名的网页去请求另一个域名网页的资源，比如从www.baidu.com 页面去请求<a href="https://www.tmall.com的资源。跨域的严格一点的定义是：只要" target="_blank" rel="external">https://www.tmall.com的资源。跨域的严格一点的定义是：只要</a> 协议，域名，端口有任何一个的不同，就被当作是跨域。</p>
+<p>post请求：</p>
+<pre><code>function postMethod(){
+var xhr = new createXHR();
+var userName = document.getElementById(&quot;userName&quot;).value;
+var age = document.getElementById(&quot;age&quot;).value;
+var data = &quot;userName=&quot; + encodeURTComponent( userName ) + &quot;&amp;age=&quot; + encodeURTComponent( age );
+//不用担心缓存问题
+xhr.open( &quot;post&quot;, &quot;example.php&quot;, true );
+//必须设置,否则服务器端收不到参数
+xhr.setRequestHeader( &quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot; );
+xhr.onreadystatechange = function(){
+    if( xhr.readyState = 4 &amp;&amp; xhr.status == 200 ){
+        document.getElementById(&quot;result&quot;).innerHTML = xhr.responseText;
+    }
+}
+//发送请求,要data数据
+xhr.send( data );
+}
+</code></pre><p>get请求：</p>
+<pre><code>function getMethod(){
+var xhr = new createXHR();
+var userName = document.getElementById(&quot;userName&quot;).value;
+var age = document.getElementById(&quot;age&quot;).value;
+//添加参数,以求每次访问不同的url,以避免缓存问题
+xhr.open( &quot;get&quot;, &quot;example.php?userName=&quot; + encodeURTComponent( userName ) + &quot;&amp;age=&quot; + encodeURTComponent( age ) + &quot;&amp;random=&quot; + Math.random(), true );
+xhr.onreadystatechange = function(){
+    if( xhr.readyState == 4 &amp;&amp; xhr.status == 200 ){
+        document.getElementById(&quot;result&quot;).innerHTML = xhr.responseText;
+    }
+}
+//发送请求,参数为null
+xhr.send( null );
+}
+</code></pre><hr>
+<h2 id="跨域请求的几种方法"><a href="#跨域请求的几种方法" class="headerlink" title="跨域请求的几种方法"></a>跨域请求的几种方法</h2><h4 id="什么是跨域？"><a href="#什么是跨域？" class="headerlink" title="什么是跨域？"></a>什么是跨域？</h4><p>跨域是指从一个域名的网页去请求另一个域名网页的资源，比如从www.baidu.com 页面去请求<a href="https://www.tmall.com的资源。跨域的严格一点的定义是：只要" target="_blank" rel="external">https://www.tmall.com的资源。跨域的严格一点的定义是：只要</a> 协议，域名，端口有任何一个的不同，就被当作是跨域。<br><img src="&quot;kuayu.png&quot;" alt="跨域"></p>
 
       
     </div>
