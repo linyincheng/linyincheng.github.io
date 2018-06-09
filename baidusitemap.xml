@@ -4,27 +4,8 @@
 
     
   <url>
-    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
-    <lastmod>2018-06-09T11:36:34.539Z</lastmod>
-    <data>
-        <display>
-        <title>Ajax的基本应用</title>
-        <pubTime>2017-12-28T09:49:46.699Z</pubTime>
-        
-        <tag>前端开发</tag>
-         
-        <tag>javascript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://linyincheng.github.io/2018/04/14/closure/</loc>
-    <lastmod>2018-06-09T11:23:39.895Z</lastmod>
+    <lastmod>2018-06-09T11:44:45.113Z</lastmod>
     <data>
         <display>
         <title>关于函数闭包的理解</title>
@@ -39,6 +20,25 @@
              
               <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
+    <lastmod>2018-06-09T11:43:58.416Z</lastmod>
+    <data>
+        <display>
+        <title>Ajax的基本应用</title>
+        <pubTime>2017-12-28T09:49:46.699Z</pubTime>
+        
+        <tag>前端开发</tag>
+         
+        <tag>javascript</tag>
+         
+         
+           
         </display>
     </data>
     </url>

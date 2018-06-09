@@ -93,12 +93,12 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://linyincheng.github.io/2018/04/14/closure/closure.png">
-<meta property="og:updated_time" content="2018-06-09T11:23:39.895Z">
+<meta property="og:image" content="https://linyincheng.github.io/2018/04/14/closure/closuer.png">
+<meta property="og:updated_time" content="2018-06-09T11:44:45.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于函数闭包的理解">
 <meta name="twitter:description" content="学习前端的过程中，特别是在Javascript学习的过程中，每个学习者都会遇到一个很难理解的难点，那就是闭包。下来我来讲讲我对闭包的了解： 函数作用域首先，讲闭包，就一定要讲到JS的作用域（函数作用域）了，函数作用域有一些特点; 特点一（函数能访问到函数外部的变量）var num =10; function fn1(){     console.log(num); } fn1();       /">
-<meta name="twitter:image" content="https://linyincheng.github.io/2018/04/14/closure/closure.png">
+<meta name="twitter:image" content="https://linyincheng.github.io/2018/04/14/closure/closuer.png">
 
 
 
@@ -413,7 +413,7 @@ console.log(num);//结果为undefined;
     }
 }
 fn1();
-</code></pre><p>如下图所示：<br><img src="closure.png" alt="闭包"></p>
+</code></pre><p>如下图所示：<br><img src="closuer.png" alt="闭包"></p>
 <p>简单来说闭包就是在嵌套函数中有访问外层函数成员变量权限的函数(一般人的理解)。。而我理解中的闭包是什么呢？<br><strong> 我认为闭包就是内部函数对外部函数的引用 </strong></p>
 <h3 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h3><p>使用闭包有两个好处：一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
 <pre><code>function foo(){
