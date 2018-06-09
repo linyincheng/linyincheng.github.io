@@ -4,8 +4,72 @@
 
     
   <url>
+    <loc>https://linyincheng.github.io/2018/04/14/closure/</loc>
+    <lastmod>2018-06-09T11:17:40.852Z</lastmod>
+    <data>
+        <display>
+        <title>关于函数闭包的理解</title>
+        <pubTime>2018-04-14T12:10:18.212Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2017/10/31/event/</loc>
+    <lastmod>2018-06-09T08:36:18.105Z</lastmod>
+    <data>
+        <display>
+        <title>Js中事件的冒泡和事件的捕获</title>
+        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://linyincheng.github.io/2018/04/06/property/</loc>
+    <lastmod>2018-05-30T12:17:01.168Z</lastmod>
+    <data>
+        <display>
+        <title>JS原型，原型链和继承的理解</title>
+        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>前端开发</tag>
+         
+         
+           
+             
+              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://linyincheng.github.io/2017/12/28/ajax/</loc>
-    <lastmod>2018-05-28T13:33:58.704Z</lastmod>
+    <lastmod>2018-05-29T00:26:13.981Z</lastmod>
     <data>
         <display>
         <title>Ajax的基本应用</title>
@@ -107,70 +171,6 @@
     </url>
 
     
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/14/bibao/</loc>
-    <lastmod>2018-05-01T12:13:13.543Z</lastmod>
-    <data>
-        <display>
-        <title>关于函数闭包的理解</title>
-        <pubTime>2018-04-14T12:10:18.211Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>前端开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://linyincheng.github.io/2017/10/31/event/</loc>
-    <lastmod>2018-04-27T03:49:34.454Z</lastmod>
-    <data>
-        <display>
-        <title>Js中事件的冒泡和事件的捕获</title>
-        <pubTime>2017-10-31T08:42:12.439Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://linyincheng.github.io/2018/04/06/property/</loc>
-    <lastmod>2018-04-14T12:09:05.236Z</lastmod>
-    <data>
-        <display>
-        <title>JS原型，原型链和继承的理解</title>
-        <pubTime>2018-04-06T09:38:05.509Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>前端开发</tag>
-         
-         
-           
-             
-              <breadCrumb title="javscript学习记录" url="https://linyincheng.github.io/categories/javscript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
     
   <url>

@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-27T03:49:34.454Z">
+<meta property="og:updated_time" content="2018-06-09T08:36:18.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js中事件的冒泡和事件的捕获">
 <meta name="twitter:description" content="首先，我们知道微软提出的是事件冒泡，网景提出的是事件捕获。这两个概念的提出是为了解决页面中事件流(即事件发生顺序)的问题。 &amp;lt;div id=&amp;quot;outer&amp;quot;&amp;gt;     &amp;lt;p id=&amp;quot;inner&amp;quot;&amp;gt;点击我！&amp;lt;/p&amp;gt; &amp;lt;/div&amp;gt; 上面的代码中一个div元素当中有一个p子元素，如果两个元素都有一onclick事件处理">
@@ -441,6 +441,20 @@ if(element.removeHandler){//Dom2级的处理事件
 </code></pre><p>其中的event.cancelBubble=true是指取消事件冒泡，将事件停止下来，不让事件往上面的元素传递。</p>
 <h2 id="冒泡还是-捕获？"><a href="#冒泡还是-捕获？" class="headerlink" title="冒泡还是 捕获？"></a>冒泡还是 捕获？</h2><p>对于事件代理来说，在事件捕获或者事件冒泡阶段处理并没有明显的优劣之分，但是由于事件冒泡的事件流模型被所有主流的浏览器兼容，从兼容性角度来说还是建议大家使用事件冒泡模型。</p>
 <h2 id="IE浏览器兼容"><a href="#IE浏览器兼容" class="headerlink" title="IE浏览器兼容"></a>IE浏览器兼容</h2><p>IE浏览器对addEventListener兼容性并不算太好，只有IE9以上可以使用。<br>要兼容旧版本的IE浏览器，可以使用IE的attachEvent函数<br>object.setCapture();<br>object.attachEvent(event, function)<br>两个参数与addEventListener相似，分别是事件和处理函数，默认是事件冒泡阶段调用处理函数，要注意的是，写事件名时候要加上”on”前缀（”onload”、”onclick”等）。</p>
+<h2 id="基于事件冒泡的事件委托"><a href="#基于事件冒泡的事件委托" class="headerlink" title="基于事件冒泡的事件委托"></a>基于事件冒泡的事件委托</h2><h3 id="什么事件委托呢？"><a href="#什么事件委托呢？" class="headerlink" title="什么事件委托呢？"></a>什么事件委托呢？</h3><p>红宝书上面讲的是：事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。我上网查了一下大牛们举的例子都是一样的，接收快递的例子;<br>来点代码吧：<br>    <ul><br>        <li>111</li><br>        <li>222</li><br>        <li>333</li><br>        <li>444</li><br>        <li>555</li><br>    </ul><br>我们要给li添加一个点击事件，使得点击li的时候弹出“123”;我们通常挥这样去写代码</p>
+<pre><code>var oUl = document.querySelector(&quot;ul&quot;);
+var oLi = oUl.querySelectorAll(&quot;li&quot;);
+for(var i=0;i&lt;oLi.length;i++){
+    oLi[i].onclick = function(){
+        alert(&quot;123&quot;);
+    }
+}
+</code></pre><p>我们会给li循环绑定点击事件。可是这样做会影响整个网页的运行性能，因为不断地需要与dom节点交互，访问dom的次数越多引起浏览器重绘和重排的次数就越多，就会影响整个页面的交互就绪时间。这就是为什么性能优化的主要思想之一就是减少DOM操作的原因；<br>如果使用事件委托的话：就会将所有的操作放到js程序里面，与dom的操作就只需要交互一次，这样就能大大的减少与dom的交互次数，提高性能；<br>每个函数都是一个对象，是对象就会占用内存，对象越多，内存占用率就越大，自然性能就越差了（内存不够用，是硬伤，哈哈）(容易造成了内存溢出)，比如上面的100个li，就要占用100个内存空间，如果是1000个，10000个呢，那只能说呵呵了，如果用事件委托，那么我们就可以只对它的父级（如果只有一个父级）这一个对象进行操作，这样我们就需要一个内存空间就够了，是不是省了很多，自然性能就会更好。</p>
+<h3 id="如何实现事件委托"><a href="#如何实现事件委托" class="headerlink" title="如何实现事件委托"></a>如何实现事件委托</h3><p>上面说到事件冒泡：事件执行顺序是从最内部的标签一直向上冒泡到document;拿上面的例子来说，li&gt;ul&gt;docment;有这样的一个机制，就是我们给ul添加click事件，那么点击li的时候可以冒泡到ul。，所以都会触发点击事件。<br>    <script><br>        var oUl =document.querySelector(“ul”);<br>        oUl.oclick= function(){<br>            alert(“123”)//这样也可以实现上面的效果；<br>        }<br>    </script><br>但是我们会发现一个问题：那就是我们无法确定点击那个li标签；怎么办呢？<br>Event对象提供了一个属性叫target，可以返回事件的目标节点，我们成为事件源，也就是说，target就可以表示为当前的事件操作的dom，但是不是真正操作dom，当然，这个是有兼容性的，标准浏览器用ev.target，IE浏览器用event.srcElement，此时只是获取了当前节点的位置，并不知道是什么节点名称，这里我们用nodeName来获取具体是什么标签名，这个返回的是一个大写的，我们需要转成小写再做比较<br>    <script><br>        var oUl =document.querySelector(“ul”);<br>        oUl.oclick= function(e){<br>            var e = event||window.event;<br>            var target = e.target||e.srcElement;<br>            if(target.nodeName.toLowerCase() ===”li”){<br>                alert(“123”)//这样也可以实现上面的效果；<br>                alert(target.innerHTML);<br>            }<br>        }<br>    </script><br>这样改下就只有点击li会触发事件了，且每次只执行一次dom操作，如果li数量很多的话，将大大减少dom的操作，优化的性能可想而知！</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>那什么样的事件可以用事件委托，什么样的事件不可以用呢？</p>
+<p>适合用事件委托的事件：click，mousedown，mouseup，keydown，keyup，keypress。</p>
+<p>值得注意的是，mouseover和mouseout虽然也有事件冒泡，但是处理它们的时候需要特别的注意，因为需要经常计算它们的位置，处理起来不太容易。</p>
+<p>不适合的就有很多了，举个例子，mousemove，每次都要计算它的位置，非常不好把控，在不如说focus，blur之类的，本身就没用冒泡的特性，自然就不能用事件委托了。</p>
 
       
     </div>
@@ -756,7 +770,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获"><span class="nav-number">2.</span> <span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addEventListener的第三个参数"><span class="nav-number">3.</span> <span class="nav-text">addEventListener的第三个参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation"><span class="nav-number">4.</span> <span class="nav-text">阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡还是-捕获？"><span class="nav-number">5.</span> <span class="nav-text">冒泡还是 捕获？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE浏览器兼容"><span class="nav-number">6.</span> <span class="nav-text">IE浏览器兼容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#事件冒泡"><span class="nav-number">1.</span> <span class="nav-text">事件冒泡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件捕获"><span class="nav-number">2.</span> <span class="nav-text">事件捕获</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addEventListener的第三个参数"><span class="nav-number">3.</span> <span class="nav-text">addEventListener的第三个参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止事件的冒泡行为以及阻止冒泡函数-stopPropagation"><span class="nav-number">4.</span> <span class="nav-text">阻止事件的冒泡行为以及阻止冒泡函数( stopPropagation())</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡还是-捕获？"><span class="nav-number">5.</span> <span class="nav-text">冒泡还是 捕获？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE浏览器兼容"><span class="nav-number">6.</span> <span class="nav-text">IE浏览器兼容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于事件冒泡的事件委托"><span class="nav-number">7.</span> <span class="nav-text">基于事件冒泡的事件委托</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么事件委托呢？"><span class="nav-number">7.1.</span> <span class="nav-text">什么事件委托呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现事件委托"><span class="nav-number">7.2.</span> <span class="nav-text">如何实现事件委托</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结："><span class="nav-number">7.3.</span> <span class="nav-text">总结：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -797,7 +811,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.3k字</span>
+  <span class="post-count">博客全站共11.7k字</span>
 </div>
 
 

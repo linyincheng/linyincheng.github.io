@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="Sliver city">
 <meta property="og:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-14T12:09:05.236Z">
+<meta property="og:updated_time" content="2018-05-30T12:17:01.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原型，原型链和继承的理解">
 <meta name="twitter:description" content="在学习JavaScript的过程中，经常会遇到几个难点，比如原型，原型链以及闭包之类的，下面我们就来聊聊我所理解的这些难点内容。 普通对象和函数对象JavaScript是一门面向对象的语言，既然面向对象，那就得有对象才行对吧，所谓万物皆对象，但是对象之间也是有区别的，对象分为函数对象和普通对象。函数对象可以创建普通对象，但是普通对象不能创建函数对象，普通对象在js的语法中什么特权也没有。举例说明一">
@@ -478,7 +478,8 @@ Object.prototype.__proto__ === null;
         var chi= new Child(69);
         chi.sayHi();
         chi.sayGrade();
-</code></pre><h4 id="构造函数实现继承"><a href="#构造函数实现继承" class="headerlink" title="构造函数实现继承"></a>构造函数实现继承</h4><pre><code>function Parents(name,age){
+</code></pre><p>chi.prototype.__proto<strong> =&gt; Child.prototype,  Child.prototype.\</strong>proto__=&gt;Parents.prototype<br>chi实例的原型是Child的实例，而Child的实例的原型指向了Parents的实例；这样就实现原型继承 而chi拥有了Child和Parents的所有属性和方法</p>
+<h4 id="构造函数实现继承"><a href="#构造函数实现继承" class="headerlink" title="构造函数实现继承"></a>构造函数实现继承</h4><pre><code>function Parents(name,age){
             this.name = name;
             this.age = age;
             this.sayHi = function(){
@@ -606,7 +607,7 @@ var chi= new Child(&quot;林云&quot;,22,69);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/14/bibao/" rel="prev" title="关于函数闭包的理解">
+              <a href="/2018/04/14/closure/" rel="prev" title="关于函数闭包的理解">
                 关于函数闭包的理解 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -877,7 +878,7 @@ var jiathis_config={
 
   <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.3k字</span>
+  <span class="post-count">博客全站共11.7k字</span>
 </div>
 
 
